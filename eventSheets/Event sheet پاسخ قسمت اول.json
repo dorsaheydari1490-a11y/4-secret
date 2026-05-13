@@ -1,0 +1,66 @@
+{
+	"name": "Event sheet پاسخ قسمت اول",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "Event sheet فلش"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 288113191376528
+				}
+			],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 261917182722861,
+					"parameters": {
+						"seconds": "10",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "توجه",
+					"sid": 820128816359411,
+					"parameters": {
+						"x": "539",
+						"y": "101"
+					}
+				}
+			],
+			"sid": 964294809686200
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-click",
+					"objectClass": "Mouse",
+					"sid": 561462829726696,
+					"parameters": {
+						"mouse-button": "right",
+						"click-type": "clicked"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-nextprevious-layout",
+					"objectClass": "System",
+					"sid": 958520298263136,
+					"parameters": {
+						"which": "next"
+					}
+				}
+			],
+			"sid": 533541054286433
+		}
+	],
+	"sid": 844047689438639
+}

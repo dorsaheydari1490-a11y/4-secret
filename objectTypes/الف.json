@@ -1,0 +1,21 @@
+{
+	"name": "الف",
+	"plugin-id": "Text",
+	"sid": 133427619277538,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Bullet",
+			"name": "Bullet",
+			"sid": 875090472112713
+		},
+		{
+			"behaviorId": "wrap",
+			"name": "Wrap",
+			"sid": 815766168195625
+		}
+	],
+	"effectTypes": []
+}

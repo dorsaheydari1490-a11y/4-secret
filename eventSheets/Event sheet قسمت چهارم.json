@@ -1,0 +1,255 @@
+{
+	"name": "Event sheet قسمت چهارم",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "Event sheet فلش"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 237697790517261
+				}
+			],
+			"actions": [
+				{
+					"id": "pin-to-object-properties",
+					"objectClass": "گرد",
+					"sid": 791329239339636,
+					"behaviorType": "Pin",
+					"parameters": {
+						"pin-to": "مثلث",
+						"x": true,
+						"y": true,
+						"angle": true,
+						"width-type": "no",
+						"height-type": "no",
+						"z": false
+					}
+				},
+				{
+					"id": "stop-all",
+					"objectClass": "Audio",
+					"sid": 962446248617603
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 697543372559643,
+					"parameters": {
+						"audio-file": {
+							"path": "03 Sunny Meadow"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 468934026181101,
+					"parameters": {
+						"audio-file": {
+							"path": "voice_msg_-5298625307354342606"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 110104144121416,
+					"parameters": {
+						"seconds": "5",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "move-to-position",
+					"objectClass": "Sprite8",
+					"sid": 131857814631980,
+					"behaviorType": "MoveTo",
+					"parameters": {
+						"x": "3000",
+						"y": "575",
+						"mode": "direct"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Text5",
+					"sid": 698626653118296
+				}
+			],
+			"sid": 204530345754922
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 560481584921423
+				}
+			],
+			"actions": [],
+			"sid": 787181535249557
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-on-floor",
+					"objectClass": "مثلث",
+					"sid": 945474003438956,
+					"behaviorType": "Platform"
+				}
+			],
+			"actions": [
+				{
+					"id": "set-angle",
+					"objectClass": "گرد",
+					"sid": 618842412022030,
+					"parameters": {
+						"angle": "گرد.Angle + (مثلث.Platform.Speed * -0.02)"
+					}
+				}
+			],
+			"sid": 292586774308022
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "pick-parent",
+					"objectClass": "گرد",
+					"sid": 774540187874166,
+					"parameters": {
+						"parent": "گرد",
+						"which": "all"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 423267715687370
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 614506160492426,
+					"parameters": {
+						"key": 13
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-mirrored",
+					"objectClass": "مثلث",
+					"sid": 161850676264328,
+					"parameters": {
+						"state": "mirrored"
+					}
+				}
+			],
+			"sid": 692867169973443
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "مثلث",
+					"sid": 197282389013786,
+					"parameters": {
+						"object": "الف4"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 597144009333732,
+					"parameters": {
+						"audio-file": {
+							"path": "sound-effect-twinklesparkle-115095"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 406630354155386,
+					"parameters": {
+						"layout": "پاسخ قسمت چهارم"
+					}
+				}
+			],
+			"sid": 725800745391245
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "مثلث",
+					"sid": 818337372966467,
+					"parameters": {
+						"object": "ب4"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 108895734934273,
+					"parameters": {
+						"audio-file": {
+							"path": "Wrong_Answer"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "star",
+					"sid": 443642029730181,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 391898843043715,
+					"parameters": {
+						"variable": "امتیاز",
+						"value": "2"
+					}
+				}
+			],
+			"sid": 156258138131318
+		}
+	],
+	"sid": 233453317547163
+}

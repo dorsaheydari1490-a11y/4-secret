@@ -1,0 +1,52 @@
+{
+	"name": "مساحت",
+	"plugin-id": "Sprite",
+	"sid": 480840381443918,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 480,
+						"height": 320,
+						"originX": 0.5206611570247934,
+						"originY": 0.562962962962963,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/webp",
+						"imageSpriteId": 2670276,
+						"collisionPoly": {
+							"points": [
+								0.004132231404958678,
+								0,
+								1,
+								0,
+								1,
+								1,
+								0.004132231404958678,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 500805954401402,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

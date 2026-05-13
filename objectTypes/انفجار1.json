@@ -1,0 +1,58 @@
+{
+	"name": "انفجار1",
+	"plugin-id": "Sprite",
+	"sid": 123551348163558,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Fade",
+			"name": "Fade",
+			"sid": 252751449983149
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 585,
+						"height": 592,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 2573221,
+						"collisionPoly": {
+							"points": [
+								0.0017094017094017094,
+								0.0016891891891891893,
+								0.9982905982905983,
+								0.0016891891891891893,
+								0.9982905982905983,
+								0.9983108108108109,
+								0.0017094017094017094,
+								0.9983108108108109
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 208026335278662,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

@@ -1,0 +1,58 @@
+{
+	"name": "آجرآبی",
+	"plugin-id": "Sprite",
+	"sid": 733985135892085,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 415765466674140
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 66,
+						"height": 66,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 1798613,
+						"collisionPoly": {
+							"points": [
+								0.07575757575757576,
+								0.015151515151515152,
+								0.9848484848484849,
+								0.07575757575757576,
+								0.9242424242424242,
+								0.9848484848484849,
+								0.015151515151515152,
+								0.9242424242424242
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 851273785737739,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

@@ -1,0 +1,52 @@
+{
+	"name": "دریاتصویر",
+	"plugin-id": "Sprite",
+	"sid": 649487151641088,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 498,
+						"height": 798,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 9999315,
+						"collisionPoly": {
+							"points": [
+								0.004036512649375506,
+								0.004331817197314273,
+								0.9959634873506245,
+								0.004331817197314273,
+								0.9959634873506245,
+								0.9956681828026857,
+								0.004036512649375506,
+								0.9956681828026857
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 180360649451290,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

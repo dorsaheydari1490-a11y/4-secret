@@ -1,0 +1,104 @@
+{
+	"name": "Event sheet آزادیd",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "Event sheet فلش"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 399428677386435
+				}
+			],
+			"actions": [
+				{
+					"id": "stop-all",
+					"objectClass": "Audio",
+					"sid": 494807875540059
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 202160259470616,
+					"parameters": {
+						"audio-file": {
+							"path": "ste-006-82937"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "move-to-position",
+					"objectClass": "میله",
+					"sid": 647951106252942,
+					"behaviorType": "MoveTo",
+					"parameters": {
+						"x": "258",
+						"y": "-901",
+						"mode": "direct"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 110997006032474,
+					"parameters": {
+						"seconds": "5",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "move-to-position",
+					"objectClass": "دایره",
+					"sid": 284060292052024,
+					"behaviorType": "MoveTo",
+					"parameters": {
+						"x": "919",
+						"y": "315",
+						"mode": "direct"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 691101309927126,
+					"parameters": {
+						"seconds": "5",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 353557547227329,
+					"parameters": {
+						"audio-file": {
+							"path": "sound-effect-twinklesparkle-115095"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "go-to-nextprevious-layout",
+					"objectClass": "System",
+					"sid": 851171459343602,
+					"parameters": {
+						"which": "next"
+					}
+				}
+			],
+			"sid": 975227144440188
+		}
+	],
+	"sid": 474604263235486
+}

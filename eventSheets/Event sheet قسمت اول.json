@@ -1,0 +1,542 @@
+{
+	"name": "Event sheet قسمت اول",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "Event sheet فلش"
+		},
+		{
+			"eventType": "variable",
+			"name": "زمان",
+			"type": "number",
+			"initialValue": "30",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 363471020025465
+		},
+		{
+			"eventType": "variable",
+			"name": "دقت",
+			"type": "number",
+			"initialValue": "2",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 780893830007348
+		},
+		{
+			"eventType": "variable",
+			"name": "امتیاز",
+			"type": "number",
+			"initialValue": "4",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 759730536090586
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 746883031984463
+				}
+			],
+			"actions": [
+				{
+					"id": "reset-eventvar",
+					"objectClass": "System",
+					"sid": 435277858060688,
+					"parameters": {
+						"variable": "زمان"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "فارس",
+					"sid": 544516362948509,
+					"parameters": {
+						"x": "239",
+						"y": "317"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 262051858743081,
+					"parameters": {
+						"audio-file": {
+							"path": "voice_msg_-590761569671517786"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 567681312904685,
+					"parameters": {
+						"audio-file": {
+							"path": "Fassounds - Funky Funk (2025) SONGSARA.NET"
+						},
+						"loop": "looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 729527523173098,
+					"parameters": {
+						"seconds": "8",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "نام1",
+					"sid": 890154929136885
+				},
+				{
+					"id": "move-to-position",
+					"objectClass": "فارس",
+					"sid": 983129733025313,
+					"behaviorType": "MoveTo",
+					"parameters": {
+						"x": "-302",
+						"y": "330",
+						"mode": "direct"
+					}
+				}
+			],
+			"sid": 765035762296956
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 864617513486400,
+					"parameters": {
+						"interval-seconds": "1.0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 586769621770106,
+					"parameters": {
+						"variable": "زمان",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 590690027862347
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 193668699706121
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "زمان",
+					"sid": 355096032111854,
+					"parameters": {
+						"text": "زمان"
+					}
+				}
+			],
+			"sid": 374556891604524
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 389298455106940,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "شش"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "شش",
+					"sid": 431380274242666
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 770292693293322,
+					"parameters": {
+						"audio-file": {
+							"path": "Wrong_Answer"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 139226146502117
+				},
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 484554733886374,
+					"parameters": {
+						"variable": "دقت",
+						"value": "1"
+					}
+				},
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 193632856787392,
+					"parameters": {
+						"variable": "امتیاز",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "star2",
+					"sid": 950457672400746,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 378264010419731
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 926769378937772,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "سه"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "سه",
+					"sid": 258454111846614
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 801782138206035,
+					"parameters": {
+						"audio-file": {
+							"path": "Wrong_Answer"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 852078646388772
+				},
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 826720417144204,
+					"parameters": {
+						"variable": "دقت",
+						"value": "1"
+					}
+				},
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 936104523371946,
+					"parameters": {
+						"variable": "امتیاز",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "star",
+					"sid": 593610758883745,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 741684199652703
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 880335283510983,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "نه"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "نه",
+					"sid": 237098193737075
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 336707091975342,
+					"parameters": {
+						"audio-file": {
+							"path": "Wrong_Answer"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 631156841977695
+				},
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 541676657953670,
+					"parameters": {
+						"variable": "دقت",
+						"value": "1"
+					}
+				},
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 660437182169258,
+					"parameters": {
+						"variable": "امتیاز",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "star3",
+					"sid": 996584777111003,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 136438818444497
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 978058788424301,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "هشت"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 884413554947112,
+					"parameters": {
+						"audio-file": {
+							"path": "sound-effect-twinklesparkle-115095"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 512593005730753
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 793989149911119,
+					"parameters": {
+						"audio-file": {
+							"path": "Applause-Sound-9"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 686499974302220,
+					"parameters": {
+						"layout": "پاسخ  قسمت اول"
+					}
+				}
+			],
+			"sid": 913536692661114
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 667377212817777,
+					"parameters": {
+						"variable": "دقت",
+						"comparison": 3,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-position",
+					"objectClass": "دقت",
+					"sid": 733552761598602,
+					"parameters": {
+						"x": "41",
+						"y": "326"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 134929489639900,
+					"parameters": {
+						"seconds": "2",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "دقت",
+					"sid": 208932566004381
+				}
+			],
+			"sid": 369883704472008
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 630232190970441,
+					"parameters": {
+						"variable": "زمان",
+						"comparison": 0,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "restart-layout",
+					"objectClass": "System",
+					"sid": 338417370625080
+				}
+			],
+			"sid": 663324733523414
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 495701477295167
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 445479368978520,
+					"parameters": {
+						"variable": "امتیاز",
+						"value": "4"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "star",
+					"sid": 615277377371723,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "star2",
+					"sid": 551775457617442,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "star3",
+					"sid": 883368244153828,
+					"parameters": {
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 444305765736094
+		}
+	],
+	"sid": 669842566476645
+}

@@ -1,0 +1,427 @@
+{
+	"name": "Event sheet قسمت دوم",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "Event sheet فلش"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-click",
+					"objectClass": "Mouse",
+					"sid": 678190524087669,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-speed",
+					"objectClass": "توپ",
+					"sid": 810678838504985,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"speed": "200"
+					}
+				},
+				{
+					"id": "set-gravity",
+					"objectClass": "توپ",
+					"sid": 626092127761704,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"gravity": "15"
+					}
+				},
+				{
+					"id": "set-acceleration",
+					"objectClass": "توپ",
+					"sid": 538143851056375,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"acceleration": "30"
+					}
+				}
+			],
+			"sid": 218975855950214
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-outside-layout",
+					"objectClass": "توپ",
+					"sid": 554066534087176
+				}
+			],
+			"actions": [
+				{
+					"id": "set-speed",
+					"objectClass": "توپ",
+					"sid": 306099897092216,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"speed": "0"
+					}
+				},
+				{
+					"id": "set-gravity",
+					"objectClass": "توپ",
+					"sid": 296393743765795,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"gravity": "0"
+					}
+				},
+				{
+					"id": "set-acceleration",
+					"objectClass": "توپ",
+					"sid": 496991982676247,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"acceleration": "0"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "توپ",
+					"sid": 171041144054610,
+					"parameters": {
+						"x": "108",
+						"y": "315"
+					}
+				},
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 136630019134925,
+					"parameters": {
+						"variable": "امتیاز",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "star3",
+					"sid": 980177684682699,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 115757794360710
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "توپ",
+					"sid": 243847726607330,
+					"parameters": {
+						"object": "آجر"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "آجر",
+					"sid": 649931989757070
+				}
+			],
+			"sid": 620076816481518
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "توپ",
+					"sid": 386202672016355,
+					"parameters": {
+						"object": "آجرطلایی"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "آجرطلایی",
+					"sid": 804031007801635
+				},
+				{
+					"id": "set-position",
+					"objectClass": "هشتم",
+					"sid": 215343535763852,
+					"parameters": {
+						"x": "255",
+						"y": "220"
+					}
+				}
+			],
+			"sid": 848557576319156
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "توپ",
+					"sid": 775887961899320,
+					"parameters": {
+						"object": "آجرآبی"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "آجرآبی",
+					"sid": 331210253364974
+				},
+				{
+					"id": "set-position",
+					"objectClass": "شانزدهم",
+					"sid": 204483261068919,
+					"parameters": {
+						"x": "64",
+						"y": "438"
+					}
+				}
+			],
+			"sid": 889216072908795
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "پد",
+					"sid": 875943605019437,
+					"parameters": {
+						"object": "هشتم"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 116886312046110,
+					"parameters": {
+						"audio-file": {
+							"path": "Wrong_Answer"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "هشتم",
+					"sid": 246947008316227
+				},
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 788475326263936,
+					"parameters": {
+						"variable": "امتیاز",
+						"value": "2"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "star2",
+					"sid": 765607832142185,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "star",
+					"sid": 674853059798528,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 406711080871113
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "پد",
+					"sid": 190026620596862,
+					"parameters": {
+						"object": "شانزدهم"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 564329554174815,
+					"parameters": {
+						"audio-file": {
+							"path": "sound-effect-twinklesparkle-115095"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 113624810044803
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 585540655855586
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 427164979674471,
+					"parameters": {
+						"audio-file": {
+							"path": "01 Candy Shoppe"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 427782098771445,
+					"parameters": {
+						"audio-file": {
+							"path": "voice_msg_-40106377443309385"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 570424157484280,
+					"parameters": {
+						"seconds": "5",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "move-to-position",
+					"objectClass": "Sprite7",
+					"sid": 591540704032526,
+					"behaviorType": "MoveTo",
+					"parameters": {
+						"x": "-420",
+						"y": "328",
+						"mode": "direct"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Text3",
+					"sid": 175188361097965
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 772139746427684,
+					"parameters": {
+						"seconds": "5",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "راهنما1",
+					"sid": 999048804367998,
+					"parameters": {
+						"x": "98",
+						"y": "187"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "راهنما2",
+					"sid": 543183992914175,
+					"parameters": {
+						"x": "178",
+						"y": "560"
+					}
+				}
+			],
+			"sid": 272705856573997
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "پد",
+					"sid": 956471871958137,
+					"parameters": {
+						"object": "شانزدهم"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 707808271095183,
+					"parameters": {
+						"layout": "پاسخ قسمت دوم"
+					}
+				}
+			],
+			"sid": 805351852945973
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-outside-layout",
+					"objectClass": "شانزدهم",
+					"sid": 295983267940209
+				}
+			],
+			"actions": [
+				{
+					"id": "restart-layout",
+					"objectClass": "System",
+					"sid": 365394077412114
+				}
+			],
+			"sid": 871753984622800,
+			"disabled": true
+		}
+	],
+	"sid": 882086689542277
+}

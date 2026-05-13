@@ -1,0 +1,37 @@
+{
+	"name": "Event sheet فلش",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 725226832466115,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "arrowRight"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "stop-all",
+					"objectClass": "Audio",
+					"sid": 203251764874995
+				},
+				{
+					"id": "go-to-nextprevious-layout",
+					"objectClass": "System",
+					"sid": 677377378354134,
+					"parameters": {
+						"which": "next"
+					}
+				}
+			],
+			"sid": 957051783002223
+		}
+	],
+	"sid": 431546178818377
+}

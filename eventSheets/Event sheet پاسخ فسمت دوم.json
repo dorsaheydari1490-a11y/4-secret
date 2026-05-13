@@ -1,0 +1,40 @@
+{
+	"name": "Event sheet پاسخ فسمت دوم",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "Event sheet فلش"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-click",
+					"objectClass": "Mouse",
+					"sid": 976142435622582,
+					"parameters": {
+						"mouse-button": "right",
+						"click-type": "clicked"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 425939710209406,
+					"parameters": {
+						"layout": "قسمت سوم"
+					}
+				},
+				{
+					"id": "stop-all",
+					"objectClass": "Audio",
+					"sid": 710978690659950
+				}
+			],
+			"sid": 897254703777568
+		}
+	],
+	"sid": 318289110291564
+}

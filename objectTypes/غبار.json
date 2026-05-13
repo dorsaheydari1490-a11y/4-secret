@@ -1,0 +1,23 @@
+{
+	"name": "غبار",
+	"plugin-id": "Particles",
+	"sid": 731689586350209,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"image": {
+		"width": 28,
+		"height": 28,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"fileType": "image/png",
+		"imageSpriteId": 4186217,
+		"useCollisionPoly": true,
+		"tag": ""
+	}
+}

@@ -1,0 +1,75 @@
+{
+	"name": "Event sheet آبادی",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "Event sheet فلش"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 307545478502821
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 606381537403291,
+					"parameters": {
+						"audio-file": {
+							"path": "3373175833863894010"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "move-to-position",
+					"objectClass": "پرده1",
+					"sid": 815346386038581,
+					"behaviorType": "MoveTo",
+					"parameters": {
+						"x": "930",
+						"y": "318",
+						"mode": "direct"
+					}
+				},
+				{
+					"id": "set-gravity",
+					"objectClass": "مثلث",
+					"sid": 818036073822283,
+					"behaviorType": "Platform",
+					"parameters": {
+						"gravity": "0"
+					}
+				},
+				{
+					"id": "set-deceleration",
+					"objectClass": "مثلث",
+					"sid": 192329770266306,
+					"behaviorType": "Platform",
+					"parameters": {
+						"deceleration": "0"
+					}
+				},
+				{
+					"id": "set-max-speed",
+					"objectClass": "مثلث",
+					"sid": 293014010034855,
+					"behaviorType": "Platform",
+					"parameters": {
+						"max-speed": "0"
+					}
+				}
+			],
+			"sid": 125476585585043
+		}
+	],
+	"sid": 526350866763792
+}

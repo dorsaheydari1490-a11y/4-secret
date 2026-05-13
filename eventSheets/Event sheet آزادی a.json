@@ -1,0 +1,47 @@
+{
+	"name": "Event sheet آزادی a",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "Event sheet آزادیd"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "Event sheet فلش"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 583958400298826
+				}
+			],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 363553922922021,
+					"parameters": {
+						"seconds": "5",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "move-to-position",
+					"objectClass": "مستطیل",
+					"sid": 626936307314835,
+					"behaviorType": "MoveTo",
+					"parameters": {
+						"x": "919",
+						"y": "315",
+						"mode": "direct"
+					}
+				}
+			],
+			"sid": 806790256494813
+		}
+	],
+	"sid": 277159039483549
+}

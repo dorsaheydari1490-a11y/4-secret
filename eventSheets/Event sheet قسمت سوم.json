@@ -1,0 +1,674 @@
+{
+	"name": "Event sheet قسمت سوم",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "Event sheet فلش"
+		},
+		{
+			"eventType": "variable",
+			"name": "is_game_started",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 713564930952671
+		},
+		{
+			"eventType": "variable",
+			"name": "is_barrier_moving",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 972927697408935
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "مثلث",
+					"sid": 884195052819942,
+					"parameters": {
+						"object": "مانع"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "restart-layout",
+					"objectClass": "System",
+					"sid": 362324378704366
+				}
+			],
+			"sid": 927463754091402
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "مثلث",
+					"sid": 656350651358470,
+					"parameters": {
+						"object": "TiledBackground"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "restart-layout",
+					"objectClass": "System",
+					"sid": 974925039272526
+				}
+			],
+			"sid": 327394296243800
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-outside-layout",
+					"objectClass": "مثلث",
+					"sid": 200171800699805
+				}
+			],
+			"actions": [
+				{
+					"id": "set-position",
+					"objectClass": "مثلث",
+					"sid": 911080197108523,
+					"parameters": {
+						"x": "91",
+						"y": "-89"
+					}
+				}
+			],
+			"sid": 882591018467309,
+			"disabled": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-click",
+					"objectClass": "Mouse",
+					"sid": 171691538712336,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-gravity",
+					"objectClass": "مثلث",
+					"sid": 612973302922814,
+					"behaviorType": "Platform",
+					"parameters": {
+						"gravity": "1000"
+					}
+				}
+			],
+			"sid": 309498039085921,
+			"disabled": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 930382496915068,
+					"parameters": {
+						"key": 13
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-vector-y",
+					"objectClass": "مثلث",
+					"sid": 804997225187063,
+					"behaviorType": "Platform",
+					"parameters": {
+						"vector-y": "-500"
+					}
+				}
+			],
+			"sid": 294141990324489,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 428923034438718,
+							"parameters": {
+								"first-value": "مثلث.Platform.Gravity",
+								"comparison": 1,
+								"second-value": "1000"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-gravity",
+							"objectClass": "مثلث",
+							"sid": 203127107561652,
+							"behaviorType": "Platform",
+							"parameters": {
+								"gravity": "1000"
+							}
+						}
+					],
+					"sid": 927274929938727
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 749702315032487,
+					"parameters": {
+						"interval-seconds": "4"
+					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 329417545814985,
+					"parameters": {
+						"variable": "is_barrier_moving"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 563522452677439,
+					"parameters": {
+						"seconds": "3",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 211821358694141,
+					"parameters": {
+						"object-to-create": "مانع",
+						"layer": "0",
+						"x": "800",
+						"y": "random(200, 800)",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				}
+			],
+			"sid": 119666960908363
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 275752390260209
+				}
+			],
+			"actions": [],
+			"sid": 330814330828790,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 335360807435573,
+							"parameters": {
+								"variable": "is_game_started"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "مانع",
+							"sid": 693576423271637
+						},
+						{
+							"id": "destroy",
+							"objectClass": "هیرکانی",
+							"sid": 437865922312465
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Text4",
+							"sid": 830934677004288
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 856008028493527,
+							"parameters": {
+								"seconds": "6",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 478013268676220,
+							"parameters": {
+								"variable": "is_game_started",
+								"value": "true"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 195010262236906,
+							"parameters": {
+								"variable": "is_barrier_moving",
+								"value": "true"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 277869798355516,
+							"parameters": {
+								"seconds": "5",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-default-controls",
+							"objectClass": "مثلث",
+							"sid": 363725060207353,
+							"behaviorType": "Platform",
+							"parameters": {
+								"default-controls": false
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 341715085513302,
+							"parameters": {
+								"seconds": "20",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "الف",
+							"sid": 223793450597711,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"speed": "-100"
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "ب",
+							"sid": 498647934425968,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"speed": "-100"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 914343522624080,
+							"parameters": {
+								"seconds": "10",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "ب",
+							"sid": 983242508849054,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"speed": "50"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 154507526378184,
+							"parameters": {
+								"seconds": "8",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "الف",
+							"sid": 999259930626214,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"speed": "50"
+							}
+						}
+					],
+					"sid": 911399472637206
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 199267132301999
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "مانع",
+							"sid": 253757297096299
+						},
+						{
+							"id": "set-gravity",
+							"objectClass": "مثلث",
+							"sid": 912907534917647,
+							"behaviorType": "Platform",
+							"parameters": {
+								"gravity": "0"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 373444655222892,
+							"parameters": {
+								"audio-file": {
+									"path": "music2"
+								},
+								"loop": "looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 285155529212352,
+							"parameters": {
+								"audio-file": {
+									"path": "voice_msg_6193907223518708044"
+								},
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 339564569521231,
+							"parameters": {
+								"seconds": "6",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "move-to-position",
+							"objectClass": "هیرکانی",
+							"sid": 160181767704762,
+							"behaviorType": "MoveTo",
+							"parameters": {
+								"x": "-557",
+								"y": "312",
+								"mode": "direct"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Text4",
+							"sid": 426894007435590
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 974737802878799,
+							"parameters": {
+								"variable": "is_game_started",
+								"value": "true"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 554911988762388,
+							"parameters": {
+								"variable": "is_barrier_moving",
+								"value": "true"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 826375433676736,
+							"parameters": {
+								"seconds": "5",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-default-controls",
+							"objectClass": "مثلث",
+							"sid": 994043055028940,
+							"behaviorType": "Platform",
+							"parameters": {
+								"default-controls": false
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 562093881887282,
+							"parameters": {
+								"seconds": "20",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "الف",
+							"sid": 310207137299880,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"speed": "-100"
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "ب",
+							"sid": 161173407820641,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"speed": "-100"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 637819724384259,
+							"parameters": {
+								"seconds": "10",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "ب",
+							"sid": 118127775300916,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"speed": "50"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 700809597091288,
+							"parameters": {
+								"seconds": "8",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "الف",
+							"sid": 418193558768881,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"speed": "50"
+							}
+						}
+					],
+					"sid": 397256353134932
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "مثلث",
+					"sid": 958547561856785,
+					"parameters": {
+						"object": "ب"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 197172805838119,
+					"parameters": {
+						"audio-file": {
+							"path": "Wrong_Answer"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 124445345615282
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "مثلث",
+					"sid": 449784481929211,
+					"parameters": {
+						"object": "الف"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 649782120493301,
+					"parameters": {
+						"audio-file": {
+							"path": "sound-effect-twinklesparkle-115095"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 552660725344976,
+					"parameters": {
+						"layout": "پاسخ قسمت سوم"
+					}
+				}
+			],
+			"sid": 392788738873613
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 425565277816999
+				}
+			],
+			"actions": [
+				{
+					"id": "set-image-offset-x",
+					"objectClass": "TiledBackground7",
+					"sid": 419317626086156,
+					"parameters": {
+						"offset-x": "Self.ImageOffsetX+1"
+					}
+				}
+			],
+			"sid": 228436976029916
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 679642840467000
+				}
+			],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 906400972339887,
+					"parameters": {
+						"seconds": "7",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "راهنما3",
+					"sid": 806541968103601,
+					"parameters": {
+						"x": "177",
+						"y": "115"
+					}
+				}
+			],
+			"sid": 171040333409123
+		}
+	],
+	"sid": 860565202595877
+}

@@ -1,0 +1,639 @@
+{
+	"projectFormatVersion": 1,
+	"savedWithRelease": 47603,
+	"name": "چهار راز",
+	"runtime": "c3",
+	"useWorker": "auto",
+	"bundleAddons": false,
+	"usedAddons": [
+		{
+			"type": "plugin",
+			"id": "Audio",
+			"name": "Audio",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Camera3D",
+			"name": "3D camera",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Keyboard",
+			"name": "Keyboard",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Mouse",
+			"name": "Mouse",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Particles",
+			"name": "Particles",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Sprite",
+			"name": "Sprite",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Text",
+			"name": "Text",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "TiledBg",
+			"name": "Tiled Background",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Touch",
+			"name": "Touch",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Bullet",
+			"name": "Bullet",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "EightDir",
+			"name": "8 Direction",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Fade",
+			"name": "Fade",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "MoveTo",
+			"name": "Move To",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Pin",
+			"name": "Pin",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Platform",
+			"name": "Platform",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Rotate",
+			"name": "Rotate",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Sin",
+			"name": "Sine",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "scrollto",
+			"name": "Scroll To",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "solid",
+			"name": "Solid",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "wrap",
+			"name": "Wrap",
+			"author": "Scirra",
+			"bundled": false
+		}
+	],
+	"uniqueId": "7yq8w7boy0m",
+	"objectTypes": {
+		"items": [
+			"3DCamera",
+			"زمین",
+			"اسمان",
+			"درخت",
+			"ابر2",
+			"ابر1",
+			"دایره",
+			"مستطیل",
+			"لوزی",
+			"مثلث",
+			"دم",
+			"Audio",
+			"انفجار2",
+			"انفجار1",
+			"انفجار3",
+			"گیاه",
+			"سبزه",
+			"چرخ",
+			"اتش",
+			"فارس",
+			"نام1",
+			"Mouse",
+			"سوال",
+			"Touch",
+			"Text",
+			"ماهی2",
+			"ماهی3",
+			"ماهی",
+			"شش",
+			"هشت",
+			"سه",
+			"نه",
+			"زمان",
+			"خفاش",
+			"دقت",
+			"جواب1اول",
+			"مساحت",
+			"جاخالی",
+			"unlocked",
+			"توجه",
+			"میله",
+			"TiledBackground",
+			"توپ",
+			"آجر",
+			"سوال2",
+			"آجرطلایی",
+			"آجرآبی",
+			"پد",
+			"Keyboard",
+			"هشتم",
+			"شانزدهم",
+			"TiledBackground2",
+			"TiledBackground3",
+			"ضرب4",
+			"شانزده",
+			"جواب2",
+			"مانع",
+			"TiledBackground4",
+			"سوال3",
+			"الف",
+			"ب",
+			"TiledBackground5",
+			"جواب3",
+			"TiledBackground6",
+			"دریاتصویر",
+			"TiledBackground7",
+			"Sprite",
+			"سکو",
+			"Sprite2",
+			"Sprite3",
+			"Sprite4",
+			"TiledBackground8",
+			"گرد",
+			"سوال4",
+			"الف4",
+			"ب4",
+			"TiledBackground9",
+			"Text2",
+			"TiledBackground10",
+			"flowerRed",
+			"flowerWhite",
+			"flowerBlue",
+			"پرده1",
+			"Sprite5",
+			"Sprite6",
+			"Sprite7",
+			"Text3",
+			"هیرکانی",
+			"Text4",
+			"Sprite8",
+			"Text5",
+			"آتش",
+			"arrowRight",
+			"star",
+			"star2",
+			"star3",
+			"Sprite9",
+			"TiledBackground11",
+			"راهنما1",
+			"راهنما2",
+			"راهنما3",
+			"starDiamond",
+			"غبار",
+			"Text6"
+		],
+		"subfolders": []
+	},
+	"functionsName": "Functions",
+	"autosaveData": null,
+	"containers": [],
+	"families": {
+		"items": [],
+		"subfolders": []
+	},
+	"layouts": {
+		"items": [
+			"شروع",
+			"مرحله اول",
+			"قسمت اول",
+			"پاسخ  قسمت اول",
+			"آزادی d",
+			"قسمت دوم",
+			"پاسخ قسمت دوم",
+			"قسمت سوم",
+			"پاسخ قسمت سوم",
+			"ازادیa",
+			"قسمت چهارم",
+			"پاسخ قسمت چهارم",
+			"آبادی"
+		],
+		"subfolders": []
+	},
+	"eventSheets": {
+		"items": [
+			"Event sheet مرحله اول",
+			"Event sheet قسمت اول",
+			"Event sheet پاسخ قسمت اول",
+			"Event sheet آزادیd",
+			"Event sheet قسمت دوم",
+			"Event sheet پاسخ فسمت دوم",
+			"Event sheet قسمت سوم",
+			"Event sheet پاسخ قسمت سوم",
+			"Event sheet آزادی a",
+			"Event sheet قسمت چهارم",
+			"Event sheet آبادی",
+			"Event sheet فلش",
+			"Event sheet شروع"
+		],
+		"subfolders": []
+	},
+	"rootFileFolders": {
+		"script": {
+			"items": [],
+			"subfolders": []
+		},
+		"sound": {
+			"items": [
+				{
+					"name": "big_explosion_sfx_3.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 131210023853230,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "falling-tree (4).webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 870580993438072,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "voice_msg_-590761569671517786.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 581292049090394,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Applause-Sound-9.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 890649277092244,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "ste-006-82937.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 453931560361970,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "sound-effect-twinklesparkle-115095.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 762979865140207,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Wrong_Answer.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 688024254042460,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "3373175833863894010.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 778644004786178,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "keyboard-typing-fast.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 697157818403162,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
+			"subfolders": []
+		},
+		"music": {
+			"items": [
+				{
+					"name": "voice_msg_-8433864202966694827.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 478024815349528,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Fassounds - Funky Funk (2025) SONGSARA.NET.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 244876000401692,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "voice_msg_8019527293139220606.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 803048337566654,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "voice_msg_5195489762529355502.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 606645771609461,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "voice_msg_-4904867693167188416.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 371768389011420,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "01 Candy Shoppe.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 596663744220060,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "03 Sunny Meadow.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 308015506750106,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "voice_msg_-40106377443309385.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 450595500964727,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "music.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 489718336986848,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "music2.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 969081839624292,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "voice_msg_6193907223518708044.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 891462535706698,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "voice_msg_-5298625307354342606.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 986615067310097,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
+			"subfolders": []
+		},
+		"video": {
+			"items": [],
+			"subfolders": []
+		},
+		"font": {
+			"items": [],
+			"subfolders": []
+		},
+		"icon": {
+			"items": [
+				{
+					"name": "icon-256.png",
+					"type": "image/png",
+					"sid": 289462307177987,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-512.png",
+					"type": "image/png",
+					"sid": 338393803620557,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-16.png",
+					"type": "image/png",
+					"sid": 988333076948670,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-64.png",
+					"type": "image/png",
+					"sid": 372989252091114,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-128.png",
+					"type": "image/png",
+					"sid": 865981046547689,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-32.png",
+					"type": "image/png",
+					"sid": 920640097887330,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "loading-logo.png",
+					"type": "image/png",
+					"sid": 384934603073686,
+					"icon-info": {
+						"purpose": "loading-logo"
+					}
+				}
+			],
+			"subfolders": []
+		},
+		"general": {
+			"items": [],
+			"subfolders": []
+		}
+	},
+	"timelines": {
+		"items": [
+			"Timeline 1"
+		],
+		"subfolders": [
+			{
+				"items": [],
+				"subfolders": []
+			}
+		]
+	},
+	"flowcharts": {
+		"items": [
+			"Flowchart 1"
+		],
+		"subfolders": []
+	},
+	"models3d": {
+		"items": [],
+		"subfolders": []
+	},
+	"properties": {
+		"description": "",
+		"version": "1.0.0.0",
+		"autoIncrementVersion": false,
+		"author": "",
+		"authorEmail": "",
+		"authorWebsite": "",
+		"appId": "",
+		"pixelRounding": false,
+		"zAxisScale": "regular",
+		"fov": 0.7853981633974483,
+		"useLoaderLayout": false,
+		"fullscreenMode": "letterbox-scale",
+		"fullscreenQuality": "high",
+		"viewportFit": "auto",
+		"backgroundColor": [
+			0,
+			0,
+			0,
+			0
+		],
+		"splashColor": [
+			1,
+			1,
+			1,
+			0
+		],
+		"useThemeColor": false,
+		"themeColor": [
+			1,
+			1,
+			1,
+			0
+		],
+		"orientations": "landscape",
+		"webgpu": "no",
+		"multitexturing": "auto",
+		"gpuPreference": "high-performance",
+		"framerateMode": "vsync",
+		"fixedFramerate": 30,
+		"sampling": "trilinear",
+		"downscaling": "medium",
+		"renderingMode": "auto",
+		"anisotropicFiltering": "auto",
+		"zNear": 1,
+		"zFar": 10000,
+		"maxSpriteSheetSize": 2048,
+		"loaderStyle": "splash",
+		"preloadSounds": true,
+		"uidAllocationMode": "increment",
+		"cordovaiOSScheme": "app",
+		"cordovaAndroidScheme": "https",
+		"exportFileStructure": "folders",
+		"scriptsType": "module"
+	},
+	"viewportWidth": 480,
+	"viewportHeight": 630,
+	"firstLayout": null
+}

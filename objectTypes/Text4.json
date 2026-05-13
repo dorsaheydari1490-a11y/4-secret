@@ -1,0 +1,16 @@
+{
+	"name": "Text4",
+	"plugin-id": "Text",
+	"sid": 745324889257923,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "MoveTo",
+			"name": "MoveTo",
+			"sid": 959946078763874
+		}
+	],
+	"effectTypes": []
+}

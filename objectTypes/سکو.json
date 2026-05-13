@@ -1,0 +1,58 @@
+{
+	"name": "سکو",
+	"plugin-id": "Sprite",
+	"sid": 850983127219948,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 815899814484322
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 66,
+						"height": 66,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 4358456,
+						"collisionPoly": {
+							"points": [
+								0.015151515151515152,
+								0.015151515151515152,
+								0.9848484848484849,
+								0.015151515151515152,
+								0.9848484848484849,
+								0.9848484848484849,
+								0.015151515151515152,
+								0.9848484848484849
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 267176539690706,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

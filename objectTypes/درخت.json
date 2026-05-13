@@ -1,0 +1,55 @@
+{
+	"name": "درخت",
+	"plugin-id": "Sprite",
+	"sid": 196525499340286,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [
+		{
+			"name": "isFalling",
+			"type": "boolean",
+			"desc": "آیا درخت سقوط کرده است",
+			"show": true,
+			"sid": 348321610678969
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 129,
+						"height": 230,
+						"originX": 0.49612403100775193,
+						"originY": 0.9956521739130435,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 950798,
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "paeen",
+								"x": 0.5038759689922481,
+								"y": 0.9826086956521739
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 854260836247272,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

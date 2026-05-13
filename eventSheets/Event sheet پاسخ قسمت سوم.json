@@ -1,0 +1,83 @@
+{
+	"name": "Event sheet پاسخ قسمت سوم",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "Event sheet فلش"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-click",
+					"objectClass": "Mouse",
+					"sid": 116183039133475,
+					"parameters": {
+						"mouse-button": "right",
+						"click-type": "clicked"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 929799089375258,
+					"parameters": {
+						"layout": "ازادیa"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 299944364532800,
+					"parameters": {
+						"seconds": "5",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "move-to-position",
+					"objectClass": "هیرکانی",
+					"sid": 105489386064927,
+					"behaviorType": "MoveTo",
+					"parameters": {
+						"x": "-538",
+						"y": "312",
+						"mode": "direct"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 803997615381713,
+					"parameters": {
+						"audio-file": {
+							"path": "music2"
+						},
+						"loop": "looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 530564646299261,
+					"parameters": {
+						"audio-file": {
+							"path": "voice_msg_6193907223518708044"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 773035608767850
+		}
+	],
+	"sid": 181823495794611
+}

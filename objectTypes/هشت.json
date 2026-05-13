@@ -1,0 +1,52 @@
+{
+	"name": "هشت",
+	"plugin-id": "Sprite",
+	"sid": 483352732860107,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 718,
+						"height": 770,
+						"originX": 0.8077117868204219,
+						"originY": 0.626613283089967,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 7375008,
+						"collisionPoly": {
+							"points": [
+								0,
+								0.0012987012987012987,
+								1,
+								0.0012987012987012987,
+								1,
+								0.9987012987012988,
+								0,
+								0.9987012987012988
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 342602779616832,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

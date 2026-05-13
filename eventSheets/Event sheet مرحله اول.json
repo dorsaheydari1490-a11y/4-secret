@@ -1,0 +1,362 @@
+{
+	"name": "Event sheet مرحله اول",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "Event sheet فلش"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 746998922077390
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 795205732098813,
+					"parameters": {
+						"audio-file": {
+							"path": "voice_msg_-8433864202966694827"
+						},
+						"loop": "not-looping",
+						"volume": "150",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 849042660168301
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 548078100080938
+				}
+			],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 489317801756957,
+					"parameters": {
+						"seconds": "13",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "درخت",
+					"sid": 737560248986809,
+					"parameters": {
+						"instance-variable": "isFalling",
+						"value": "true"
+					}
+				}
+			],
+			"sid": 901658584581632
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "درخت",
+					"sid": 210030451683612,
+					"parameters": {
+						"instance-variable": "isFalling"
+					}
+				},
+				{
+					"id": "is-between-angles",
+					"objectClass": "درخت",
+					"sid": 202219510535864,
+					"parameters": {
+						"first-angle": "0",
+						"second-angle": "90"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "rotate-clockwise",
+					"objectClass": "درخت",
+					"sid": 289390682715210,
+					"parameters": {
+						"degrees": "2"
+					}
+				}
+			],
+			"sid": 647970766232367
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 790170024232927
+				}
+			],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 186084044087984,
+					"parameters": {
+						"seconds": "6",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "انفجار1",
+					"sid": 118391945949654,
+					"parameters": {
+						"x": "365",
+						"y": "162"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 659477106654284,
+					"parameters": {
+						"audio-file": {
+							"path": "big_explosion_sfx_3"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 466546961124321,
+					"parameters": {
+						"seconds": "1.0",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "انفجار2",
+					"sid": 298046372057174,
+					"parameters": {
+						"x": "113",
+						"y": "194"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 334712589068495,
+					"parameters": {
+						"audio-file": {
+							"path": "big_explosion_sfx_3"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 924539806136080,
+					"parameters": {
+						"seconds": "1.0",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "انفجار3",
+					"sid": 135576785139915,
+					"parameters": {
+						"x": "254",
+						"y": "484"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 353750392936408,
+					"parameters": {
+						"audio-file": {
+							"path": "big_explosion_sfx_3"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 308462822851893,
+					"parameters": {
+						"seconds": "1.0",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 466182247230749,
+					"parameters": {
+						"audio-file": {
+							"path": "falling-tree (4)"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 230004443757743,
+					"parameters": {
+						"seconds": "6",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "لوزی",
+					"sid": 360860616401018,
+					"parameters": {
+						"x": "253",
+						"y": "522"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "ابر2",
+					"sid": 203148808880740
+				},
+				{
+					"id": "destroy",
+					"objectClass": "ابر1",
+					"sid": 328626661493969
+				},
+				{
+					"id": "set-speed",
+					"objectClass": "چرخ",
+					"sid": 265625275435460,
+					"behaviorType": "Rotate",
+					"parameters": {
+						"speed": "0"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "چرخ",
+					"sid": 754495876919209,
+					"parameters": {
+						"x": "3",
+						"y": "641"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "مستطیل",
+					"sid": 923769689704971,
+					"parameters": {
+						"x": "459",
+						"y": "648"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "مثلث",
+					"sid": 939304610187412
+				},
+				{
+					"id": "set-position",
+					"objectClass": "دم",
+					"sid": 187276965654201,
+					"parameters": {
+						"x": "333",
+						"y": "577"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 340900544041708,
+					"parameters": {
+						"seconds": "10",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "stop-all",
+					"objectClass": "Audio",
+					"sid": 149912467076261
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 246028866196242,
+					"parameters": {
+						"layout": "قسمت اول"
+					}
+				}
+			],
+			"sid": 946187259445546
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 433852288236923
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "آتش",
+					"sid": 182895107296924,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 860842438065522,
+					"parameters": {
+						"seconds": "15",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "آتش",
+					"sid": 847025244088787,
+					"parameters": {
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 651348994565667
+		}
+	],
+	"sid": 350042142008530
+}

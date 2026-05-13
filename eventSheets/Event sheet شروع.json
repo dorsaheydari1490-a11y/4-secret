@@ -1,0 +1,59 @@
+{
+	"name": "Event sheet شروع",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 777499010092291
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 866918609138531,
+					"parameters": {
+						"audio-file": {
+							"path": "keyboard-typing-fast"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "typewriter-text",
+					"objectClass": "Text6",
+					"sid": 203667490750931,
+					"parameters": {
+						"text": "\"من درسا حیدری هستم. این بازی رو با کانستراکت ساختم توی این ماجراجویی بومی، توی شهر هندسه، دوستای مثلث ما توسط بی‌قانده‌ها در چهار جای مهم ایران پنهان شدن. با حل معمای ریاضی، قبل از اینکه دیر بشه، همه رو نجات بده بازی «چهار راز» برای دانش‌آموزان سوم تا ششم ساخته شده تا ریاضی پایه را با ماجراجویی در مکان‌های ایران و حل معما، بدون استرس یاد بگیرند. ساخت آن با موتور کانستراکت و گرافیک هوش مصنوعی انجام شده.\"",
+						"duration": "30"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 875751768895171,
+					"parameters": {
+						"seconds": "34",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 809245279966022,
+					"parameters": {
+						"layout": "مرحله اول"
+					}
+				}
+			],
+			"sid": 402798909035619
+		}
+	],
+	"sid": 718307848706434
+}
