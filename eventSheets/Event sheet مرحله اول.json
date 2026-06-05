@@ -16,6 +16,10 @@
 			],
 			"actions": [
 				{
+					"type": "comment",
+					"text": "وقتی صفحه شروع میشود این صدا پخش میشود و داستان را می گوید"
+				},
+				{
 					"id": "play",
 					"objectClass": "Audio",
 					"sid": 795205732098813,
@@ -42,6 +46,10 @@
 				}
 			],
 			"actions": [
+				{
+					"type": "comment",
+					"text": "وقتی 13 ثانیه صبر کردی درخت را روی isFalling تنظیم کن"
+				},
 				{
 					"id": "wait",
 					"objectClass": "System",
@@ -86,6 +94,10 @@
 			],
 			"actions": [
 				{
+					"type": "comment",
+					"text": " بپرس آیا درخت درحال سقوط است؟ انگاه درخت 2 درجه به سمت عقربه های ساعت حرکت کند"
+				},
+				{
 					"id": "rotate-clockwise",
 					"objectClass": "درخت",
 					"sid": 289390682715210,
@@ -106,6 +118,10 @@
 				}
 			],
 			"actions": [
+				{
+					"type": "comment",
+					"text": "روند اجرای داستان"
+				},
 				{
 					"id": "wait",
 					"objectClass": "System",
@@ -329,6 +345,10 @@
 				}
 			],
 			"actions": [
+				{
+					"type": "comment",
+					"text": "متحرک کردن آتش روی خانه"
+				},
 				{
 					"id": "set-visible",
 					"objectClass": "آتش",

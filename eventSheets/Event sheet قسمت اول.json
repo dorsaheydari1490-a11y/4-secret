@@ -10,7 +10,7 @@
 			"name": "زمان",
 			"type": "number",
 			"initialValue": "30",
-			"comment": "",
+			"comment": "بازیکن 30 ثانیه فرصت دارد تا جواب درست را انتخاب کند ",
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 363471020025465
@@ -20,7 +20,7 @@
 			"name": "دقت",
 			"type": "number",
 			"initialValue": "2",
-			"comment": "",
+			"comment": "اگر بازیکن 2 گزینه پشت سر هم اشتباه بزند پیامی برایش می آید",
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 780893830007348
@@ -45,6 +45,10 @@
 				}
 			],
 			"actions": [
+				{
+					"type": "comment",
+					"text": "شروع بازی به این صورت است"
+				},
 				{
 					"id": "reset-eventvar",
 					"objectClass": "System",
@@ -132,6 +136,10 @@
 			],
 			"actions": [
 				{
+					"type": "comment",
+					"text": "هر ثانیه 1 عدد از زمان کم میشه"
+				},
+				{
 					"id": "subtract-from-eventvar",
 					"objectClass": "System",
 					"sid": 586769621770106,
@@ -179,6 +187,10 @@
 				}
 			],
 			"actions": [
+				{
+					"type": "comment",
+					"text": "اگر روی این گزینه کلیک شود"
+				},
 				{
 					"id": "destroy",
 					"objectClass": "شش",
@@ -247,6 +259,10 @@
 				}
 			],
 			"actions": [
+				{
+					"type": "comment",
+					"text": "اگر روی این گرینه کلیک شود"
+				},
 				{
 					"id": "destroy",
 					"objectClass": "سه",
