@@ -332,6 +332,10 @@
 			],
 			"actions": [
 				{
+					"type": "comment",
+					"text": "اگر روی این گزینه کلیک شود"
+				},
+				{
 					"id": "destroy",
 					"objectClass": "نه",
 					"sid": 237098193737075
