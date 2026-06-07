@@ -18,10 +18,10 @@
 			{
 				"frames": [
 					{
-						"width": 250,
-						"height": 250,
-						"originX": 0.5,
-						"originY": 0.5,
+						"width": 456,
+						"height": 328,
+						"originX": 0.4890350877192983,
+						"originY": 0.5198170731707318,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
