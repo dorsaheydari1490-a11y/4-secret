@@ -1,7 +1,7 @@
 {
-	"name": "star3",
+	"name": "ستاره",
 	"plugin-id": "Sprite",
-	"sid": 863560403898904,
+	"sid": 613531635823858,
 	"isGlobal": false,
 	"editorNewInstanceIsReplica": true,
 	"instanceVariables": [],
@@ -9,7 +9,7 @@
 		{
 			"behaviorId": "Pin",
 			"name": "Pin",
-			"sid": 639522775001838
+			"sid": 991434146127155
 		}
 	],
 	"effectTypes": [],
@@ -18,21 +18,37 @@
 			{
 				"frames": [
 					{
-						"width": 64,
-						"height": 64,
-						"originX": 0.5,
-						"originY": 0.5,
+						"width": 732,
+						"height": 731,
+						"originX": 0.49863387978142076,
+						"originY": 0.5458276333789329,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
 						"fileType": "image/png",
-						"imageSpriteId": 4493697,
+						"imageSpriteId": 7580054,
+						"collisionPoly": {
+							"points": [
+								0.9098360655737705,
+								0,
+								1,
+								0,
+								0.75,
+								0.9986320109439124,
+								0.14890710382513658,
+								0.9179206566347469,
+								0.04918032786885246,
+								0.3283173734610123,
+								0.4603825136612022,
+								0.009575923392612859
+							]
+						},
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""
 					}
 				],
-				"sid": 628604382711185,
+				"sid": 967026846811894,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

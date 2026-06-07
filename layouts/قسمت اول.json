@@ -7,7 +7,7 @@
 			"subLayers": [],
 			"instances": [
 				{
-					"type": "TiledBackground11",
+					"type": "بکگراند_دریا",
 					"properties": {
 						"initially-visible": true,
 						"origin": "top-left",
@@ -59,7 +59,7 @@
 				1,
 				1,
 				1,
-				1
+				0.7
 			],
 			"backgroundColor": [
 				1,
@@ -84,167 +84,7 @@
 			"name": "Layer ماهی",
 			"overriden": 0,
 			"subLayers": [],
-			"instances": [
-				{
-					"type": "ماهی3",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 41,
-					"sid": 511413617513296,
-					"tags": "",
-					"instanceVariables": {},
-					"behaviors": {
-						"Wrap": {
-							"properties": {
-								"wrap-to": "layout"
-							}
-						},
-						"Sine": {
-							"properties": {
-								"movement": "horizontal",
-								"wave": "sine",
-								"period": 600,
-								"period-random": 0,
-								"period-offset": 0,
-								"period-offset-random": 0,
-								"magnitude": -2020,
-								"magnitude-random": 0,
-								"enabled": true,
-								"live-preview": false
-							}
-						}
-					},
-					"showing": true,
-					"locked": false,
-					"world": {
-						"x": 564,
-						"y": 458,
-						"width": 64,
-						"height": 64,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"z": 0,
-						"angle": 0
-					}
-				},
-				{
-					"type": "ماهی",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 42,
-					"sid": 471586732983932,
-					"tags": "",
-					"instanceVariables": {},
-					"behaviors": {
-						"Sine": {
-							"properties": {
-								"movement": "horizontal",
-								"wave": "sine",
-								"period": 600,
-								"period-random": 0,
-								"period-offset": 0,
-								"period-offset-random": 0,
-								"magnitude": 4040,
-								"magnitude-random": 0,
-								"enabled": true,
-								"live-preview": false
-							}
-						},
-						"Wrap": {
-							"properties": {
-								"wrap-to": "layout"
-							}
-						}
-					},
-					"showing": true,
-					"locked": false,
-					"world": {
-						"x": 257,
-						"y": 759,
-						"width": 128,
-						"height": 128,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"z": 0,
-						"angle": 0
-					}
-				},
-				{
-					"type": "ماهی2",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 40,
-					"sid": 283514950978805,
-					"tags": "",
-					"instanceVariables": {},
-					"behaviors": {
-						"Wrap": {
-							"properties": {
-								"wrap-to": "layout"
-							}
-						},
-						"Sine": {
-							"properties": {
-								"movement": "horizontal",
-								"wave": "sine",
-								"period": 600,
-								"period-random": 0,
-								"period-offset": 0,
-								"period-offset-random": 0,
-								"magnitude": 2020,
-								"magnitude-random": 0,
-								"enabled": true,
-								"live-preview": false
-							}
-						}
-					},
-					"showing": true,
-					"locked": false,
-					"world": {
-						"x": -106,
-						"y": 302,
-						"width": 128,
-						"height": 128,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"z": 0,
-						"angle": 0
-					}
-				}
-			],
+			"instances": [],
 			"sid": 751984567158391,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
@@ -313,8 +153,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 96,
-						"y": -2,
+						"x": -753,
+						"y": 94,
 						"width": 302,
 						"height": 329,
 						"originX": 0,
@@ -558,6 +398,39 @@
 						"z": 0,
 						"angle": 0
 					}
+				},
+				{
+					"type": "سوال_خط_جدید_مساحت",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 32,
+					"sid": 581625768462660,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 232,
+						"y": 149,
+						"width": 401,
+						"height": 314,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
 				}
 			],
 			"sid": 193774410022934,
@@ -624,10 +497,10 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 231,
-						"y": 312,
-						"width": 505,
-						"height": 636,
+						"x": -492,
+						"y": 547,
+						"width": 483.72654690618754,
+						"height": 629.0084566596191,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -637,56 +510,7 @@
 							1
 						],
 						"z": 0,
-						"angle": 0
-					}
-				},
-				{
-					"type": "نام1",
-					"properties": {
-						"text": "مرحله خلیج همیشگی فارس",
-						"enable-bbcode": true,
-						"font": "Arial",
-						"size": 40,
-						"line-height": 0,
-						"bold": false,
-						"italic": false,
-						"color": [
-							0.9215686274509803,
-							0.984313725490196,
-							1,
-							1
-						],
-						"horizontal-alignment": "left",
-						"vertical-alignment": "top",
-						"wrapping": "word",
-						"text-direction": "ltr",
-						"icon-set": -1,
-						"initially-visible": true,
-						"origin": "top-left",
-						"read-aloud": false
-					},
-					"uid": 32,
-					"sid": 946439730231708,
-					"tags": "",
-					"instanceVariables": {},
-					"behaviors": {},
-					"showing": true,
-					"locked": false,
-					"world": {
-						"x": 2,
-						"y": 162,
-						"width": 516,
-						"height": 121,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"z": 0,
-						"angle": 0
+						"angle": 3.141592653589793
 					}
 				}
 			],
@@ -759,7 +583,7 @@
 					}
 				},
 				{
-					"type": "star",
+					"type": "ستاره",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -781,12 +605,12 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 26,
-						"y": 28,
-						"width": 42,
-						"height": 40,
-						"originX": 0.5,
-						"originY": 0.5,
+						"x": 30.642076535754327,
+						"y": 34.54941206731791,
+						"width": 64,
+						"height": 64,
+						"originX": 0.49863387978142076,
+						"originY": 0.5458276333789329,
 						"color": [
 							1,
 							1,
@@ -794,11 +618,11 @@
 							1
 						],
 						"z": 0,
-						"angle": 0
+						"angle": 0.000009915262673132474
 					}
 				},
 				{
-					"type": "star2",
+					"type": "ستاره2",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -820,12 +644,12 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 26,
-						"y": 123,
+						"x": 31.689680099487305,
+						"y": 169.2755889892578,
 						"width": 64,
 						"height": 64,
-						"originX": 0.5,
-						"originY": 0.5,
+						"originX": 0.49863387978142076,
+						"originY": 0.5458276333789329,
 						"color": [
 							1,
 							1,
@@ -837,7 +661,7 @@
 					}
 				},
 				{
-					"type": "star3",
+					"type": "ستاره3",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -859,12 +683,12 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 26,
-						"y": 76,
+						"x": 31.23888397216797,
+						"y": 101.8115005493164,
 						"width": 64,
 						"height": 64,
-						"originX": 0.5,
-						"originY": 0.5,
+						"originX": 0.49863387978142076,
+						"originY": 0.5458276333789329,
 						"color": [
 							1,
 							1,

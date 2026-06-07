@@ -1,22 +1,22 @@
 {
-	"name": "TiledBackground2",
+	"name": "بکگراند_منظره",
 	"plugin-id": "TiledBg",
-	"sid": 165434837038142,
+	"sid": 431608442633799,
 	"isGlobal": false,
 	"editorNewInstanceIsReplica": true,
 	"instanceVariables": [],
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"image": {
-		"width": 613,
-		"height": 1198,
+		"width": 470,
+		"height": 921,
 		"originX": 0.5,
 		"originY": 0.5,
 		"originalSource": "",
 		"exportFormat": "lossless",
 		"exportQuality": 0.8,
 		"fileType": "image/jpeg",
-		"imageSpriteId": 7635599,
+		"imageSpriteId": 9133675,
 		"useCollisionPoly": true,
 		"tag": ""
 	}

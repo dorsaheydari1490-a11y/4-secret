@@ -7,7 +7,7 @@
 			"subLayers": [],
 			"instances": [
 				{
-					"type": "TiledBackground9",
+					"type": "رنگارنگ",
 					"properties": {
 						"initially-visible": true,
 						"origin": "top-left",
@@ -86,7 +86,7 @@
 			"subLayers": [],
 			"instances": [
 				{
-					"type": "Text2",
+					"type": "پاسخ_آخر",
 					"properties": {
 						"text": "چون روز یکم شنبه است، شنبه‌ها هر هفت روز یک‌بار تکرار می‌شوند.\nپس اگر از روز یکم، هفت‌تا هفت‌تا جلو برویم، شنبه‌ها به‌ترتیب می‌شوند:\n\n۱ → ۸ → ۱۵ → ۲۲ → ۲۹\n\nشنبهٔ بعدی می‌شود:\n\n۲۹ + ۷ = ۳۶\n\nاما چون روز ۳۶ در ماه وجود ندارد، پس شنبهٔ دیگری نداریم.",
 						"enable-bbcode": true,

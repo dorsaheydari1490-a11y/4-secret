@@ -16,6 +16,10 @@
 			],
 			"actions": [
 				{
+					"type": "comment",
+					"text": "تنظیمات اولیه شروع مرحله: چسباندن شیء گرد به مثلث، پخش موزیک و صدای گوینده، و حذف متن ۵ پس از ۵ ثانیه"
+				},
+				{
 					"id": "pin-to-object-properties",
 					"objectClass": "گرد",
 					"sid": 791329239339636,
@@ -85,7 +89,7 @@
 				},
 				{
 					"id": "destroy",
-					"objectClass": "Text5",
+					"objectClass": "برج_میلاد",
 					"sid": 698626653118296
 				}
 			],
@@ -114,6 +118,10 @@
 				}
 			],
 			"actions": [
+				{
+					"type": "comment",
+					"text": "انیمیشن چرخش شیء گرد: تنظیم زاویه حرکت بر اساس سرعت کاراکتر پلتفرم وقتی روی زمین است"
+				},
 				{
 					"id": "set-angle",
 					"objectClass": "گرد",
@@ -155,6 +163,10 @@
 			],
 			"actions": [
 				{
+					"type": "comment",
+					"text": "برعکس کردن جهت کاراکتر (قرینه‌سازی/Mirrored) با فشردن کلید اینت"
+				},
+				{
 					"id": "set-mirrored",
 					"objectClass": "مثلث",
 					"sid": 161850676264328,
@@ -178,6 +190,10 @@
 				}
 			],
 			"actions": [
+				{
+					"type": "comment",
+					"text": "مکانیک موفقیت یا اتمام بخش: پخش افکت صوتی ستاره و رفتن به مرحله پاسخ قسمت چهارم در صورت برخورد با الف۴"
+				},
 				{
 					"id": "play",
 					"objectClass": "Audio",
@@ -217,6 +233,10 @@
 			],
 			"actions": [
 				{
+					"type": "comment",
+					"text": "مکانیزم باخت"
+				},
+				{
 					"id": "play",
 					"objectClass": "Audio",
 					"sid": 108895734934273,
@@ -232,7 +252,7 @@
 				},
 				{
 					"id": "set-visible",
-					"objectClass": "star",
+					"objectClass": "ستاره",
 					"sid": 443642029730181,
 					"parameters": {
 						"visibility": "invisible"

@@ -39,6 +39,10 @@
 			],
 			"actions": [
 				{
+					"type": "comment",
+					"text": "اگر مثلث به مانع خورد"
+				},
+				{
 					"id": "restart-layout",
 					"objectClass": "System",
 					"sid": 362324378704366
@@ -54,11 +58,15 @@
 					"objectClass": "مثلث",
 					"sid": 656350651358470,
 					"parameters": {
-						"object": "TiledBackground"
+						"object": "محافظ"
 					}
 				}
 			],
 			"actions": [
+				{
+					"type": "comment",
+					"text": "اگر مثلث به محافظ در پایین خورد"
+				},
 				{
 					"id": "restart-layout",
 					"objectClass": "System",
@@ -131,6 +139,10 @@
 			],
 			"actions": [
 				{
+					"type": "comment",
+					"text": "با دکمه اینتر مثلث بالا میرود"
+				},
+				{
 					"id": "set-vector-y",
 					"objectClass": "مثلث",
 					"sid": 804997225187063,
@@ -157,6 +169,10 @@
 						}
 					],
 					"actions": [
+						{
+							"type": "comment",
+							"text": "تنظیم برای به هم نریختن گرانش مثلث"
+						},
 						{
 							"id": "set-gravity",
 							"objectClass": "مثلث",
@@ -200,6 +216,10 @@
 						"seconds": "3",
 						"use-timescale": true
 					}
+				},
+				{
+					"type": "comment",
+					"text": "ساختن موانع"
 				},
 				{
 					"id": "create-object",
@@ -254,7 +274,7 @@
 						},
 						{
 							"id": "destroy",
-							"objectClass": "Text4",
+							"objectClass": "جنگل_هیرکانی",
 							"sid": 830934677004288
 						},
 						{
@@ -379,6 +399,10 @@
 					],
 					"actions": [
 						{
+							"type": "comment",
+							"text": "سناریوی شروع بازی و مدیریت زمان‌بندی ورود کاراکتر و تنظیم سرعت موانع"
+						},
+						{
 							"id": "destroy",
 							"objectClass": "مانع",
 							"sid": 253757297096299
@@ -442,7 +466,7 @@
 						},
 						{
 							"id": "destroy",
-							"objectClass": "Text4",
+							"objectClass": "جنگل_هیرکانی",
 							"sid": 426894007435590
 						},
 						{
@@ -563,6 +587,10 @@
 			],
 			"actions": [
 				{
+					"type": "comment",
+					"text": "صدای بردن"
+				},
+				{
 					"id": "play",
 					"objectClass": "Audio",
 					"sid": 197172805838119,
@@ -592,6 +620,10 @@
 				}
 			],
 			"actions": [
+				{
+					"type": "comment",
+					"text": "صدای باختن"
+				},
 				{
 					"id": "play",
 					"objectClass": "Audio",
@@ -628,8 +660,12 @@
 			],
 			"actions": [
 				{
+					"type": "comment",
+					"text": "متحرک شدن بکگراند"
+				},
+				{
 					"id": "set-image-offset-x",
-					"objectClass": "TiledBackground7",
+					"objectClass": "قسمتسوم_بکگراند",
 					"sid": 419317626086156,
 					"parameters": {
 						"offset-x": "Self.ImageOffsetX+1"

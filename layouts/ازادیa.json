@@ -7,7 +7,7 @@
 			"subLayers": [],
 			"instances": [
 				{
-					"type": "TiledBackground6",
+					"type": "چتر_بکگراند",
 					"properties": {
 						"initially-visible": true,
 						"origin": "top-left",
@@ -161,10 +161,10 @@
 					"world": {
 						"x": 255,
 						"y": 306.5,
-						"width": 486.9229586872159,
-						"height": 809.8976601964641,
-						"originX": 0.47393364928909953,
-						"originY": 0.5,
+						"width": 2363.0763492687634,
+						"height": 3291.012714449124,
+						"originX": 0.5,
+						"originY": 0.47402608315686867,
 						"color": [
 							1,
 							1,

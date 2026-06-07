@@ -16,6 +16,10 @@
 			],
 			"actions": [
 				{
+					"type": "comment",
+					"text": "وقتی صفحه شروع شد10 ثانیه صبر کن"
+				},
+				{
 					"id": "wait",
 					"objectClass": "System",
 					"sid": 261917182722861,
@@ -50,6 +54,10 @@
 				}
 			],
 			"actions": [
+				{
+					"type": "comment",
+					"text": "با کلیک راست هم میتوانید به مرحله بعدی برید"
+				},
 				{
 					"id": "go-to-nextprevious-layout",
 					"objectClass": "System",

@@ -1,28 +1,22 @@
 {
-	"name": "TiledBackground",
+	"name": "بکگراند_دریا",
 	"plugin-id": "TiledBg",
-	"sid": 318844293972590,
+	"sid": 690633115394210,
 	"isGlobal": false,
 	"editorNewInstanceIsReplica": true,
 	"instanceVariables": [],
-	"behaviorTypes": [
-		{
-			"behaviorId": "solid",
-			"name": "Solid",
-			"sid": 188936015846339
-		}
-	],
+	"behaviorTypes": [],
 	"effectTypes": [],
 	"image": {
-		"width": 32,
-		"height": 32,
+		"width": 501,
+		"height": 858,
 		"originX": 0.5,
 		"originY": 0.5,
 		"originalSource": "",
 		"exportFormat": "lossless",
 		"exportQuality": 0.8,
 		"fileType": "image/png",
-		"imageSpriteId": 8948503,
+		"imageSpriteId": 1566597,
 		"useCollisionPoly": true,
 		"tag": ""
 	}

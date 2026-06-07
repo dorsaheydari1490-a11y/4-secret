@@ -1,22 +1,22 @@
 {
-	"name": "TiledBackground9",
+	"name": "بکگراند_توپ",
 	"plugin-id": "TiledBg",
-	"sid": 476445236750220,
+	"sid": 165434837038142,
 	"isGlobal": false,
 	"editorNewInstanceIsReplica": true,
 	"instanceVariables": [],
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"image": {
-		"width": 800,
-		"height": 713,
+		"width": 613,
+		"height": 1198,
 		"originX": 0.5,
 		"originY": 0.5,
 		"originalSource": "",
 		"exportFormat": "lossless",
 		"exportQuality": 0.8,
-		"fileType": "image/png",
-		"imageSpriteId": 5600839,
+		"fileType": "image/jpeg",
+		"imageSpriteId": 7635599,
 		"useCollisionPoly": true,
 		"tag": ""
 	}

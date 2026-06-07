@@ -20,6 +20,10 @@
 			],
 			"actions": [
 				{
+					"type": "comment",
+					"text": "تنظیم شدن سرعت توپ برای شروع"
+				},
+				{
 					"id": "set-speed",
 					"objectClass": "توپ",
 					"sid": 810678838504985,
@@ -59,6 +63,10 @@
 				}
 			],
 			"actions": [
+				{
+					"type": "comment",
+					"text": "اگر توپ از بازی خارج شد؟"
+				},
 				{
 					"id": "set-speed",
 					"objectClass": "توپ",
@@ -106,7 +114,7 @@
 				},
 				{
 					"id": "set-visible",
-					"objectClass": "star3",
+					"objectClass": "ستاره3",
 					"sid": 980177684682699,
 					"parameters": {
 						"visibility": "invisible"
@@ -129,6 +137,10 @@
 			],
 			"actions": [
 				{
+					"type": "comment",
+					"text": "وقتی توپ به آجر میخورد"
+				},
+				{
 					"id": "destroy",
 					"objectClass": "آجر",
 					"sid": 649931989757070
@@ -149,6 +161,10 @@
 				}
 			],
 			"actions": [
+				{
+					"type": "comment",
+					"text": "وقتی توپ به آجر طلایی میخورد"
+				},
 				{
 					"id": "destroy",
 					"objectClass": "آجرطلایی",
@@ -180,6 +196,10 @@
 			],
 			"actions": [
 				{
+					"type": "comment",
+					"text": "وقتی توپ به آجر آبی میخورد"
+				},
+				{
 					"id": "destroy",
 					"objectClass": "آجرآبی",
 					"sid": 331210253364974
@@ -210,6 +230,10 @@
 			],
 			"actions": [
 				{
+					"type": "comment",
+					"text": "اگر توپ به جواب غلط خورد"
+				},
+				{
 					"id": "play",
 					"objectClass": "Audio",
 					"sid": 116886312046110,
@@ -239,7 +263,7 @@
 				},
 				{
 					"id": "set-visible",
-					"objectClass": "star2",
+					"objectClass": "ستاره2",
 					"sid": 765607832142185,
 					"parameters": {
 						"visibility": "invisible"
@@ -247,7 +271,7 @@
 				},
 				{
 					"id": "set-visible",
-					"objectClass": "star",
+					"objectClass": "ستاره",
 					"sid": 674853059798528,
 					"parameters": {
 						"visibility": "invisible"
@@ -296,6 +320,10 @@
 				}
 			],
 			"actions": [
+				{
+					"type": "comment",
+					"text": "وقتی بازی شروع شد"
+				},
 				{
 					"id": "play",
 					"objectClass": "Audio",
@@ -346,7 +374,7 @@
 				},
 				{
 					"id": "destroy",
-					"objectClass": "Text3",
+					"objectClass": "میدان_جهان",
 					"sid": 175188361097965
 				},
 				{

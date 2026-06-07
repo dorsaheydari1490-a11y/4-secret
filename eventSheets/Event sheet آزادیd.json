@@ -37,10 +37,10 @@
 				{
 					"id": "move-to-position",
 					"objectClass": "میله",
-					"sid": 647951106252942,
+					"sid": 237209923615877,
 					"behaviorType": "MoveTo",
 					"parameters": {
-						"x": "258",
+						"x": "225",
 						"y": "-901",
 						"mode": "direct"
 					}
@@ -52,6 +52,15 @@
 					"parameters": {
 						"seconds": "5",
 						"use-timescale": true
+					}
+				},
+				{
+					"id": "set-speed",
+					"objectClass": "دایره",
+					"sid": 384060292052025,
+					"behaviorType": "Rotate",
+					"parameters": {
+						"speed": "120"
 					}
 				},
 				{

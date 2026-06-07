@@ -7,7 +7,7 @@
 			"subLayers": [],
 			"instances": [
 				{
-					"type": "TiledBackground7",
+					"type": "قسمتسوم_بکگراند",
 					"properties": {
 						"initially-visible": true,
 						"origin": "top-left",
@@ -282,8 +282,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 918,
-						"y": 103,
+						"x": -981,
+						"y": 80,
 						"width": 332,
 						"height": 64.03799406509683,
 						"originX": 0,
@@ -295,7 +295,7 @@
 							1
 						],
 						"z": 0,
-						"angle": 3.129510721585376
+						"angle": 3.141592653589793
 					}
 				},
 				{
@@ -348,8 +348,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 962,
-						"y": 564,
+						"x": -948,
+						"y": 510,
 						"width": 433.00067168739895,
 						"height": 30,
 						"originX": 0,
@@ -361,7 +361,7 @@
 							1
 						],
 						"z": 0,
-						"angle": 3.1466753877305176
+						"angle": 3.141592653589793
 					}
 				},
 				{
@@ -393,8 +393,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 237,
-						"y": 310,
+						"x": 238,
+						"y": 307,
 						"width": 484,
 						"height": 637,
 						"originX": 0.5,
@@ -410,7 +410,7 @@
 					}
 				},
 				{
-					"type": "Text4",
+					"type": "جنگل_هیرکانی",
 					"properties": {
 						"text": "مرحله جنگل های هیرکانی",
 						"enable-bbcode": true,
@@ -471,7 +471,7 @@
 					}
 				},
 				{
-					"type": "TiledBackground",
+					"type": "محافظ",
 					"properties": {
 						"initially-visible": true,
 						"origin": "top-left",

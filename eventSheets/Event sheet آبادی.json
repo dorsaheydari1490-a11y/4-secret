@@ -16,6 +16,10 @@
 			],
 			"actions": [
 				{
+					"type": "comment",
+					"text": "شنیدن داستان و کنار رفتن پرده"
+				},
+				{
 					"id": "play",
 					"objectClass": "Audio",
 					"sid": 606381537403291,

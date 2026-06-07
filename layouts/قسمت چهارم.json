@@ -60,10 +60,10 @@
 					"world": {
 						"x": 172,
 						"y": 577,
-						"width": 223,
-						"height": 60,
-						"originX": 0.5,
-						"originY": 0.5,
+						"width": 2811.6583333333333,
+						"height": 1024,
+						"originX": 0.5003304692663583,
+						"originY": 0.5009765625,
 						"color": [
 							1,
 							1,
@@ -116,7 +116,7 @@
 					}
 				},
 				{
-					"type": "TiledBackground8",
+					"type": "آسمان",
 					"properties": {
 						"initially-visible": true,
 						"origin": "top-left",
@@ -1163,7 +1163,7 @@
 					}
 				},
 				{
-					"type": "Text5",
+					"type": "برج_میلاد",
 					"properties": {
 						"text": "مرحله برج میلاد",
 						"enable-bbcode": true,
@@ -1303,7 +1303,7 @@
 					}
 				},
 				{
-					"type": "star",
+					"type": "ستاره",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -1325,12 +1325,12 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 28,
-						"y": 34,
-						"width": 42,
-						"height": 40,
-						"originX": 0.5,
-						"originY": 0.5,
+						"x": 32.986894607543945,
+						"y": 33.37664794921875,
+						"width": 64,
+						"height": 64,
+						"originX": 0.49863387978142076,
+						"originY": 0.5458276333789329,
 						"color": [
 							1,
 							1,
@@ -1342,7 +1342,7 @@
 					}
 				},
 				{
-					"type": "star3",
+					"type": "ستاره3",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -1364,12 +1364,12 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 27,
-						"y": 136,
+						"x": 32.61024284362793,
+						"y": 171.5315399169922,
 						"width": 64,
 						"height": 64,
-						"originX": 0.5,
-						"originY": 0.5,
+						"originX": 0.49863387978142076,
+						"originY": 0.5458276333789329,
 						"color": [
 							1,
 							1,
@@ -1381,7 +1381,7 @@
 					}
 				},
 				{
-					"type": "star2",
+					"type": "ستاره2",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -1403,12 +1403,12 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 27,
-						"y": 82,
+						"x": 31.363502502441406,
+						"y": 102.57086181640625,
 						"width": 64,
 						"height": 64,
-						"originX": 0.5,
-						"originY": 0.5,
+						"originX": 0.49863387978142076,
+						"originY": 0.5458276333789329,
 						"color": [
 							1,
 							1,

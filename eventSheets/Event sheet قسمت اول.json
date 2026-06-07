@@ -235,7 +235,7 @@
 				},
 				{
 					"id": "set-visible",
-					"objectClass": "star2",
+					"objectClass": "ستاره2",
 					"sid": 950457672400746,
 					"parameters": {
 						"visibility": "invisible"
@@ -307,7 +307,7 @@
 				},
 				{
 					"id": "set-visible",
-					"objectClass": "star",
+					"objectClass": "ستاره",
 					"sid": 593610758883745,
 					"parameters": {
 						"visibility": "invisible"
@@ -379,7 +379,7 @@
 				},
 				{
 					"id": "set-visible",
-					"objectClass": "star3",
+					"objectClass": "ستاره3",
 					"sid": 996584777111003,
 					"parameters": {
 						"visibility": "invisible"
@@ -403,6 +403,10 @@
 				}
 			],
 			"actions": [
+				{
+					"type": "comment",
+					"text": "اگر روی گزینه صحیح کلیک شود"
+				},
 				{
 					"id": "play",
 					"objectClass": "Audio",
@@ -463,6 +467,10 @@
 			],
 			"actions": [
 				{
+					"type": "comment",
+					"text": "اگر متغییر دقت برابر یا کمتر از صفر بود یک پیام برای دانش آموز میآید و بعد از 2 ثانیه حذف میشود"
+				},
+				{
 					"id": "set-position",
 					"objectClass": "دقت",
 					"sid": 733552761598602,
@@ -504,6 +512,10 @@
 			],
 			"actions": [
 				{
+					"type": "comment",
+					"text": "اگر زمان به اتمام رسید صفحه دوباره از اول شروع بشه"
+				},
+				{
 					"id": "restart-layout",
 					"objectClass": "System",
 					"sid": 338417370625080
@@ -522,6 +534,10 @@
 			],
 			"actions": [
 				{
+					"type": "comment",
+					"text": "وقتی صفحه دوباره شروع میشه امتیاز ها هم به حالت عادی برگردند و ستاره ها ظاهر شوند"
+				},
+				{
 					"id": "set-eventvar-value",
 					"objectClass": "System",
 					"sid": 445479368978520,
@@ -532,7 +548,7 @@
 				},
 				{
 					"id": "set-visible",
-					"objectClass": "star",
+					"objectClass": "ستاره",
 					"sid": 615277377371723,
 					"parameters": {
 						"visibility": "visible"
@@ -540,7 +556,7 @@
 				},
 				{
 					"id": "set-visible",
-					"objectClass": "star2",
+					"objectClass": "ستاره2",
 					"sid": 551775457617442,
 					"parameters": {
 						"visibility": "visible"
@@ -548,7 +564,7 @@
 				},
 				{
 					"id": "set-visible",
-					"objectClass": "star3",
+					"objectClass": "ستاره3",
 					"sid": 883368244153828,
 					"parameters": {
 						"visibility": "visible"

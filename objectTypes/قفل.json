@@ -1,38 +1,32 @@
 {
-	"name": "star",
+	"name": "قفل",
 	"plugin-id": "Sprite",
-	"sid": 613531635823858,
+	"sid": 904646844232131,
 	"isGlobal": false,
 	"editorNewInstanceIsReplica": true,
 	"instanceVariables": [],
-	"behaviorTypes": [
-		{
-			"behaviorId": "Pin",
-			"name": "Pin",
-			"sid": 991434146127155
-		}
-	],
+	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {
 		"items": [
 			{
 				"frames": [
 					{
-						"width": 42,
-						"height": 40,
+						"width": 50,
+						"height": 50,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
 						"fileType": "image/png",
-						"imageSpriteId": 7580054,
+						"imageSpriteId": 2074675,
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""
 					}
 				],
-				"sid": 967026846811894,
+				"sid": 751688832888468,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

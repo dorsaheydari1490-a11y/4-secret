@@ -2107,7 +2107,7 @@
 					}
 				},
 				{
-					"type": "Text6",
+					"type": "شروع_معرفی",
 					"properties": {
 						"text": ".",
 						"enable-bbcode": true,

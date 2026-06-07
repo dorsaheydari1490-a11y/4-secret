@@ -1,22 +1,22 @@
 {
-	"name": "TiledBackground11",
+	"name": "بکگراند_خورشید",
 	"plugin-id": "TiledBg",
-	"sid": 690633115394210,
+	"sid": 549298672751500,
 	"isGlobal": false,
 	"editorNewInstanceIsReplica": true,
 	"instanceVariables": [],
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"image": {
-		"width": 501,
-		"height": 858,
+		"width": 1051,
+		"height": 621,
 		"originX": 0.5,
 		"originY": 0.5,
 		"originalSource": "",
 		"exportFormat": "lossless",
 		"exportQuality": 0.8,
 		"fileType": "image/png",
-		"imageSpriteId": 1566597,
+		"imageSpriteId": 6321528,
 		"useCollisionPoly": true,
 		"tag": ""
 	}

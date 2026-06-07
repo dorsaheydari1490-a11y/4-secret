@@ -17,6 +17,10 @@
 			],
 			"actions": [
 				{
+					"type": "comment",
+					"text": "مکانیزم رفتن به مرحله بعدی"
+				},
+				{
 					"id": "stop-all",
 					"objectClass": "Audio",
 					"sid": 203251764874995

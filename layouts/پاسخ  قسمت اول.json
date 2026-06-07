@@ -37,10 +37,10 @@
 					"world": {
 						"x": 940,
 						"y": 257,
-						"width": 132,
-						"height": 137,
-						"originX": 0.5,
-						"originY": 0.5,
+						"width": 772.1999999999999,
+						"height": 847.6875,
+						"originX": 0.5053418803418803,
+						"originY": 0.49393939393939396,
 						"color": [
 							1,
 							1,
@@ -167,7 +167,7 @@
 					}
 				},
 				{
-					"type": "unlocked",
+					"type": "قفل",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",

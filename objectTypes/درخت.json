@@ -20,21 +20,33 @@
 			{
 				"frames": [
 					{
-						"width": 129,
-						"height": 230,
-						"originX": 0.49612403100775193,
-						"originY": 0.9956521739130435,
+						"width": 1026,
+						"height": 1470,
+						"originX": 0.49613158650286354,
+						"originY": 1.000899142265602,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
 						"fileType": "image/png",
 						"imageSpriteId": 950798,
+						"collisionPoly": {
+							"points": [
+								0.48050682261208577,
+								0.0380952380952381,
+								0.6140350877192983,
+								0.9394557823129251,
+								0.5087719298245614,
+								0.9496598639455782,
+								0.391812865497076,
+								0.9306122448979591
+							]
+						},
 						"useCollisionPoly": true,
 						"imagePoints": [
 							{
 								"name": "paeen",
-								"x": 0.5038759689922481,
-								"y": 0.9826086956521739
+								"x": 0.5038684134971365,
+								"y": 0.9872700384501626
 							}
 						],
 						"duration": 1,
