@@ -102,94 +102,12 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 167,
-						"y": 357,
-						"width": 298,
-						"height": 252,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"z": 0,
-						"angle": 0
-					}
-				},
-				{
-					"type": "شانزده",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 77,
-					"sid": 793468933816409,
-					"tags": "",
-					"instanceVariables": {},
-					"behaviors": {},
-					"showing": true,
-					"locked": false,
-					"world": {
-						"x": 404,
-						"y": 398,
-						"width": 181,
-						"height": 121,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"z": 0,
-						"angle": 0
-					}
-				},
-				{
-					"type": "جواب2",
-					"properties": {
-						"text": "کیک مربعی را اول ۴ تکه می‌کنیم. بعد هر تکه را ۴ تکه می‌کنیم.\n۴ تا تکه‌ی اول، هر کدام ۴ تا تکه می‌شوند، یعنی ۱۶ تکه.\nیک تکه را رنگ می‌کنیم → ۱ از ۱۶ تا",
-						"enable-bbcode": true,
-						"font": "Arial",
-						"size": 30,
-						"line-height": 0,
-						"bold": false,
-						"italic": false,
-						"color": [
-							0,
-							0,
-							0,
-							1
-						],
-						"horizontal-alignment": "left",
-						"vertical-alignment": "top",
-						"wrapping": "word",
-						"text-direction": "ltr",
-						"icon-set": -1,
-						"initially-visible": true,
-						"origin": "top-left",
-						"read-aloud": false
-					},
-					"uid": 79,
-					"sid": 459712244795253,
-					"tags": "",
-					"instanceVariables": {},
-					"behaviors": {},
-					"showing": true,
-					"locked": false,
-					"world": {
-						"x": 9,
-						"y": -3,
-						"width": 488,
-						"height": 326,
-						"originX": 0,
-						"originY": 0,
+						"x": 248.47402135231317,
+						"y": 487.4308300395257,
+						"width": 495.38,
+						"height": 216.024,
+						"originX": 0.5387900355871886,
+						"originY": 0.43280632411067194,
 						"color": [
 							1,
 							1,
@@ -222,6 +140,72 @@
 						"width": 50,
 						"height": 50,
 						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
+					"type": "کیک_جواب_دوم",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 42,
+					"sid": 499153347405912,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 239.66216216216216,
+						"y": 204,
+						"width": 292,
+						"height": 416,
+						"originX": 0.8344594594594594,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
+					"type": "متن_جواب_دوم",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 77,
+					"sid": 808959276723974,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 227.81283422459893,
+						"y": 206.5,
+						"width": 357.7714285714286,
+						"height": 473,
+						"originX": 0.25401069518716574,
 						"originY": 0.5,
 						"color": [
 							1,
