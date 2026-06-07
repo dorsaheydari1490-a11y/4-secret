@@ -765,6 +765,14 @@
 								"stop-on-solids": false,
 								"enabled": true
 							}
+						},
+						"Rotate": {
+							"properties": {
+								"speed": 180,
+								"acceleration": 0,
+								"enabled": true,
+								"live-preview": false
+							}
 						}
 					},
 					"showing": true,

@@ -7,7 +7,7 @@
 			"subLayers": [],
 			"instances": [
 				{
-					"type": "دریاتصویر",
+					"type": "غار_زندانی",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -23,10 +23,10 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 259,
-						"y": 317,
-						"width": 514,
-						"height": 717.8888888888889,
+						"x": 243,
+						"y": 312.5,
+						"width": 479.93975903614455,
+						"height": 619.125730994152,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -112,10 +112,10 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 260,
-						"y": 281,
-						"width": 284.54999999999995,
-						"height": 257.3125,
+						"x": 244,
+						"y": 314,
+						"width": 284.284,
+						"height": 284.284,
 						"originX": 0.5053418803418803,
 						"originY": 0.49393939393939396,
 						"color": [

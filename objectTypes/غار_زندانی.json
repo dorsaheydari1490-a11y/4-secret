@@ -1,5 +1,5 @@
 {
-	"name": "دریاتصویر",
+	"name": "غار_زندانی",
 	"plugin-id": "Sprite",
 	"sid": 649487151641088,
 	"isGlobal": false,
@@ -12,14 +12,14 @@
 			{
 				"frames": [
 					{
-						"width": 498,
-						"height": 798,
+						"width": 465,
+						"height": 447,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"fileType": "image/png",
+						"fileType": "image/jpeg",
 						"imageSpriteId": 9999315,
 						"collisionPoly": {
 							"points": [
