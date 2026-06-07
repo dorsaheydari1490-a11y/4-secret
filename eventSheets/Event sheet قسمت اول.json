@@ -36,6 +36,16 @@
 			"sid": 759730536090586
 		},
 		{
+			"eventType": "variable",
+			"name": "فارس_رفته",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "بعد از خروج فارس از صفحه 1 می‌شود؛ در ری‌استارت بعد از باخت دیگر فارس نمایش داده نمی‌شود",
+			"isStatic": true,
+			"isConstant": false,
+			"sid": 482917365402001
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -58,69 +68,236 @@
 					}
 				},
 				{
-					"id": "set-position",
-					"objectClass": "فارس",
-					"sid": 544516362948509,
+					"id": "set-visible",
+					"objectClass": "نوار_زمان_پس",
+					"sid": 482917365402010,
 					"parameters": {
-						"x": "239",
-						"y": "317"
+						"visibility": "invisible"
 					}
 				},
 				{
-					"id": "play",
-					"objectClass": "Audio",
-					"sid": 262051858743081,
+					"id": "set-visible",
+					"objectClass": "نوار_زمان_پر",
+					"sid": 482917365402011,
 					"parameters": {
-						"audio-file": {
-							"path": "voice_msg_-590761569671517786"
-						},
-						"loop": "not-looping",
-						"volume": "0",
-						"stereo-pan": "0",
-						"tag-optional": "\"\""
+						"visibility": "invisible"
 					}
 				},
 				{
-					"id": "play",
-					"objectClass": "Audio",
-					"sid": 567681312904685,
+					"id": "set-size",
+					"objectClass": "نوار_زمان_پر",
+					"sid": 482917365401920,
 					"parameters": {
-						"audio-file": {
-							"path": "Fassounds - Funky Funk (2025) SONGSARA.NET"
-						},
-						"loop": "looping",
-						"volume": "0",
-						"stereo-pan": "0",
-						"tag-optional": "\"\""
+						"width": "22",
+						"height": "520"
 					}
 				},
 				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 729527523173098,
+					"id": "set-animation",
+					"objectClass": "نوار_زمان_پر",
+					"sid": 482917365401921,
 					"parameters": {
-						"seconds": "8",
-						"use-timescale": true
-					}
-				},
-				{
-					"id": "destroy",
-					"objectClass": "نام1",
-					"sid": 890154929136885
-				},
-				{
-					"id": "move-to-position",
-					"objectClass": "فارس",
-					"sid": 983129733025313,
-					"behaviorType": "MoveTo",
-					"parameters": {
-						"x": "-302",
-						"y": "330",
-						"mode": "direct"
+						"animation": "\"Animation 1\"",
+						"from": "beginning"
 					}
 				}
 			],
-			"sid": 765035762296956
+			"sid": 765035762296956,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 482917365402020,
+							"parameters": {
+								"variable": "فارس_رفته",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "اولین بار: معرفی فارس و حرکت به بیرون صفحه"
+						},
+						{
+							"id": "set-position",
+							"objectClass": "فارس",
+							"sid": 544516362948509,
+							"parameters": {
+								"x": "239",
+								"y": "317"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "فارس",
+							"sid": 482917365402021,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 262051858743081,
+							"parameters": {
+								"audio-file": {
+									"path": "voice_msg_-590761569671517786"
+								},
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 567681312904685,
+							"parameters": {
+								"audio-file": {
+									"path": "Fassounds - Funky Funk (2025) SONGSARA.NET"
+								},
+								"loop": "looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 729527523173098,
+							"parameters": {
+								"seconds": "8",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "نام1",
+							"sid": 890154929136885
+						},
+						{
+							"id": "move-to-position",
+							"objectClass": "فارس",
+							"sid": 983129733025313,
+							"behaviorType": "MoveTo",
+							"parameters": {
+								"x": "-302",
+								"y": "330",
+								"mode": "direct"
+							}
+						}
+					],
+					"sid": 482917365402022
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 482917365402023
+						}
+					],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "بعد از باخت: فارس دیگر نیاید و تایمر فوراً فعال شود"
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "فارس",
+							"sid": 482917365402024,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "نوار_زمان_پس",
+							"sid": 482917365402025,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "نوار_زمان_پر",
+							"sid": 482917365402026,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 482917365402027
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-outside-layout",
+					"objectClass": "فارس",
+					"sid": 482917365402030
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 482917365402031,
+					"parameters": {
+						"variable": "فارس_رفته",
+						"comparison": 0,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "وقتی فارس کامل از صفحه خارج شد، تایمر نمایش داده و شروع می‌شود"
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 482917365402032,
+					"parameters": {
+						"variable": "فارس_رفته",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "فارس",
+					"sid": 482917365402033,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "نوار_زمان_پس",
+					"sid": 482917365402034,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "نوار_زمان_پر",
+					"sid": 482917365402035,
+					"parameters": {
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 482917365402036
 		},
 		{
 			"eventType": "block",
@@ -131,6 +308,16 @@
 					"sid": 864617513486400,
 					"parameters": {
 						"interval-seconds": "1.0"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 482917365402040,
+					"parameters": {
+						"variable": "فارس_رفته",
+						"comparison": 0,
+						"value": "1"
 					}
 				}
 			],
@@ -158,19 +345,81 @@
 					"id": "every-tick",
 					"objectClass": "System",
 					"sid": 193668699706121
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 482917365402041,
+					"parameters": {
+						"variable": "فارس_رفته",
+						"comparison": 0,
+						"value": "1"
+					}
 				}
 			],
 			"actions": [
 				{
-					"id": "set-text",
-					"objectClass": "زمان",
-					"sid": 355096032111854,
+					"id": "set-size",
+					"objectClass": "نوار_زمان_پر",
+					"sid": 482917365401910,
 					"parameters": {
-						"text": "زمان"
+						"width": "22",
+						"height": "520 * (زمان / 30)"
 					}
 				}
 			],
-			"sid": 374556891604524
+			"sid": 374556891604524,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 482917365401911,
+							"parameters": {
+								"variable": "زمان",
+								"comparison": 3,
+								"value": "10"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "نوار_زمان_پر",
+							"sid": 482917365401912,
+							"parameters": {
+								"animation": "\"هشدار\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 482917365401913
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 482917365401914
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "نوار_زمان_پر",
+							"sid": 482917365401915,
+							"parameters": {
+								"animation": "\"Animation 1\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 482917365401916
+				}
+			]
 		},
 		{
 			"eventType": "block",
@@ -507,6 +756,16 @@
 						"variable": "زمان",
 						"comparison": 0,
 						"value": "0"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 482917365402042,
+					"parameters": {
+						"variable": "فارس_رفته",
+						"comparison": 0,
+						"value": "1"
 					}
 				}
 			],
