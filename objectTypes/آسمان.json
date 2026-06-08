@@ -8,14 +8,14 @@
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"image": {
-		"width": 256,
-		"height": 256,
+		"width": 541,
+		"height": 546,
 		"originX": 0.5,
 		"originY": 0.5,
 		"originalSource": "",
 		"exportFormat": "lossless",
 		"exportQuality": 0.8,
-		"fileType": "image/png",
+		"fileType": "image/jpeg",
 		"imageSpriteId": 9119206,
 		"useCollisionPoly": true,
 		"tag": ""

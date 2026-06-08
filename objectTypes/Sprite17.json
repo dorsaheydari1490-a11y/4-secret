@@ -1,7 +1,7 @@
 {
-	"name": "رنگ_قرمز",
+	"name": "Sprite17",
 	"plugin-id": "Sprite",
-	"sid": 778434799647523,
+	"sid": 750736739625766,
 	"isGlobal": false,
 	"editorNewInstanceIsReplica": true,
 	"instanceVariables": [],
@@ -12,21 +12,21 @@
 			{
 				"frames": [
 					{
-						"width": 83,
-						"height": 87,
-						"originX": -0.1566265060240964,
-						"originY": 1.0804597701149425,
+						"width": 552,
+						"height": 549,
+						"originX": 0.5,
+						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"fileType": "image/png",
-						"imageSpriteId": 2493990,
+						"fileType": "image/jpeg",
+						"imageSpriteId": 6448461,
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""
 					}
 				],
-				"sid": 479208428890420,
+				"sid": 374222599076050,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

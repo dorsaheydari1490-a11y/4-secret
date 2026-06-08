@@ -33,8 +33,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": -1,
-						"y": 0,
+						"x": 3,
+						"y": 2,
 						"width": 481,
 						"height": 634,
 						"originX": 0,
@@ -118,8 +118,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 29,
-						"y": -33,
+						"x": -466,
+						"y": -11,
 						"width": 440,
 						"height": 434,
 						"originX": 0,
@@ -198,8 +198,8 @@
 					"world": {
 						"x": 817,
 						"y": 314,
-						"width": 484,
-						"height": 637,
+						"width": 545.4758064516129,
+						"height": 1044.2316715542522,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -263,6 +263,39 @@
 						"height": 66,
 						"originX": 0,
 						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
+					"type": "Sprite13",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 218,
+					"sid": 685455901489878,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 220,
+						"y": 301,
+						"width": 416,
+						"height": 537,
+						"originX": 0.5096153846153846,
+						"originY": 0.5279329608938548,
 						"color": [
 							1,
 							1,

@@ -33,12 +33,45 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 1,
-						"y": -5,
+						"x": 919,
+						"y": 7,
 						"width": 632,
-						"height": 640,
+						"height": 579,
 						"originX": 0,
 						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
+					"type": "Sprite14",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 219,
+					"sid": 977198732991624,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 240.5,
+						"y": 316.5,
+						"width": 482,
+						"height": 624,
+						"originX": 0.5,
+						"originY": 0.5,
 						"color": [
 							1,
 							1,
@@ -114,10 +147,10 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 225,
-						"y": 275,
-						"width": 49,
-						"height": 212,
+						"x": 232,
+						"y": 321,
+						"width": 215.046875,
+						"height": 311.125,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -161,8 +194,8 @@
 					"world": {
 						"x": 255,
 						"y": 306.5,
-						"width": 2363.0763492687634,
-						"height": 3291.012714449124,
+						"width": 1064.117986,
+						"height": 762.672129,
 						"originX": 0.5,
 						"originY": 0.47402608315686867,
 						"color": [

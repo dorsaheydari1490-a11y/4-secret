@@ -78,43 +78,10 @@
 					"world": {
 						"x": 241,
 						"y": 219,
-						"width": 90.37751004016064,
-						"height": 67.5409090909091,
-						"originX": 0.5170731707317073,
-						"originY": 0.6176470588235294,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"z": 0,
-						"angle": 0
-					}
-				},
-				{
-					"type": "رنگ_قرمز",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 206,
-					"sid": 638088786460401,
-					"tags": "",
-					"instanceVariables": {},
-					"behaviors": {},
-					"showing": true,
-					"locked": false,
-					"world": {
-						"x": 292,
-						"y": 332,
-						"width": 41,
-						"height": 37,
-						"originX": -0.1566265060240964,
-						"originY": 1.0804597701149425,
+						"width": 109.77560975609757,
+						"height": 93.36537433155081,
+						"originX": 0.5221961014790871,
+						"originY": 0.6680572938395217,
 						"color": [
 							1,
 							1,

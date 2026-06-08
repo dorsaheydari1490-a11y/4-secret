@@ -329,7 +329,7 @@
 					"world": {
 						"x": 175.36795306167937,
 						"y": 322.42568407425,
-						"width": 50,
+						"width": 49.99999999999999,
 						"height": 50,
 						"originX": 0.524547803617571,
 						"originY": 0.5268542199488491,
@@ -456,55 +456,6 @@
 						"height": 66,
 						"originX": 0.5,
 						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"z": 0,
-						"angle": 0
-					}
-				},
-				{
-					"type": "سوال2",
-					"properties": {
-						"text": "«یک مربع را به ۴ قسمت مساوی تقسیم کرده‌ایم.\nهر قسمت را دوباره به ۴ قسمت مساوی تقسیم می‌کنیم.\nاگر یکی از این قسمت‌ها را رنگ کنیم، چه کسری از مربع رنگ شده است؟»",
-						"enable-bbcode": true,
-						"font": "Arial",
-						"size": 20,
-						"line-height": 0,
-						"bold": false,
-						"italic": false,
-						"color": [
-							0.48627450980392156,
-							0.6901960784313725,
-							0.47058823529411764,
-							1
-						],
-						"horizontal-alignment": "left",
-						"vertical-alignment": "top",
-						"wrapping": "word",
-						"text-direction": "ltr",
-						"icon-set": -1,
-						"initially-visible": true,
-						"origin": "top-left",
-						"read-aloud": false
-					},
-					"uid": 67,
-					"sid": 956377177412229,
-					"tags": "",
-					"instanceVariables": {},
-					"behaviors": {},
-					"showing": true,
-					"locked": false,
-					"world": {
-						"x": 561,
-						"y": 160,
-						"width": 438,
-						"height": 171,
-						"originX": 0,
-						"originY": 0,
 						"color": [
 							1,
 							1,
@@ -769,10 +720,10 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": -609,
-						"y": 375,
+						"x": 241,
+						"y": 315,
 						"width": 478.5906313645621,
-						"height": 628.7407407407406,
+						"height": 636.7407407407406,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [

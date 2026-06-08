@@ -333,8 +333,8 @@
 						},
 						{
 							"id": "set-speed",
-							"objectClass": "الف",
-							"sid": 223793450597711,
+							"objectClass": "گزینه_الف_سوم",
+							"sid": 933130039232452,
 							"behaviorType": "Bullet",
 							"parameters": {
 								"speed": "-100"
@@ -342,8 +342,8 @@
 						},
 						{
 							"id": "set-speed",
-							"objectClass": "ب",
-							"sid": 498647934425968,
+							"objectClass": "گزینه_ب_سوم",
+							"sid": 834445285217319,
 							"behaviorType": "Bullet",
 							"parameters": {
 								"speed": "-100"
@@ -360,8 +360,8 @@
 						},
 						{
 							"id": "set-speed",
-							"objectClass": "ب",
-							"sid": 983242508849054,
+							"objectClass": "گزینه_ب_سوم",
+							"sid": 870323502579941,
 							"behaviorType": "Bullet",
 							"parameters": {
 								"speed": "50"
@@ -378,8 +378,8 @@
 						},
 						{
 							"id": "set-speed",
-							"objectClass": "الف",
-							"sid": 999259930626214,
+							"objectClass": "گزینه_الف_سوم",
+							"sid": 902919403302940,
 							"behaviorType": "Bullet",
 							"parameters": {
 								"speed": "50"
@@ -516,8 +516,8 @@
 						},
 						{
 							"id": "set-speed",
-							"objectClass": "الف",
-							"sid": 310207137299880,
+							"objectClass": "گزینه_الف_سوم",
+							"sid": 885638604983719,
 							"behaviorType": "Bullet",
 							"parameters": {
 								"speed": "-100"
@@ -525,8 +525,8 @@
 						},
 						{
 							"id": "set-speed",
-							"objectClass": "ب",
-							"sid": 161173407820641,
+							"objectClass": "گزینه_ب_سوم",
+							"sid": 672220423050012,
 							"behaviorType": "Bullet",
 							"parameters": {
 								"speed": "-100"
@@ -543,8 +543,8 @@
 						},
 						{
 							"id": "set-speed",
-							"objectClass": "ب",
-							"sid": 118127775300916,
+							"objectClass": "گزینه_ب_سوم",
+							"sid": 776768028456612,
 							"behaviorType": "Bullet",
 							"parameters": {
 								"speed": "50"
@@ -561,8 +561,8 @@
 						},
 						{
 							"id": "set-speed",
-							"objectClass": "الف",
-							"sid": 418193558768881,
+							"objectClass": "گزینه_الف_سوم",
+							"sid": 664625713452809,
 							"behaviorType": "Bullet",
 							"parameters": {
 								"speed": "50"
@@ -579,9 +579,9 @@
 				{
 					"id": "on-collision-with-another-object",
 					"objectClass": "مثلث",
-					"sid": 958547561856785,
+					"sid": 726870988802350,
 					"parameters": {
-						"object": "ب"
+						"object": "گزینه_ب_سوم"
 					}
 				}
 			],
@@ -603,6 +603,14 @@
 						"stereo-pan": "0",
 						"tag-optional": "\"\""
 					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 529751898043437,
+					"parameters": {
+						"layout": "پاسخ قسمت سوم"
+					}
 				}
 			],
 			"sid": 124445345615282
@@ -613,9 +621,9 @@
 				{
 					"id": "on-collision-with-another-object",
 					"objectClass": "مثلث",
-					"sid": 449784481929211,
+					"sid": 681455780530881,
 					"parameters": {
-						"object": "الف"
+						"object": "گزینه_الف_سوم"
 					}
 				}
 			],
@@ -636,14 +644,6 @@
 						"volume": "0",
 						"stereo-pan": "0",
 						"tag-optional": "\"\""
-					}
-				},
-				{
-					"id": "go-to-layout",
-					"objectClass": "System",
-					"sid": 552660725344976,
-					"parameters": {
-						"layout": "پاسخ قسمت سوم"
 					}
 				}
 			],

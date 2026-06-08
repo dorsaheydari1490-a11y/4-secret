@@ -1,7 +1,7 @@
 {
-	"name": "Sprite",
+	"name": "الف_4",
 	"plugin-id": "Sprite",
-	"sid": 953198941943261,
+	"sid": 877951061412335,
 	"isGlobal": false,
 	"editorNewInstanceIsReplica": true,
 	"instanceVariables": [],
@@ -12,25 +12,31 @@
 			{
 				"frames": [
 					{
-						"width": 1002,
-						"height": 426,
+						"width": 901,
+						"height": 166,
 						"originX": 0.5,
-						"originY": 0.29891304347826086,
+						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"fileType": "image/jpeg",
-						"imageSpriteId": 4355744,
+						"fileType": "image/png",
+						"imageSpriteId": 3683222,
 						"collisionPoly": {
 							"points": [
-								0.003875968992248062,
+								0.43951165371809103,
+								0.018072289156626505,
+								0.9400665926748057,
+								0.05421686746987952,
+								0.9700332963374029,
+								1,
+								0.6315205327413984,
+								1,
+								0.03773584905660377,
+								0.963855421686747,
 								0,
-								0.9961240310077519,
-								0,
-								0.9961240310077519,
-								0.9945652173913043,
-								0.003875968992248062,
-								0.9945652173913043
+								0.18072289156626506,
+								0.08435072142064373,
+								0.024096385542168676
 							]
 						},
 						"useCollisionPoly": true,
@@ -38,7 +44,7 @@
 						"tag": ""
 					}
 				],
-				"sid": 406480792886544,
+				"sid": 934470994298356,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

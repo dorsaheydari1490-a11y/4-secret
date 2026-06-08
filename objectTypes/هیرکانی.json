@@ -18,8 +18,8 @@
 			{
 				"frames": [
 					{
-						"width": 496,
-						"height": 341,
+						"width": 559,
+						"height": 559,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
@@ -27,18 +27,6 @@
 						"exportQuality": 0.8,
 						"fileType": "image/png",
 						"imageSpriteId": 1719605,
-						"collisionPoly": {
-							"points": [
-								1,
-								1,
-								0,
-								1,
-								0,
-								0,
-								1,
-								0
-							]
-						},
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""

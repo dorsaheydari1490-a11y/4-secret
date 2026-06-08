@@ -1,0 +1,65 @@
+{
+	"name": "گزینه_الف_سوم",
+	"plugin-id": "Sprite",
+	"sid": 653765120500100,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Bullet",
+			"name": "Bullet",
+			"sid": 328616071956447
+		},
+		{
+			"behaviorId": "wrap",
+			"name": "Wrap",
+			"sid": 866702766673567
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 317,
+						"height": 315,
+						"originX": 0.5283911671924291,
+						"originY": 0.5063492063492063,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 9275142,
+						"collisionPoly": {
+							"points": [
+								0.06940063091482651,
+								0.9333333333333333,
+								0.33753943217665616,
+								0.060317460317460325,
+								0.8927444794952681,
+								0.13650793650793647,
+								0.9842271293375395,
+								0.8603174603174604,
+								0.886435331230284,
+								0.9555555555555556
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 348582324479305,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

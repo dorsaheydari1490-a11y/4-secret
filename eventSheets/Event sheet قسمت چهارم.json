@@ -79,18 +79,13 @@
 				{
 					"id": "move-to-position",
 					"objectClass": "Sprite8",
-					"sid": 131857814631980,
+					"sid": 279442305030289,
 					"behaviorType": "MoveTo",
 					"parameters": {
 						"x": "3000",
-						"y": "575",
+						"y": "693",
 						"mode": "direct"
 					}
-				},
-				{
-					"id": "destroy",
-					"objectClass": "برج_میلاد",
-					"sid": 698626653118296
 				}
 			],
 			"sid": 204530345754922
@@ -183,9 +178,9 @@
 				{
 					"id": "on-collision-with-another-object",
 					"objectClass": "مثلث",
-					"sid": 197282389013786,
+					"sid": 253699718152663,
 					"parameters": {
-						"object": "الف4"
+						"object": "الف_4"
 					}
 				}
 			],
@@ -225,9 +220,9 @@
 				{
 					"id": "on-collision-with-another-object",
 					"objectClass": "مثلث",
-					"sid": 818337372966467,
+					"sid": 209873843424388,
 					"parameters": {
-						"object": "ب4"
+						"object": "ب_4"
 					}
 				}
 			],
