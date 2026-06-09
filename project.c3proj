@@ -15,8 +15,22 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Date",
+			"name": "Date",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Keyboard",
 			"name": "Keyboard",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "LocalStorage",
+			"name": "Local storage",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -249,7 +263,22 @@
 			"Sprite15",
 			"الف_4",
 			"ب_4",
-			"Sprite17"
+			"Sprite17",
+			"LocalStorage",
+			"Date",
+			"ورود_نام",
+			"دکمه_پروفایل",
+			"پنل_پروفایل",
+			"دکمه_شروع",
+			"دکمه_ادامه",
+			"دکمه_شروع_جدید",
+			"دکمه_بستن_پروفایل",
+			"متن_پروفایل",
+			"متن_عنوان_ورود",
+			"متن_خوشآمد",
+			"متن_دکمه_شروع",
+			"متن_دکمه_ادامه",
+			"متن_دکمه_شروع_جدید"
 		],
 		"subfolders": []
 	},
@@ -262,6 +291,7 @@
 	},
 	"layouts": {
 		"items": [
+			"ورود",
 			"شروع",
 			"مرحله اول",
 			"قسمت اول",
@@ -293,7 +323,11 @@
 			"Event sheet قسمت چهارم",
 			"Event sheet آبادی",
 			"Event sheet فلش",
-			"Event sheet شروع"
+			"Event sheet شروع",
+			"Event sheet ورود",
+			"Event sheet پروفایل",
+			"Event sheet پروفایل HUD",
+			"Event sheet فروشگاه"
 		],
 		"subfolders": []
 	},
@@ -632,5 +666,5 @@
 	},
 	"viewportWidth": 480,
 	"viewportHeight": 630,
-	"firstLayout": null
+	"firstLayout": "ورود"
 }

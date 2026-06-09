@@ -1,0 +1,12 @@
+{
+	"name": "LocalStorage",
+	"plugin-id": "LocalStorage",
+	"sid": 910000000000001,
+	"singleglobal-inst": {
+		"type": "LocalStorage",
+		"properties": {},
+		"uid": 300,
+		"sid": 910000000000002,
+		"tags": ""
+	}
+}

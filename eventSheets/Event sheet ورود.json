@@ -1,0 +1,700 @@
+{
+	"name": "Event sheet ورود",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "نام_ذخیره",
+			"type": "string",
+			"initialValue": "\"\"",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 910000000000200
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 910000000000201
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "دکمه_ادامه",
+					"sid": 910000000000202,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "دکمه_شروع_جدید",
+					"sid": 910000000000203,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "متن_خوشآمد",
+					"sid": 910000000000204,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "متن_دکمه_ادامه",
+					"sid": 910000000000205,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "متن_دکمه_شروع_جدید",
+					"sid": 910000000000206,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "ورود_نام",
+					"sid": 910000000000207,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "دکمه_شروع",
+					"sid": 910000000000208,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "متن_عنوان_ورود",
+					"sid": 910000000000209,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "متن_دکمه_شروع",
+					"sid": 910000000000210,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "ورود_نام",
+					"sid": 910000000000211,
+					"parameters": {
+						"text": "\"\""
+					}
+				},
+				{
+					"id": "check-item-exists",
+					"objectClass": "LocalStorage",
+					"sid": 9100000000002111,
+					"parameters": {
+						"key": "\"playerName\""
+					}
+				}
+			],
+			"sid": 910000000000212
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-any-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 910000000000251
+				},
+				{
+					"id": "is-visible",
+					"objectClass": "ورود_نام",
+					"sid": 910000000000252
+				},
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 910000000000253,
+					"parameters": {
+						"first-value": "len(ورود_نام.Text)",
+						"comparison": 2,
+						"second-value": "20"
+					}
+				},
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 910000000000254,
+					"parameters": {
+						"first-value": "len(Keyboard.StringFromKeyCode(Keyboard.LastKeyCode))",
+						"comparison": 4,
+						"second-value": "0"
+					}
+				},
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 910000000000255,
+					"parameters": {
+						"first-value": "Keyboard.LastKeyCode",
+						"comparison": 1,
+						"second-value": "8"
+					}
+				},
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 910000000000256,
+					"parameters": {
+						"first-value": "Keyboard.LastKeyCode",
+						"comparison": 1,
+						"second-value": "13"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "ورود_نام",
+					"sid": 910000000000257,
+					"parameters": {
+						"text": "ورود_نام.Text & Keyboard.StringFromKeyCode(Keyboard.LastKeyCode)"
+					}
+				}
+			],
+			"sid": 910000000000258
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 910000000000259,
+					"parameters": {
+						"key": 8
+					}
+				},
+				{
+					"id": "is-visible",
+					"objectClass": "ورود_نام",
+					"sid": 910000000000260
+				},
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 910000000000261,
+					"parameters": {
+						"first-value": "len(ورود_نام.Text)",
+						"comparison": 4,
+						"second-value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "ورود_نام",
+					"sid": 910000000000262,
+					"parameters": {
+						"text": "left(ورود_نام.Text, len(ورود_نام.Text) - 1)"
+					}
+				}
+			],
+			"sid": 910000000000263
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 910000000000264,
+					"parameters": {
+						"key": 13
+					}
+				},
+				{
+					"id": "is-visible",
+					"objectClass": "ورود_نام",
+					"sid": 910000000000265
+				},
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 910000000000266,
+					"parameters": {
+						"first-value": "len(ورود_نام.Text)",
+						"comparison": 4,
+						"second-value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-item",
+					"objectClass": "LocalStorage",
+					"sid": 910000000000267,
+					"parameters": {
+						"key": "\"playerName\"",
+						"value": "ورود_نام.Text"
+					}
+				},
+				{
+					"id": "set-item",
+					"objectClass": "LocalStorage",
+					"sid": 910000000000268,
+					"parameters": {
+						"key": "\"savedLayout\"",
+						"value": "\"شروع\""
+					}
+				},
+				{
+					"id": "set-item",
+					"objectClass": "LocalStorage",
+					"sid": 910000000000269,
+					"parameters": {
+						"key": "\"lastPlayed\"",
+						"value": "Date.GetYear(Date.Now) & \"-\" & zeropad(2, Date.GetMonth(Date.Now) + 1) & \"-\" & zeropad(2, Date.GetDate(Date.Now))"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 910000000000270,
+					"parameters": {
+						"layout": "شروع"
+					}
+				}
+			],
+			"sid": 910000000000271
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-exists",
+					"objectClass": "LocalStorage",
+					"sid": 910000000000213,
+					"parameters": {
+						"key": "\"playerName\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "get-item",
+					"objectClass": "LocalStorage",
+					"sid": 910000000000214,
+					"parameters": {
+						"key": "\"playerName\""
+					}
+				}
+			],
+			"sid": 910000000000215
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-missing",
+					"objectClass": "LocalStorage",
+					"sid": 910000000000216,
+					"parameters": {
+						"key": "\"playerName\""
+					}
+				}
+			],
+			"actions": [],
+			"sid": 910000000000217
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-get",
+					"objectClass": "LocalStorage",
+					"sid": 910000000000218,
+					"parameters": {
+						"key": "\"playerName\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "متن_خوشآمد",
+					"sid": 910000000000219,
+					"parameters": {
+						"text": "\"سلام \" & LocalStorage.ItemValue"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "متن_خوشآمد",
+					"sid": 910000000000220,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "دکمه_ادامه",
+					"sid": 910000000000221,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "دکمه_شروع_جدید",
+					"sid": 910000000000222,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "متن_دکمه_ادامه",
+					"sid": 910000000000223,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "متن_دکمه_شروع_جدید",
+					"sid": 910000000000224,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "ورود_نام",
+					"sid": 910000000000225,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "دکمه_شروع",
+					"sid": 910000000000226,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "متن_عنوان_ورود",
+					"sid": 910000000000227,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "متن_دکمه_شروع",
+					"sid": 910000000000228,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 910000000000229
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 910000000000230,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "دکمه_شروع"
+					}
+				},
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 910000000000231,
+					"parameters": {
+						"first-value": "len(ورود_نام.Text)",
+						"comparison": 4,
+						"second-value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-item",
+					"objectClass": "LocalStorage",
+					"sid": 910000000000232,
+					"parameters": {
+						"key": "\"playerName\"",
+						"value": "ورود_نام.Text"
+					}
+				},
+				{
+					"id": "set-item",
+					"objectClass": "LocalStorage",
+					"sid": 910000000000233,
+					"parameters": {
+						"key": "\"savedLayout\"",
+						"value": "\"شروع\""
+					}
+				},
+				{
+					"id": "set-item",
+					"objectClass": "LocalStorage",
+					"sid": 910000000000234,
+					"parameters": {
+						"key": "\"lastPlayed\"",
+						"value": "Date.GetYear(Date.Now) & \"-\" & zeropad(2, Date.GetMonth(Date.Now) + 1) & \"-\" & zeropad(2, Date.GetDate(Date.Now))"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 910000000000235,
+					"parameters": {
+						"layout": "شروع"
+					}
+				}
+			],
+			"sid": 910000000000236
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 910000000000352,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "دکمه_ادامه"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "get-item",
+					"objectClass": "LocalStorage",
+					"sid": 910000000000351,
+					"parameters": {
+						"key": "\"savedLayout\""
+					}
+				}
+			],
+			"sid": 910000000000354
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 910000000000353,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "متن_دکمه_ادامه"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "get-item",
+					"objectClass": "LocalStorage",
+					"sid": 9100000000003511,
+					"parameters": {
+						"key": "\"savedLayout\""
+					}
+				}
+			],
+			"sid": 9100000000003541
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-get",
+					"objectClass": "LocalStorage",
+					"sid": 910000000000355,
+					"parameters": {
+						"key": "\"savedLayout\""
+					}
+				},
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 910000000000357,
+					"parameters": {
+						"first-value": "len(LocalStorage.ItemValue)",
+						"comparison": 4,
+						"second-value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout-by-name",
+					"objectClass": "System",
+					"sid": 910000000000360,
+					"parameters": {
+						"layout": "LocalStorage.ItemValue"
+					}
+				}
+			],
+			"sid": 910000000000356
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-get",
+					"objectClass": "LocalStorage",
+					"sid": 910000000000361,
+					"parameters": {
+						"key": "\"savedLayout\""
+					}
+				},
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 910000000000362,
+					"parameters": {
+						"first-value": "len(LocalStorage.ItemValue)",
+						"comparison": 0,
+						"second-value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 910000000000366,
+					"parameters": {
+						"layout": "شروع"
+					}
+				}
+			],
+			"sid": 910000000000363
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-missing",
+					"objectClass": "LocalStorage",
+					"sid": 910000000000364,
+					"parameters": {
+						"key": "\"savedLayout\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 910000000000365,
+					"parameters": {
+						"layout": "شروع"
+					}
+				}
+			],
+			"sid": 910000000000367
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 910000000000368,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "دکمه_شروع_جدید"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-item",
+					"objectClass": "LocalStorage",
+					"sid": 910000000000370,
+					"parameters": {
+						"key": "\"savedLayout\"",
+						"value": "\"شروع\""
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 910000000000371,
+					"parameters": {
+						"layout": "شروع"
+					}
+				}
+			],
+			"sid": 910000000000372
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 910000000000369,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "متن_دکمه_شروع_جدید"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-item",
+					"objectClass": "LocalStorage",
+					"sid": 9100000000003701,
+					"parameters": {
+						"key": "\"savedLayout\"",
+						"value": "\"شروع\""
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 9100000000003711,
+					"parameters": {
+						"layout": "شروع"
+					}
+				}
+			],
+			"sid": 9100000000003721
+		}
+	],
+	"sid": 910000000000250
+}

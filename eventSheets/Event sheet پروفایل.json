@@ -1,0 +1,10 @@
+{
+	"name": "Event sheet پروفایل",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "Event sheet پروفایل HUD"
+		}
+	],
+	"sid": 910000000000260
+}

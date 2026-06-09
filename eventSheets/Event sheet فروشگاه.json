@@ -1,0 +1,10 @@
+{
+	"name": "Event sheet فروشگاه",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "Event sheet پروفایل"
+		}
+	],
+	"sid": 910000000000600
+}

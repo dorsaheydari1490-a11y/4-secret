@@ -1,0 +1,279 @@
+{
+	"name": "Event sheet پروفایل HUD",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "نام_ذخیره",
+			"type": "string",
+			"initialValue": "\"\"",
+			"comment": "",
+			"isStatic": true,
+			"isConstant": false,
+			"sid": 910000000000270
+		},
+		{
+			"eventType": "variable",
+			"name": "لایوت_ذخیره",
+			"type": "string",
+			"initialValue": "\"\"",
+			"comment": "",
+			"isStatic": true,
+			"isConstant": false,
+			"sid": 910000000000271
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 910000000000272
+				}
+			],
+			"actions": [
+				{
+					"id": "set-item",
+					"objectClass": "LocalStorage",
+					"sid": 910000000000273,
+					"parameters": {
+						"key": "\"savedLayout\"",
+						"value": "LayoutName"
+					}
+				},
+				{
+					"id": "set-item",
+					"objectClass": "LocalStorage",
+					"sid": 910000000000274,
+					"parameters": {
+						"key": "\"lastPlayed\"",
+						"value": "Date.GetYear(Date.Now) & \"-\" & zeropad(2, Date.GetMonth(Date.Now) + 1) & \"-\" & zeropad(2, Date.GetDate(Date.Now))"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "پنل_پروفایل",
+					"sid": 910000000000275,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "متن_پروفایل",
+					"sid": 910000000000276,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "دکمه_بستن_پروفایل",
+					"sid": 910000000000277,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "دکمه_پروفایل",
+					"sid": 910000000000278,
+					"parameters": {
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 910000000000279
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 910000000000280,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "دکمه_پروفایل"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "پنل_پروفایل",
+					"sid": 910000000000281,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "متن_پروفایل",
+					"sid": 910000000000282,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "دکمه_بستن_پروفایل",
+					"sid": 910000000000283,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "متن_پروفایل",
+					"sid": 910000000000284,
+					"parameters": {
+						"text": "\"در حال بارگذاری...\""
+					}
+				},
+				{
+					"id": "get-item",
+					"objectClass": "LocalStorage",
+					"sid": 910000000000285,
+					"parameters": {
+						"key": "\"playerName\""
+					}
+				}
+			],
+			"sid": 910000000000286
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-get",
+					"objectClass": "LocalStorage",
+					"sid": 910000000000287,
+					"parameters": {
+						"key": "\"playerName\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 910000000000288,
+					"parameters": {
+						"variable": "نام_ذخیره",
+						"value": "LocalStorage.ItemValue"
+					}
+				},
+				{
+					"id": "get-item",
+					"objectClass": "LocalStorage",
+					"sid": 910000000000289,
+					"parameters": {
+						"key": "\"savedLayout\""
+					}
+				}
+			],
+			"sid": 910000000000290
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-get",
+					"objectClass": "LocalStorage",
+					"sid": 910000000000291,
+					"parameters": {
+						"key": "\"savedLayout\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 910000000000292,
+					"parameters": {
+						"variable": "لایوت_ذخیره",
+						"value": "LocalStorage.ItemValue"
+					}
+				},
+				{
+					"id": "get-item",
+					"objectClass": "LocalStorage",
+					"sid": 910000000000293,
+					"parameters": {
+						"key": "\"lastPlayed\""
+					}
+				}
+			],
+			"sid": 910000000000294
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-get",
+					"objectClass": "LocalStorage",
+					"sid": 910000000000295,
+					"parameters": {
+						"key": "\"lastPlayed\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "متن_پروفایل",
+					"sid": 910000000000296,
+					"parameters": {
+						"text": "\"نام: \" & نام_ذخیره & newline & \"آخرین مرحله: \" & لایوت_ذخیره & newline & \"تاریخ: \" & LocalStorage.ItemValue"
+					}
+				}
+			],
+			"sid": 910000000000297
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 910000000000298,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "دکمه_بستن_پروفایل"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "پنل_پروفایل",
+					"sid": 910000000000299,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "متن_پروفایل",
+					"sid": 910000000000300,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "دکمه_بستن_پروفایل",
+					"sid": 910000000000301,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 910000000000302
+		}
+	],
+	"sid": 910000000000310
+}

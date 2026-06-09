@@ -2,6 +2,10 @@
 	"name": "Event sheet شروع",
 	"events": [
 		{
+			"eventType": "include",
+			"includeSheet": "Event sheet پروفایل"
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{

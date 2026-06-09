@@ -1,0 +1,10 @@
+{
+	"name": "ورود_نام",
+	"plugin-id": "Text",
+	"sid": 910000000000003,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": []
+}
