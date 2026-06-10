@@ -76,7 +76,7 @@
 						"wrapping": "word",
 						"text-direction": "rtl",
 						"icon-set": -1,
-						"initially-visible": true,
+						"initially-visible": false,
 						"origin": "center",
 						"read-aloud": false
 					},
