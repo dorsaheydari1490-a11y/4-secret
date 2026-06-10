@@ -50,6 +50,15 @@
 					"id": "restart-layout",
 					"objectClass": "System",
 					"sid": 362324378704366
+				},
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 220331305927234,
+					"parameters": {
+						"variable": "امتیاز_قسمت_اول",
+						"value": "1"
+					}
 				}
 			],
 			"sid": 927463754091402
@@ -407,6 +416,38 @@
 							"text": "سناریوی شروع بازی و مدیریت زمان‌بندی ورود کاراکتر و تنظیم سرعت موانع"
 						},
 						{
+							"id": "reset-eventvar",
+							"objectClass": "System",
+							"sid": 427735452742983,
+							"parameters": {
+								"variable": "امتیاز_قسمت_اول"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "ستاره",
+							"sid": 163457393223790,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "ستاره2",
+							"sid": 938442370401660,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "ستاره3",
+							"sid": 442884820593708,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
 							"id": "destroy",
 							"objectClass": "مانع",
 							"sid": 253757297096299
@@ -708,6 +749,150 @@
 				}
 			],
 			"sid": 171040333409123
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 675338516004878,
+					"parameters": {
+						"variable": "امتیاز_قسمت_اول",
+						"comparison": 0,
+						"value": "2"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "ستاره",
+					"sid": 888514667129952,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 557300742930018
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 540982876731726,
+					"parameters": {
+						"variable": "امتیاز_قسمت_اول",
+						"comparison": 0,
+						"value": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "ستاره2",
+					"sid": 327468494496697,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "ستاره",
+					"sid": 803539196952765,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 362730334068627
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 618861947572981,
+					"parameters": {
+						"variable": "امتیاز_قسمت_اول",
+						"comparison": 0,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "ستاره3",
+					"sid": 571626391894952,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "ستاره",
+					"sid": 688484778379878,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "ستاره2",
+					"sid": 458931890075659,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 262154174605648
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 142361745801073,
+					"parameters": {
+						"variable": "امتیاز_قسمت_اول",
+						"comparison": 0,
+						"value": "3"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "ستاره",
+					"sid": 975518990436880,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "ستاره2",
+					"sid": 199126082176684,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "ستاره3",
+					"sid": 177939982978369,
+					"parameters": {
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 947579644868881
 		}
 	],
 	"sid": 860565202595877

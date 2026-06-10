@@ -456,8 +456,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 244.9998136016518,
-						"y": 304.9498368366604,
+						"x": 244.999814,
+						"y": 304.949837,
 						"width": 520.5702708048697,
 						"height": 640.7775280345734,
 						"originX": 0.5,
@@ -470,6 +470,123 @@
 						],
 						"z": 0,
 						"angle": 3.1378768295090924
+					}
+				},
+				{
+					"type": "ستاره",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 267,
+					"sid": 241926932577379,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {
+						"Pin": {
+							"properties": {
+								"destroy": false
+							}
+						}
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 36,
+						"y": 39,
+						"width": 64,
+						"height": 64,
+						"originX": 0.49863387978142076,
+						"originY": 0.5458276333789329,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0.000009915262673132474
+					}
+				},
+				{
+					"type": "ستاره2",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 268,
+					"sid": 312683922843736,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {
+						"Pin": {
+							"properties": {
+								"destroy": false
+							}
+						}
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 32,
+						"y": 109,
+						"width": 64,
+						"height": 64,
+						"originX": 0.49863387978142076,
+						"originY": 0.5458276333789329,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
+					"type": "ستاره3",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 269,
+					"sid": 867045573173254,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {
+						"Pin": {
+							"properties": {
+								"destroy": false
+							}
+						}
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 34,
+						"y": 175,
+						"width": 64,
+						"height": 64,
+						"originX": 0.49863387978142076,
+						"originY": 0.5458276333789329,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
 					}
 				}
 			],

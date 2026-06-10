@@ -35,6 +35,14 @@
 					"id": "stop-all",
 					"objectClass": "Audio",
 					"sid": 710978690659950
+				},
+				{
+					"id": "reset-eventvar",
+					"objectClass": "System",
+					"sid": 753578170632493,
+					"parameters": {
+						"variable": "امتیاز_قسمت_اول"
+					}
 				}
 			],
 			"sid": 897254703777568

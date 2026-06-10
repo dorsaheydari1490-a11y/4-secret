@@ -31,10 +31,10 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "امتیاز",
+			"name": "امتیاز_قسمت_اول",
 			"type": "number",
-			"initialValue": "4",
-			"comment": "",
+			"initialValue": "3",
+			"comment": "سیستم امتیاز دهی و ستاره ها",
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 759730536090586
@@ -482,16 +482,8 @@
 					"objectClass": "System",
 					"sid": 193632856787392,
 					"parameters": {
-						"variable": "امتیاز",
+						"variable": "امتیاز_قسمت_اول",
 						"value": "1"
-					}
-				},
-				{
-					"id": "set-visible",
-					"objectClass": "ستاره2",
-					"sid": 950457672400746,
-					"parameters": {
-						"visibility": "invisible"
 					}
 				}
 			],
@@ -554,16 +546,8 @@
 					"objectClass": "System",
 					"sid": 936104523371946,
 					"parameters": {
-						"variable": "امتیاز",
+						"variable": "امتیاز_قسمت_اول",
 						"value": "1"
-					}
-				},
-				{
-					"id": "set-visible",
-					"objectClass": "ستاره",
-					"sid": 593610758883745,
-					"parameters": {
-						"visibility": "invisible"
 					}
 				}
 			],
@@ -626,16 +610,8 @@
 					"objectClass": "System",
 					"sid": 660437182169258,
 					"parameters": {
-						"variable": "امتیاز",
+						"variable": "امتیاز_قسمت_اول",
 						"value": "1"
-					}
-				},
-				{
-					"id": "set-visible",
-					"objectClass": "ستاره3",
-					"sid": 996584777111003,
-					"parameters": {
-						"visibility": "invisible"
 					}
 				}
 			],
@@ -699,6 +675,14 @@
 					"sid": 686499974302220,
 					"parameters": {
 						"layout": "پاسخ  قسمت اول"
+					}
+				},
+				{
+					"id": "reset-eventvar",
+					"objectClass": "System",
+					"sid": 305651074345911,
+					"parameters": {
+						"variable": "امتیاز_قسمت_اول"
 					}
 				}
 			],
@@ -801,40 +785,93 @@
 					"text": "وقتی صفحه دوباره شروع میشه امتیاز ها هم به حالت عادی برگردند و ستاره ها ظاهر شوند"
 				},
 				{
-					"id": "set-eventvar-value",
+					"id": "reset-eventvar",
 					"objectClass": "System",
-					"sid": 445479368978520,
+					"sid": 385749927398336,
 					"parameters": {
-						"variable": "امتیاز",
-						"value": "4"
-					}
-				},
-				{
-					"id": "set-visible",
-					"objectClass": "ستاره",
-					"sid": 615277377371723,
-					"parameters": {
-						"visibility": "visible"
-					}
-				},
-				{
-					"id": "set-visible",
-					"objectClass": "ستاره2",
-					"sid": 551775457617442,
-					"parameters": {
-						"visibility": "visible"
-					}
-				},
-				{
-					"id": "set-visible",
-					"objectClass": "ستاره3",
-					"sid": 883368244153828,
-					"parameters": {
-						"visibility": "visible"
+						"variable": "امتیاز_قسمت_اول"
 					}
 				}
 			],
 			"sid": 444305765736094
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 161300596387146,
+					"parameters": {
+						"variable": "امتیاز_قسمت_اول",
+						"comparison": 0,
+						"value": "2"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "ستاره",
+					"sid": 675252670087092,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 480265148840513
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 967693423824943,
+					"parameters": {
+						"variable": "امتیاز_قسمت_اول",
+						"comparison": 0,
+						"value": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "ستاره2",
+					"sid": 679145653276996,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 295673043796719
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 736173786608130,
+					"parameters": {
+						"variable": "امتیاز_قسمت_اول",
+						"comparison": 0,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "ستاره3",
+					"sid": 950685930993155,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 397458542255100
 		}
 	],
 	"sid": 669842566476645

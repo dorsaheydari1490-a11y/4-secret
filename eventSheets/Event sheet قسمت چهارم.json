@@ -24,6 +24,14 @@
 					"text": "تنظیمات اولیه شروع مرحله: چسباندن شیء گرد به مثلث، پخش موزیک و صدای گوینده، و حذف متن ۵ پس از ۵ ثانیه"
 				},
 				{
+					"id": "reset-eventvar",
+					"objectClass": "System",
+					"sid": 142133377668346,
+					"parameters": {
+						"variable": "امتیاز_قسمت_اول"
+					}
+				},
+				{
 					"id": "pin-to-object-properties",
 					"objectClass": "گرد",
 					"sid": 791329239339636,
@@ -250,24 +258,94 @@
 					}
 				},
 				{
-					"id": "set-visible",
-					"objectClass": "ستاره",
-					"sid": 443642029730181,
-					"parameters": {
-						"visibility": "invisible"
-					}
-				},
-				{
 					"id": "subtract-from-eventvar",
 					"objectClass": "System",
-					"sid": 391898843043715,
+					"sid": 769118496051795,
 					"parameters": {
-						"variable": "امتیاز",
-						"value": "2"
+						"variable": "امتیاز_قسمت_اول",
+						"value": "1"
 					}
 				}
 			],
 			"sid": 156258138131318
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 402532727636827,
+					"parameters": {
+						"variable": "امتیاز_قسمت_اول",
+						"comparison": 0,
+						"value": "2"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "ستاره",
+					"sid": 674005563810273,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 396563800786022
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 869543638766532,
+					"parameters": {
+						"variable": "امتیاز_قسمت_اول",
+						"comparison": 0,
+						"value": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "ستاره2",
+					"sid": 937469035074998,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 149059791038812
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 914406385421735,
+					"parameters": {
+						"variable": "امتیاز_قسمت_اول",
+						"comparison": 0,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "ستاره3",
+					"sid": 789584669435567,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 464019753810480
 		}
 	],
 	"sid": 233453317547163

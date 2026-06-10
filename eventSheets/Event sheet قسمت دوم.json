@@ -112,16 +112,8 @@
 					"objectClass": "System",
 					"sid": 136630019134925,
 					"parameters": {
-						"variable": "امتیاز",
+						"variable": "امتیاز_قسمت_اول",
 						"value": "1"
-					}
-				},
-				{
-					"id": "set-visible",
-					"objectClass": "ستاره3",
-					"sid": 980177684682699,
-					"parameters": {
-						"visibility": "invisible"
 					}
 				}
 			],
@@ -259,26 +251,10 @@
 				{
 					"id": "subtract-from-eventvar",
 					"objectClass": "System",
-					"sid": 788475326263936,
+					"sid": 956962526696617,
 					"parameters": {
-						"variable": "امتیاز",
-						"value": "2"
-					}
-				},
-				{
-					"id": "set-visible",
-					"objectClass": "ستاره2",
-					"sid": 765607832142185,
-					"parameters": {
-						"visibility": "invisible"
-					}
-				},
-				{
-					"id": "set-visible",
-					"objectClass": "ستاره",
-					"sid": 674853059798528,
-					"parameters": {
-						"visibility": "invisible"
+						"variable": "امتیاز_قسمت_اول",
+						"value": "1"
 					}
 				}
 			],
@@ -431,6 +407,14 @@
 					"parameters": {
 						"layout": "پاسخ قسمت دوم"
 					}
+				},
+				{
+					"id": "reset-eventvar",
+					"objectClass": "System",
+					"sid": 648729409044610,
+					"parameters": {
+						"variable": "امتیاز_قسمت_اول"
+					}
 				}
 			],
 			"sid": 805351852945973
@@ -453,6 +437,84 @@
 			],
 			"sid": 871753984622800,
 			"disabled": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 889226367854016,
+					"parameters": {
+						"variable": "امتیاز_قسمت_اول",
+						"comparison": 0,
+						"value": "2"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "ستاره",
+					"sid": 422341699497756,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 852394883083175
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 701238420918031,
+					"parameters": {
+						"variable": "امتیاز_قسمت_اول",
+						"comparison": 0,
+						"value": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "ستاره2",
+					"sid": 311974744193046,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 859240156364884
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 957415157288647,
+					"parameters": {
+						"variable": "امتیاز_قسمت_اول",
+						"comparison": 0,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "ستاره3",
+					"sid": 557153380296865,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 521126312471889
 		}
 	],
 	"sid": 882086689542277
