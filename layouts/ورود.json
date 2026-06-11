@@ -7,55 +7,6 @@
 			"subLayers": [],
 			"instances": [
 				{
-					"type": "متن_عنوان_ورود",
-					"properties": {
-						"text": "نام خود را با کیبورد تایپ کنید",
-						"enable-bbcode": true,
-						"font": "Arial",
-						"size": 26,
-						"line-height": 0,
-						"bold": false,
-						"italic": false,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"horizontal-alignment": "center",
-						"vertical-alignment": "center",
-						"wrapping": "word",
-						"text-direction": "rtl",
-						"icon-set": -1,
-						"initially-visible": true,
-						"origin": "center",
-						"read-aloud": false
-					},
-					"uid": 301,
-					"sid": 910000000000400,
-					"tags": "",
-					"instanceVariables": {},
-					"behaviors": {},
-					"showing": true,
-					"locked": false,
-					"world": {
-						"x": 240,
-						"y": 120,
-						"width": 400,
-						"height": 60,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"z": 0,
-						"angle": 0
-					}
-				},
-				{
 					"type": "ورود_نام",
 					"properties": {
 						"text": "",

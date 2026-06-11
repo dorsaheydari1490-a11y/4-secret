@@ -71,14 +71,6 @@
 				},
 				{
 					"id": "set-visible",
-					"objectClass": "متن_عنوان_ورود",
-					"sid": 910000000000209,
-					"parameters": {
-						"visibility": "visible"
-					}
-				},
-				{
-					"id": "set-visible",
 					"objectClass": "متن_دکمه_شروع",
 					"sid": 910000000000210,
 					"parameters": {
@@ -216,14 +208,6 @@
 					"id": "set-visible",
 					"objectClass": "دکمه_شروع",
 					"sid": 910000000000226,
-					"parameters": {
-						"visibility": "invisible"
-					}
-				},
-				{
-					"id": "set-visible",
-					"objectClass": "متن_عنوان_ورود",
-					"sid": 910000000000227,
 					"parameters": {
 						"visibility": "invisible"
 					}
