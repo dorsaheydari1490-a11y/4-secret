@@ -196,15 +196,6 @@
 								"y": "330",
 								"mode": "direct"
 							}
-						},
-						{
-							"id": "set-position",
-							"objectClass": "شش",
-							"sid": 239005946156765,
-							"parameters": {
-								"x": "369383",
-								"y": "941329"
-							}
 						}
 					],
 					"sid": 482917365402022
@@ -446,6 +437,16 @@
 						"click-type": "clicked",
 						"object-clicked": "شش"
 					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 977227934664942,
+					"parameters": {
+						"variable": "فارس_رفته",
+						"comparison": 0,
+						"value": "1"
+					}
 				}
 			],
 			"actions": [
@@ -509,6 +510,16 @@
 						"mouse-button": "left",
 						"click-type": "clicked",
 						"object-clicked": "سه"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 863165246461195,
+					"parameters": {
+						"variable": "فارس_رفته",
+						"comparison": 0,
+						"value": "1"
 					}
 				}
 			],
@@ -574,6 +585,16 @@
 						"click-type": "clicked",
 						"object-clicked": "نه"
 					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 729539793922024,
+					"parameters": {
+						"variable": "فارس_رفته",
+						"comparison": 0,
+						"value": "1"
+					}
 				}
 			],
 			"actions": [
@@ -637,6 +658,16 @@
 						"mouse-button": "left",
 						"click-type": "clicked",
 						"object-clicked": "هشت"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 910357859426178,
+					"parameters": {
+						"variable": "فارس_رفته",
+						"comparison": 0,
+						"value": "1"
 					}
 				}
 			],
