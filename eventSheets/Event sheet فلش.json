@@ -11,7 +11,7 @@
 					"parameters": {
 						"mouse-button": "left",
 						"click-type": "clicked",
-						"object-clicked": "arrowRight"
+						"object-clicked": "فلش"
 					}
 				}
 			],

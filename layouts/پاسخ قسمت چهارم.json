@@ -160,7 +160,7 @@
 			"subLayers": [],
 			"instances": [
 				{
-					"type": "arrowRight",
+					"type": "فلش",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
