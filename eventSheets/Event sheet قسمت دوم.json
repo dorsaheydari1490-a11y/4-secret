@@ -48,6 +48,15 @@
 					"text": "تنظیم شدن سرعت توپ برای شروع"
 				},
 				{
+					"id": "set-position",
+					"objectClass": "فلش",
+					"sid": 667302806845671,
+					"parameters": {
+						"x": "412",
+						"y": "600"
+					}
+				},
+				{
 					"id": "set-speed",
 					"objectClass": "توپ",
 					"sid": 810678838504985,
@@ -380,6 +389,15 @@
 						"x": "-420",
 						"y": "328",
 						"mode": "direct"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "فلش",
+					"sid": 729159236194812,
+					"parameters": {
+						"x": "412",
+						"y": "600"
 					}
 				},
 				{
