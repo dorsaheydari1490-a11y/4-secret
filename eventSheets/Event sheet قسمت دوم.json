@@ -343,7 +343,7 @@
 				},
 				{
 					"id": "move-to-position",
-					"objectClass": "Sprite7",
+					"objectClass": "میدان",
 					"sid": 591540704032526,
 					"behaviorType": "MoveTo",
 					"parameters": {

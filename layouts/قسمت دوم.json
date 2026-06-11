@@ -1033,7 +1033,7 @@
 					}
 				},
 				{
-					"type": "Sprite7",
+					"type": "میدان",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
