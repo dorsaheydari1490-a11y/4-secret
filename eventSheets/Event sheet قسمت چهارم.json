@@ -54,6 +54,20 @@
 				{
 					"id": "play",
 					"objectClass": "Audio",
+					"sid": 823958227012681,
+					"parameters": {
+						"audio-file": {
+							"path": "voice_msg_-5298625307354342606"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
 					"sid": 697543372559643,
 					"parameters": {
 						"audio-file": {
