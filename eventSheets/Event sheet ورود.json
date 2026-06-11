@@ -267,15 +267,6 @@
 					}
 				},
 				{
-					"id": "set-item",
-					"objectClass": "LocalStorage",
-					"sid": 910000000000234,
-					"parameters": {
-						"key": "\"lastPlayed\"",
-						"value": "Date.GetYear(Date.Now) & \"-\" & zeropad(2, Date.GetMonth(Date.Now) + 1) & \"-\" & zeropad(2, Date.GetDate(Date.Now))"
-					}
-				},
-				{
 					"id": "go-to-layout",
 					"objectClass": "System",
 					"sid": 910000000000235,

@@ -15,13 +15,6 @@
 		},
 		{
 			"type": "plugin",
-			"id": "Date",
-			"name": "Date",
-			"author": "Scirra",
-			"bundled": false
-		},
-		{
-			"type": "plugin",
 			"id": "Keyboard",
 			"name": "Keyboard",
 			"author": "Scirra",
@@ -265,7 +258,6 @@
 			"ب_4",
 			"Sprite17",
 			"LocalStorage",
-			"Date",
 			"ورود_نام",
 			"دکمه_پروفایل",
 			"پنل_پروفایل",

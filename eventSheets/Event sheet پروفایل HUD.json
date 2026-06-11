@@ -41,15 +41,6 @@
 					}
 				},
 				{
-					"id": "set-item",
-					"objectClass": "LocalStorage",
-					"sid": 910000000000274,
-					"parameters": {
-						"key": "\"lastPlayed\"",
-						"value": "Date.GetYear(Date.Now) & \"-\" & zeropad(2, Date.GetMonth(Date.Now) + 1) & \"-\" & zeropad(2, Date.GetDate(Date.Now))"
-					}
-				},
-				{
 					"id": "set-visible",
 					"objectClass": "پنل_پروفایل",
 					"sid": 910000000000275,
@@ -198,39 +189,15 @@
 					}
 				},
 				{
-					"id": "get-item",
-					"objectClass": "LocalStorage",
-					"sid": 910000000000293,
-					"parameters": {
-						"key": "\"lastPlayed\""
-					}
-				}
-			],
-			"sid": 910000000000294
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-item-get",
-					"objectClass": "LocalStorage",
-					"sid": 910000000000295,
-					"parameters": {
-						"key": "\"lastPlayed\""
-					}
-				}
-			],
-			"actions": [
-				{
 					"id": "set-text",
 					"objectClass": "متن_پروفایل",
 					"sid": 910000000000296,
 					"parameters": {
-						"text": "\"نام: \" & نام_ذخیره & newline & \"آخرین مرحله: \" & لایوت_ذخیره & newline & \"تاریخ: \" & LocalStorage.ItemValue"
+						"text": "\"نام: \" & نام_ذخیره & newline & \"آخرین مرحله: \" & لایوت_ذخیره"
 					}
 				}
 			],
-			"sid": 910000000000297
+			"sid": 910000000000294
 		},
 		{
 			"eventType": "block",

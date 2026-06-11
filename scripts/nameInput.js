@@ -8,13 +8,6 @@ let nameInputEl = null;
 let activeRuntime = null;
 let resetInputOnShow = true;
 
-function formatDate() {
-	const now = new Date();
-	const month = String(now.getMonth() + 1).padStart(2, "0");
-	const day = String(now.getDate()).padStart(2, "0");
-	return `${now.getFullYear()}-${month}-${day}`;
-}
-
 function getNameInstance(runtime) {
 	return runtime.objects[NAME_OBJECT]?.getFirstInstance() ?? null;
 }
@@ -71,7 +64,6 @@ async function savePlayerAndStart(runtime) {
 	syncToText(runtime, value);
 	await runtime.storage.setItem("playerName", value);
 	await runtime.storage.setItem("savedLayout", "شروع");
-	await runtime.storage.setItem("lastPlayed", formatDate());
 	hideNameInput();
 	runtime.goToLayout("شروع");
 }
