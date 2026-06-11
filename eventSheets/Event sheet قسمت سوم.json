@@ -347,10 +347,10 @@
 						{
 							"id": "set-speed",
 							"objectClass": "گزینه_الف_سوم",
-							"sid": 933130039232452,
+							"sid": 243962341798149,
 							"behaviorType": "Bullet",
 							"parameters": {
-								"speed": "-100"
+								"speed": "-103"
 							}
 						},
 						{
@@ -392,10 +392,10 @@
 						{
 							"id": "set-speed",
 							"objectClass": "گزینه_الف_سوم",
-							"sid": 902919403302940,
+							"sid": 458647463413576,
 							"behaviorType": "Bullet",
 							"parameters": {
-								"speed": "50"
+								"speed": "53"
 							}
 						}
 					],
@@ -576,10 +576,10 @@
 						{
 							"id": "set-speed",
 							"objectClass": "گزینه_الف_سوم",
-							"sid": 885638604983719,
+							"sid": 388493612114557,
 							"behaviorType": "Bullet",
 							"parameters": {
-								"speed": "-100"
+								"speed": "-103"
 							}
 						},
 						{
@@ -621,10 +621,10 @@
 						{
 							"id": "set-speed",
 							"objectClass": "گزینه_الف_سوم",
-							"sid": 664625713452809,
+							"sid": 558737462678126,
 							"behaviorType": "Bullet",
 							"parameters": {
-								"speed": "50"
+								"speed": "53"
 							}
 						}
 					],
@@ -703,6 +703,15 @@
 						"volume": "0",
 						"stereo-pan": "0",
 						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 367422495816361,
+					"parameters": {
+						"variable": "امتیاز_قسمت_اول",
+						"value": "1"
 					}
 				}
 			],

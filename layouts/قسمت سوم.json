@@ -109,7 +109,7 @@
 								"max-fall-speed": 1000,
 								"double-jump": true,
 								"jump-sustain": 0,
-								"default-controls": true,
+								"default-controls": false,
 								"enabled": true
 							}
 						},
@@ -361,8 +361,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": -817,
-						"y": 65,
+						"x": 917,
+						"y": 80,
 						"width": 64,
 						"height": 64,
 						"originX": 0.5283911671924291,
@@ -411,8 +411,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": -823,
-						"y": 357,
+						"x": -1360,
+						"y": 563,
 						"width": 64,
 						"height": 64,
 						"originX": 0.4833333333333333,
