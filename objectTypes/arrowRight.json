@@ -2,7 +2,7 @@
 	"name": "arrowRight",
 	"plugin-id": "Sprite",
 	"sid": 997324654381547,
-	"isGlobal": false,
+	"isGlobal": true,
 	"editorNewInstanceIsReplica": true,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -12,8 +12,8 @@
 			{
 				"frames": [
 					{
-						"width": 50,
-						"height": 50,
+						"width": 539,
+						"height": 463,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
@@ -21,6 +21,24 @@
 						"exportQuality": 0.8,
 						"fileType": "image/png",
 						"imageSpriteId": 892680,
+						"collisionPoly": {
+							"points": [
+								0.5825602968460112,
+								0.03023758099352052,
+								0.9666048237476809,
+								0.5010799136069114,
+								0.9387755102040817,
+								0.5485961123110151,
+								0.5176252319109462,
+								0.9395248380129589,
+								0.03339517625231911,
+								0.6825053995680346,
+								0.025974025974025976,
+								0.6349892008639308,
+								0.07421150278293136,
+								0.23110151187904968
+							]
+						},
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""

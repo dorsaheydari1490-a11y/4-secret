@@ -517,10 +517,10 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 445,
-						"y": 548,
-						"width": 50,
-						"height": 50,
+						"x": 449,
+						"y": 598,
+						"width": 53,
+						"height": 39,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [

@@ -757,10 +757,10 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 420,
-						"y": 609,
-						"width": 50,
-						"height": 50,
+						"x": 412,
+						"y": 600,
+						"width": 53,
+						"height": 39,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -1016,10 +1016,10 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 263,
-						"y": 79,
-						"width": 451.89719626168227,
-						"height": 200.74617067833697,
+						"x": 260.05681108835216,
+						"y": 97.28701544893104,
+						"width": 445.9887307167232,
+						"height": 164.17213978047488,
 						"originX": 0.4981308411214953,
 						"originY": 0.5,
 						"color": [

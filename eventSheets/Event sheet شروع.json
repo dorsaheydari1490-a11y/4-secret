@@ -6,6 +6,10 @@
 			"includeSheet": "Event sheet پروفایل"
 		},
 		{
+			"eventType": "include",
+			"includeSheet": "Event sheet فلش"
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{

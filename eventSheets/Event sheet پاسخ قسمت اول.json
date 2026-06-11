@@ -43,35 +43,6 @@
 				}
 			],
 			"sid": 964294809686200
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-click",
-					"objectClass": "Mouse",
-					"sid": 561462829726696,
-					"parameters": {
-						"mouse-button": "right",
-						"click-type": "clicked"
-					}
-				}
-			],
-			"actions": [
-				{
-					"type": "comment",
-					"text": "با کلیک راست هم میتوانید به مرحله بعدی برید"
-				},
-				{
-					"id": "go-to-nextprevious-layout",
-					"objectClass": "System",
-					"sid": 958520298263136,
-					"parameters": {
-						"which": "next"
-					}
-				}
-			],
-			"sid": 533541054286433
 		}
 	],
 	"sid": 844047689438639
