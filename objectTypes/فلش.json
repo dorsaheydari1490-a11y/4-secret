@@ -2,7 +2,7 @@
 	"name": "فلش",
 	"plugin-id": "Sprite",
 	"sid": 997324654381547,
-	"isGlobal": true,
+	"isGlobal": false,
 	"editorNewInstanceIsReplica": true,
 	"instanceVariables": [],
 	"behaviorTypes": [],
