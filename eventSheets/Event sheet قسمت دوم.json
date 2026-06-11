@@ -2,6 +2,16 @@
 	"name": "Event sheet قسمت دوم",
 	"events": [
 		{
+			"eventType": "variable",
+			"name": "میدان_رفته",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 726649450675327
+		},
+		{
 			"eventType": "include",
 			"includeSheet": "Event sheet پروفایل"
 		},
@@ -19,6 +29,16 @@
 					"parameters": {
 						"mouse-button": "left",
 						"click-type": "clicked"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 207506427958417,
+					"parameters": {
+						"variable": "میدان_رفته",
+						"comparison": 0,
+						"value": "1"
 					}
 				}
 			],
@@ -297,6 +317,16 @@
 					"id": "on-start-of-layout",
 					"objectClass": "System",
 					"sid": 585540655855586
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 176422655972980,
+					"parameters": {
+						"variable": "میدان_رفته",
+						"comparison": 0,
+						"value": "0"
+					}
 				}
 			],
 			"actions": [
@@ -335,7 +365,7 @@
 				{
 					"id": "wait",
 					"objectClass": "System",
-					"sid": 570424157484280,
+					"sid": 500027258935093,
 					"parameters": {
 						"seconds": "5",
 						"use-timescale": true
@@ -515,6 +545,64 @@
 				}
 			],
 			"sid": 521126312471889
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-outside-layout",
+					"objectClass": "میدان",
+					"sid": 276716040427763
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 893447428051181,
+					"parameters": {
+						"variable": "میدان_رفته",
+						"comparison": 0,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 548698718874361,
+					"parameters": {
+						"variable": "میدان_رفته",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "میدان",
+					"sid": 510766753190274,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "راهنما1",
+					"sid": 146694288356067,
+					"parameters": {
+						"x": "98",
+						"y": "187"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "راهنما2",
+					"sid": 253745103130691,
+					"parameters": {
+						"x": "187",
+						"y": "560"
+					}
+				}
+			],
+			"sid": 792954991404874
 		}
 	],
 	"sid": 882086689542277
