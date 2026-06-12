@@ -158,50 +158,6 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "pick-parent",
-					"objectClass": "گرد",
-					"sid": 774540187874166,
-					"parameters": {
-						"parent": "گرد",
-						"which": "all"
-					}
-				}
-			],
-			"actions": [],
-			"sid": 423267715687370
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-key-pressed",
-					"objectClass": "Keyboard",
-					"sid": 614506160492426,
-					"parameters": {
-						"key": 13
-					}
-				}
-			],
-			"actions": [
-				{
-					"type": "comment",
-					"text": "برعکس کردن جهت کاراکتر (قرینه‌سازی/Mirrored) با فشردن کلید اینت"
-				},
-				{
-					"id": "set-mirrored",
-					"objectClass": "مثلث",
-					"sid": 161850676264328,
-					"parameters": {
-						"state": "mirrored"
-					}
-				}
-			],
-			"sid": 692867169973443
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
 					"id": "on-collision-with-another-object",
 					"objectClass": "مثلث",
 					"sid": 253699718152663,

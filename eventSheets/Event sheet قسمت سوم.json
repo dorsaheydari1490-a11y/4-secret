@@ -163,6 +163,20 @@
 					"parameters": {
 						"vector-y": "-500"
 					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 123907405628556,
+					"parameters": {
+						"audio-file": {
+							"path": "The sound of jumping"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
 				}
 			],
 			"sid": 294141990324489,
