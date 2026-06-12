@@ -12,6 +12,26 @@
 			"sid": 726649450675327
 		},
 		{
+			"eventType": "variable",
+			"name": "آجر_آبی",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "آیا آجر آبی شکسته است؟",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 550364836344216
+		},
+		{
+			"eventType": "variable",
+			"name": "آجر_طلایی",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "آیا آجر طلایی شکسته است؟",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 237651680781402
+		},
+		{
 			"eventType": "include",
 			"includeSheet": "Event sheet پروفایل"
 		},
@@ -191,6 +211,15 @@
 					"text": "وقتی توپ به آجر طلایی میخورد"
 				},
 				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 112057177669086,
+					"parameters": {
+						"variable": "آجر_طلایی",
+						"value": "1"
+					}
+				},
+				{
 					"id": "destroy",
 					"objectClass": "آجرطلایی",
 					"sid": 804031007801635
@@ -223,6 +252,15 @@
 				{
 					"type": "comment",
 					"text": "وقتی توپ به آجر آبی میخورد"
+				},
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 335852870296389,
+					"parameters": {
+						"variable": "آجر_آبی",
+						"value": "1"
+					}
 				},
 				{
 					"id": "destroy",
@@ -474,17 +512,39 @@
 					"id": "is-outside-layout",
 					"objectClass": "شانزدهم",
 					"sid": 295983267940209
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 848657570935769,
+					"parameters": {
+						"variable": "آجر_آبی",
+						"comparison": 0,
+						"value": "0"
+					}
 				}
 			],
 			"actions": [
 				{
-					"id": "restart-layout",
+					"id": "set-position",
+					"objectClass": "شانزدهم",
+					"sid": 658657984496434,
+					"parameters": {
+						"x": "71",
+						"y": "324"
+					}
+				},
+				{
+					"id": "subtract-from-eventvar",
 					"objectClass": "System",
-					"sid": 365394077412114
+					"sid": 712577739594335,
+					"parameters": {
+						"variable": "امتیاز_قسمت_اول",
+						"value": "1"
+					}
 				}
 			],
-			"sid": 871753984622800,
-			"disabled": true
+			"sid": 871753984622800
 		},
 		{
 			"eventType": "block",
@@ -621,6 +681,38 @@
 				}
 			],
 			"sid": 792954991404874
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-outside-layout",
+					"objectClass": "هشتم",
+					"sid": 515821858441333
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 617568695369602,
+					"parameters": {
+						"variable": "آجر_طلایی",
+						"comparison": 0,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-position",
+					"objectClass": "هشتم",
+					"sid": 294063838786156,
+					"parameters": {
+						"x": "255",
+						"y": "220"
+					}
+				}
+			],
+			"sid": 444284491745341
 		}
 	],
 	"sid": 882086689542277
