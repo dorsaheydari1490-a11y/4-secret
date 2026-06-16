@@ -777,17 +777,11 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "is-in-touch",
+					"id": "is-touching-object",
 					"objectClass": "Touch",
-					"sid": 513303625913632
-				},
-				{
-					"id": "compare-x",
-					"objectClass": "پد",
-					"sid": 335751605934796,
+					"sid": 265948453953958,
 					"parameters": {
-						"comparison": 4,
-						"x-co-ordinate": "پد.X"
+						"object": "فلش_راست"
 					}
 				}
 			],
@@ -795,30 +789,24 @@
 				{
 					"id": "simulate-control",
 					"objectClass": "پد",
-					"sid": 687785352903374,
+					"sid": 180061986842493,
 					"behaviorType": "8Direction",
 					"parameters": {
 						"control": "right"
 					}
 				}
 			],
-			"sid": 716501183177593
+			"sid": 825014901038652
 		},
 		{
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "is-in-touch",
+					"id": "is-touching-object",
 					"objectClass": "Touch",
-					"sid": 449083207885013
-				},
-				{
-					"id": "compare-x",
-					"objectClass": "پد",
-					"sid": 449360446712433,
+					"sid": 398082350192645,
 					"parameters": {
-						"comparison": 2,
-						"x-co-ordinate": "پد.X"
+						"object": "فلش_چپ"
 					}
 				}
 			],
@@ -826,14 +814,14 @@
 				{
 					"id": "simulate-control",
 					"objectClass": "پد",
-					"sid": 270697500065104,
+					"sid": 849732690282395,
 					"behaviorType": "8Direction",
 					"parameters": {
 						"control": "left"
 					}
 				}
 			],
-			"sid": 608279605903036
+			"sid": 453213324469450
 		}
 	],
 	"sid": 882086689542277

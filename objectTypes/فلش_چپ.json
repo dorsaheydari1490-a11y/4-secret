@@ -1,0 +1,56 @@
+{
+	"name": "فلش_چپ",
+	"plugin-id": "Sprite",
+	"sid": 547892564684560,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 502,
+						"height": 421,
+						"originX": 0.5,
+						"originY": 0.49524940617577196,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 7479835,
+						"collisionPoly": {
+							"points": [
+								0.9322709163346614,
+								0.24228028503562946,
+								0.9721115537848606,
+								0.6603325415676959,
+								0.9641434262948207,
+								0.7102137767220903,
+								0.4701195219123506,
+								0.9857482185273159,
+								0.019920318725099584,
+								0.5368171021377672,
+								0.40637450199203184,
+								0.0166270783847981
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 936766937863685,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

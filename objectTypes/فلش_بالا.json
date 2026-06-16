@@ -1,0 +1,56 @@
+{
+	"name": "فلش_بالا",
+	"plugin-id": "Sprite",
+	"sid": 769468947892395,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 415,
+						"height": 502,
+						"originX": 0.5024096385542168,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 6402308,
+						"collisionPoly": {
+							"points": [
+								0.016867469879518072,
+								0.4063745019920319,
+								0.5445783132530121,
+								0.019920318725099615,
+								1,
+								0.4701195219123506,
+								0.7204819277108434,
+								0.9641434262948207,
+								0.6698795180722892,
+								0.9721115537848606,
+								0.2457831325301205,
+								0.9322709163346612
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 725494513392823,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

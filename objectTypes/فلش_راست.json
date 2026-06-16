@@ -1,0 +1,56 @@
+{
+	"name": "فلش_راست",
+	"plugin-id": "Sprite",
+	"sid": 340137588960198,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 502,
+						"height": 411,
+						"originX": 0.5,
+						"originY": 0.4975669099756691,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 5337012,
+						"collisionPoly": {
+							"points": [
+								0.5936254980079682,
+								0.0072992700729927005,
+								0.9800796812749004,
+								0.5401459854014599,
+								0.5298804780876494,
+								1,
+								0.035856573705179286,
+								0.7177615571776156,
+								0.027888446215139442,
+								0.6666666666666666,
+								0.06772908366533864,
+								0.2384428223844282
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 912628735169922,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

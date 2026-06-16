@@ -570,7 +570,7 @@
 								"directions": "left-right",
 								"set-angle": "smooth",
 								"allow-sliding": false,
-								"default-controls": false,
+								"default-controls": true,
 								"enabled": true
 							}
 						},
@@ -1251,6 +1251,72 @@
 						"height": 31.162303664921463,
 						"originX": 0.5,
 						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
+					"type": "فلش_راست",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 272,
+					"sid": 638915988948548,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 456,
+						"y": 543,
+						"width": 42.42,
+						"height": 42.42,
+						"originX": 0.5,
+						"originY": 0.4975669099756691,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
+					"type": "فلش_چپ",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 273,
+					"sid": 648896436699547,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 23,
+						"y": 543,
+						"width": 42.42,
+						"height": 42.42,
+						"originX": 0.5,
+						"originY": 0.49524940617577196,
 						"color": [
 							1,
 							1,
