@@ -570,7 +570,7 @@
 								"directions": "left-right",
 								"set-angle": "smooth",
 								"allow-sliding": false,
-								"default-controls": true,
+								"default-controls": false,
 								"enabled": true
 							}
 						},

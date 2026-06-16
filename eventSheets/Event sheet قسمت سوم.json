@@ -930,6 +930,45 @@
 				}
 			],
 			"sid": 947579644868881
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 980862753698783,
+					"parameters": {
+						"object": "دکمه_پرش"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-vector-y",
+					"objectClass": "مثلث",
+					"sid": 978403063357803,
+					"behaviorType": "Platform",
+					"parameters": {
+						"vector-y": "-500"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 752279773871743,
+					"parameters": {
+						"audio-file": {
+							"path": "The sound of jumping"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 944817304963814
 		}
 	],
 	"sid": 860565202595877

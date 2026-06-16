@@ -772,6 +772,68 @@
 				}
 			],
 			"sid": 759026457280933
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-in-touch",
+					"objectClass": "Touch",
+					"sid": 513303625913632
+				},
+				{
+					"id": "compare-x",
+					"objectClass": "پد",
+					"sid": 335751605934796,
+					"parameters": {
+						"comparison": 4,
+						"x-co-ordinate": "پد.X"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "پد",
+					"sid": 687785352903374,
+					"behaviorType": "8Direction",
+					"parameters": {
+						"control": "right"
+					}
+				}
+			],
+			"sid": 716501183177593
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-in-touch",
+					"objectClass": "Touch",
+					"sid": 449083207885013
+				},
+				{
+					"id": "compare-x",
+					"objectClass": "پد",
+					"sid": 449360446712433,
+					"parameters": {
+						"comparison": 2,
+						"x-co-ordinate": "پد.X"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "پد",
+					"sid": 270697500065104,
+					"behaviorType": "8Direction",
+					"parameters": {
+						"control": "left"
+					}
+				}
+			],
+			"sid": 608279605903036
 		}
 	],
 	"sid": 882086689542277
