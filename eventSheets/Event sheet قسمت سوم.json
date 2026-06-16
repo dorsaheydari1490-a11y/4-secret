@@ -947,7 +947,7 @@
 				{
 					"id": "set-vector-y",
 					"objectClass": "مثلث",
-					"sid": 978403063357803,
+					"sid": 937981651651757,
 					"behaviorType": "Platform",
 					"parameters": {
 						"vector-y": "-500"
@@ -968,7 +968,36 @@
 					}
 				}
 			],
-			"sid": 944817304963814
+			"sid": 944817304963814,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 590178593892114,
+							"parameters": {
+								"first-value": "مثلث.Platform.Gravity",
+								"comparison": 1,
+								"second-value": "1000"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-gravity",
+							"objectClass": "مثلث",
+							"sid": 590178593892115,
+							"behaviorType": "Platform",
+							"parameters": {
+								"gravity": "1000"
+							}
+						}
+					],
+					"sid": 590178593892116
+				}
+			]
 		}
 	],
 	"sid": 860565202595877
