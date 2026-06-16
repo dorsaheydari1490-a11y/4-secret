@@ -713,6 +713,65 @@
 				}
 			],
 			"sid": 444284491745341
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap",
+					"objectClass": "Touch",
+					"sid": 765109579137474
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 136242601071177,
+					"parameters": {
+						"variable": "میدان_رفته",
+						"comparison": 0,
+						"value": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-position",
+					"objectClass": "فلش",
+					"sid": 186575890038219,
+					"parameters": {
+						"x": "412",
+						"y": "600"
+					}
+				},
+				{
+					"id": "set-speed",
+					"objectClass": "توپ",
+					"sid": 798250193738461,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"speed": "200"
+					}
+				},
+				{
+					"id": "set-gravity",
+					"objectClass": "توپ",
+					"sid": 227081055930826,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"gravity": "15"
+					}
+				},
+				{
+					"id": "set-acceleration",
+					"objectClass": "توپ",
+					"sid": 930341573117186,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"acceleration": "30"
+					}
+				}
+			],
+			"sid": 759026457280933
 		}
 	],
 	"sid": 882086689542277

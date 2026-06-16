@@ -912,6 +912,285 @@
 				}
 			],
 			"sid": 397458542255100
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 218347770144593,
+					"parameters": {
+						"object": "شش"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 260524794359613,
+					"parameters": {
+						"variable": "فارس_رفته",
+						"comparison": 0,
+						"value": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "شش",
+					"sid": 535723123610157
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 522702382513826,
+					"parameters": {
+						"audio-file": {
+							"path": "Wrong_Answer"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 543450867996445
+				},
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 311814145092257,
+					"parameters": {
+						"variable": "دقت",
+						"value": "1"
+					}
+				},
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 716493534961433,
+					"parameters": {
+						"variable": "امتیاز_قسمت_اول",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 943242305760187
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 832716939051740,
+					"parameters": {
+						"object": "سه"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 937035147039986,
+					"parameters": {
+						"variable": "فارس_رفته",
+						"comparison": 0,
+						"value": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "سه",
+					"sid": 300795212214339
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 990308637785611,
+					"parameters": {
+						"audio-file": {
+							"path": "Wrong_Answer"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 980559234010261
+				},
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 203827659058300,
+					"parameters": {
+						"variable": "دقت",
+						"value": "1"
+					}
+				},
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 987377612458086,
+					"parameters": {
+						"variable": "امتیاز_قسمت_اول",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 174236612238208
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 362963961661049,
+					"parameters": {
+						"object": "نه"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 413776083060122,
+					"parameters": {
+						"variable": "فارس_رفته",
+						"comparison": 0,
+						"value": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "نه",
+					"sid": 811431391623904
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 816570884833814,
+					"parameters": {
+						"audio-file": {
+							"path": "Wrong_Answer"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 421280049182336
+				},
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 177059642698509,
+					"parameters": {
+						"variable": "دقت",
+						"value": "1"
+					}
+				},
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 983168914533373,
+					"parameters": {
+						"variable": "امتیاز_قسمت_اول",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 495735528629712
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 788088156788677,
+					"parameters": {
+						"object": "هشت"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 585859146497695,
+					"parameters": {
+						"variable": "فارس_رفته",
+						"comparison": 0,
+						"value": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 340228303765255,
+					"parameters": {
+						"audio-file": {
+							"path": "sound-effect-twinklesparkle-115095"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 375393356913395
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 763705030123917,
+					"parameters": {
+						"audio-file": {
+							"path": "Applause-Sound-9"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 679141585365800,
+					"parameters": {
+						"layout": "پاسخ  قسمت اول"
+					}
+				},
+				{
+					"id": "reset-eventvar",
+					"objectClass": "System",
+					"sid": 913795121912970,
+					"parameters": {
+						"variable": "امتیاز_قسمت_اول"
+					}
+				}
+			],
+			"sid": 772234355240059
 		}
 	],
 	"sid": 669842566476645

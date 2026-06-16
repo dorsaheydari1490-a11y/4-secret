@@ -490,6 +490,164 @@
 				}
 			],
 			"sid": 9100000000003720
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 252967650760488,
+					"parameters": {
+						"object": "دکمه_شروع"
+					}
+				},
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 525981866579802,
+					"parameters": {
+						"first-value": "len(ورود_نام.Text)",
+						"comparison": 4,
+						"second-value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-item",
+					"objectClass": "LocalStorage",
+					"sid": 630517222618467,
+					"parameters": {
+						"key": "\"playerName\"",
+						"value": "\"ورود_نام.Text\""
+					}
+				},
+				{
+					"id": "set-item",
+					"objectClass": "LocalStorage",
+					"sid": 807776366353486,
+					"parameters": {
+						"key": "\"savedLayout\"",
+						"value": "\"شروع\""
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 551913185847571,
+					"parameters": {
+						"layout": "شروع"
+					}
+				}
+			],
+			"sid": 337371005097665
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 587555500169960,
+					"parameters": {
+						"object": "دکمه_ادامه"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "get-item",
+					"objectClass": "LocalStorage",
+					"sid": 733351587141849,
+					"parameters": {
+						"key": "\"savedLayout\""
+					}
+				}
+			],
+			"sid": 391171819588611
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 681020012213495,
+					"parameters": {
+						"object": "متن_دکمه_ادامه"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "get-item",
+					"objectClass": "LocalStorage",
+					"sid": 862274598870835,
+					"parameters": {
+						"key": "\"savedLayout\""
+					}
+				}
+			],
+			"sid": 396133761207920
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 793525663707219,
+					"parameters": {
+						"object": "دکمه_شروع_جدید"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-item",
+					"objectClass": "LocalStorage",
+					"sid": 601942388615857,
+					"parameters": {
+						"key": "\"savedLayout\"",
+						"value": "\"شروع\""
+					}
+				}
+			],
+			"sid": 342648907112401
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 208378536156382,
+					"parameters": {
+						"object": "متن_دکمه_شروع_جدید"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-item",
+					"objectClass": "LocalStorage",
+					"sid": 185740219599536,
+					"parameters": {
+						"key": "\"savedLayout\"",
+						"value": "\"شروع\""
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 647144805590352,
+					"parameters": {
+						"layout": "شروع"
+					}
+				}
+			],
+			"sid": 429668422920458
 		}
 	],
 	"sid": 910000000000250

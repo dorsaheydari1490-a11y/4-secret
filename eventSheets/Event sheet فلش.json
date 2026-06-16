@@ -35,6 +35,35 @@
 				}
 			],
 			"sid": 957051783002223
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 865385033014950,
+					"parameters": {
+						"object": "فلش"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "stop-all",
+					"objectClass": "Audio",
+					"sid": 305539248881092
+				},
+				{
+					"id": "go-to-nextprevious-layout",
+					"objectClass": "System",
+					"sid": 185371168302516,
+					"parameters": {
+						"which": "next"
+					}
+				}
+			],
+			"sid": 318818507040178
 		}
 	],
 	"sid": 431546178818377
