@@ -396,13 +396,79 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "every-tick",
-					"objectClass": "System",
-					"sid": 357186772820413
+					"id": "on-collision-with-another-object",
+					"objectClass": "جوجه_تیغی",
+					"sid": 951737500085219,
+					"parameters": {
+						"object": "Sprite2"
+					}
 				}
 			],
-			"actions": [],
-			"sid": 931617793791198
+			"actions": [
+				{
+					"id": "set-mirrored",
+					"objectClass": "جوجه_تیغی",
+					"sid": 264902147089285,
+					"parameters": {
+						"state": "mirrored"
+					}
+				}
+			],
+			"sid": 329302287007031
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "جوجه_تیغی",
+					"sid": 925054198176190,
+					"parameters": {
+						"object": "Sprite4"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-mirrored",
+					"objectClass": "جوجه_تیغی",
+					"sid": 305369871128084,
+					"parameters": {
+						"state": "not-mirrored"
+					}
+				}
+			],
+			"sid": 227549655344964
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "جوجه_تیغی",
+					"sid": 736199437661230,
+					"parameters": {
+						"object": "مثلث"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "جوجه_تیغی",
+					"sid": 774840751349196
+				},
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 282813417175759,
+					"parameters": {
+						"variable": "امتیاز_قسمت_اول",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 366643556278607
 		}
 	],
 	"sid": 233453317547163

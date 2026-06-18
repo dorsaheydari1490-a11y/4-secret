@@ -175,8 +175,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 630.5,
-						"y": 383.58152173913044,
+						"x": 665,
+						"y": 356,
 						"width": 2283.1629102461548,
 						"height": 1376.668691585401,
 						"originX": 0.5,
@@ -633,6 +633,68 @@
 			"subLayers": [],
 			"instances": [
 				{
+					"type": "جوجه_تیغی",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 277,
+					"sid": 335320011450608,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {
+						"Platform": {
+							"properties": {
+								"max-speed": 330,
+								"acceleration": 1500,
+								"deceleration": 1500,
+								"jump-strength": 650,
+								"gravity": 1500,
+								"max-fall-speed": 1000,
+								"double-jump": false,
+								"jump-sustain": 0,
+								"default-controls": false,
+								"enabled": true
+							}
+						},
+						"Sine": {
+							"properties": {
+								"movement": "horizontal",
+								"wave": "triangle",
+								"period": 15,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 794,
+								"magnitude-random": 0,
+								"enabled": true,
+								"live-preview": false
+							}
+						}
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 518,
+						"y": 564,
+						"width": 97,
+						"height": 64,
+						"originX": 0.48271604938271606,
+						"originY": 0.45667870036101077,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
 					"type": "مثلث",
 					"properties": {
 						"initially-visible": true,
@@ -669,8 +731,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 78,
-						"y": 569,
+						"x": 56,
+						"y": 252,
 						"width": 84,
 						"height": 59.60454545454545,
 						"originX": 0.5221961014790871,
@@ -1125,8 +1187,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 200.7,
-						"y": 627,
+						"x": 228,
+						"y": 526,
 						"width": 1263.6333333333334,
 						"height": 1098.054054054054,
 						"originX": 0.5,
@@ -1206,54 +1268,6 @@
 						"z": 0,
 						"angle": 0
 					}
-				},
-				{
-					"type": "جوجه_تیغی",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 277,
-					"sid": 335320011450608,
-					"tags": "",
-					"instanceVariables": {},
-					"behaviors": {
-						"Platform": {
-							"properties": {
-								"max-speed": 330,
-								"acceleration": 1500,
-								"deceleration": 1500,
-								"jump-strength": 650,
-								"gravity": 1500,
-								"max-fall-speed": 1000,
-								"double-jump": false,
-								"jump-sustain": 0,
-								"default-controls": false,
-								"enabled": true
-							}
-						}
-					},
-					"showing": true,
-					"locked": false,
-					"world": {
-						"x": 518,
-						"y": 564,
-						"width": 97,
-						"height": 64,
-						"originX": 0.48271604938271606,
-						"originY": 0.45667870036101077,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"z": 0,
-						"angle": 0
-					}
 				}
 			],
 			"sid": 788207987211435,
@@ -1308,8 +1322,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 456,
-						"y": 555,
+						"x": 449,
+						"y": 83,
 						"width": 52.99999999999999,
 						"height": 39,
 						"originX": 0.5,
@@ -1762,8 +1776,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 433,
-						"y": 492,
+						"x": 453,
+						"y": 606,
 						"width": 42.42,
 						"height": 42.42,
 						"originX": 0.5,
@@ -1795,8 +1809,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 339,
-						"y": 496,
+						"x": 383,
+						"y": 612,
 						"width": 42.42,
 						"height": 42.42,
 						"originX": 0.5,
@@ -1828,8 +1842,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 381,
-						"y": 445,
+						"x": 416,
+						"y": 554,
 						"width": 42.42,
 						"height": 42.42,
 						"originX": 0.5024096385542168,

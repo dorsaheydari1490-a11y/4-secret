@@ -240,6 +240,102 @@
 				}
 			],
 			"sid": 910000000000302
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 247036585689560,
+					"parameters": {
+						"object": "دکمه_پروفایل"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "پنل_پروفایل",
+					"sid": 541571994064972,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "متن_پروفایل",
+					"sid": 317858886789682,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "دکمه_بستن_پروفایل",
+					"sid": 394126723512614,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "متن_پروفایل",
+					"sid": 103232636038850,
+					"parameters": {
+						"text": "\"درحال بارگذاری\""
+					}
+				},
+				{
+					"id": "get-item",
+					"objectClass": "LocalStorage",
+					"sid": 441446880348320,
+					"parameters": {
+						"key": "\"playerName\""
+					}
+				}
+			],
+			"sid": 928235385859469
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 635856718209622,
+					"parameters": {
+						"object": "دکمه_بستن_پروفایل"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "پنل_پروفایل",
+					"sid": 552894866575191,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "متن_پروفایل",
+					"sid": 289167202453052,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "دکمه_بستن_پروفایل",
+					"sid": 274740706690576,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 387465050667839
 		}
 	],
 	"sid": 910000000000310
