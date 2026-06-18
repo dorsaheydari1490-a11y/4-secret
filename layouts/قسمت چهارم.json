@@ -252,8 +252,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 249.50983227761236,
-						"y": 388.7459104457329,
+						"x": 223,
+						"y": 106,
 						"width": 30.993875394232536,
 						"height": 480.1033159888822,
 						"originX": 0.5,
@@ -293,8 +293,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 289.1207534842133,
-						"y": 144.07442885479662,
+						"x": 54,
+						"y": 290,
 						"width": 110.38807265210308,
 						"height": 33.04829399805992,
 						"originX": 0.5,
@@ -334,10 +334,10 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 192.594460845998,
-						"y": 246.47707316311104,
-						"width": 95.81266825374186,
-						"height": 54.322284243052145,
+						"x": 367,
+						"y": 547.5636538991457,
+						"width": 198.81266825374186,
+						"height": 21.322284243052145,
 						"originX": 0.539048065925687,
 						"originY": 0.4787820336180766,
 						"color": [
@@ -375,10 +375,10 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 47.76753296638577,
-						"y": 355.7911469236438,
+						"x": 499,
+						"y": -215,
 						"width": 91.47014922276374,
-						"height": 58.060027706900584,
+						"height": 24.060027706900584,
 						"originX": 0.539048065925687,
 						"originY": 0.4787820336180766,
 						"color": [
@@ -416,10 +416,10 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 196,
-						"y": 452.6288905377187,
-						"width": 90.78321793790661,
-						"height": 39.437090266253655,
+						"x": 263,
+						"y": 588,
+						"width": 167.7832179379066,
+						"height": 24.437090266253655,
 						"originX": 0.539048065925687,
 						"originY": 0.4787820336180766,
 						"color": [
@@ -457,10 +457,10 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 39,
-						"y": 516.338496199382,
-						"width": 72.41518275104487,
-						"height": 39.99423594630853,
+						"x": 311,
+						"y": 566,
+						"width": 174.41518275104488,
+						"height": 16.994235946308528,
 						"originX": 0.539048065925687,
 						"originY": 0.4787820336180766,
 						"color": [
@@ -539,8 +539,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 1362,
-						"y": 354,
+						"x": 1280,
+						"y": 356,
 						"width": 30.993875394232536,
 						"height": 480.1033159888822,
 						"originX": 0.5,
@@ -1206,6 +1206,54 @@
 						"z": 0,
 						"angle": 0
 					}
+				},
+				{
+					"type": "جوجه_تیغی",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 277,
+					"sid": 335320011450608,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {
+						"Platform": {
+							"properties": {
+								"max-speed": 330,
+								"acceleration": 1500,
+								"deceleration": 1500,
+								"jump-strength": 650,
+								"gravity": 1500,
+								"max-fall-speed": 1000,
+								"double-jump": false,
+								"jump-sustain": 0,
+								"default-controls": false,
+								"enabled": true
+							}
+						}
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 518,
+						"y": 564,
+						"width": 97,
+						"height": 64,
+						"originX": 0.48271604938271606,
+						"originY": 0.45667870036101077,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
 				}
 			],
 			"sid": 788207987211435,
@@ -1714,8 +1762,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 440,
-						"y": 613,
+						"x": 433,
+						"y": 492,
 						"width": 42.42,
 						"height": 42.42,
 						"originX": 0.5,
@@ -1747,8 +1795,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 389,
-						"y": 614,
+						"x": 339,
+						"y": 496,
 						"width": 42.42,
 						"height": 42.42,
 						"originX": 0.5,
@@ -1780,8 +1828,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 414,
-						"y": 584,
+						"x": 381,
+						"y": 445,
 						"width": 42.42,
 						"height": 42.42,
 						"originX": 0.5024096385542168,

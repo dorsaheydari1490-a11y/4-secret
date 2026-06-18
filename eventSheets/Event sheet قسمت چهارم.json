@@ -323,7 +323,7 @@
 				{
 					"id": "is-touching-object",
 					"objectClass": "Touch",
-					"sid": 451524774347032,
+					"sid": 346177402503941,
 					"parameters": {
 						"object": "فلش_بالا"
 					}
@@ -391,6 +391,18 @@
 				}
 			],
 			"sid": 136046860159594
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 357186772820413
+				}
+			],
+			"actions": [],
+			"sid": 931617793791198
 		}
 	],
 	"sid": 233453317547163
