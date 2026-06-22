@@ -1,0 +1,60 @@
+{
+	"name": "جواب_اول",
+	"plugin-id": "Sprite",
+	"sid": 960393116832555,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 707,
+						"height": 304,
+						"originX": 0.4915134370579915,
+						"originY": 0.5608552631578947,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 5446394,
+						"collisionPoly": {
+							"points": [
+								0.1456859971711457,
+								0.07894736842105264,
+								0.7906647807637907,
+								0.1118421052631579,
+								0.9759547383309759,
+								0.3684210526315789,
+								0.8769448373408769,
+								0.8322368421052632,
+								0.7340876944837341,
+								0.944078947368421,
+								0.07213578500707214,
+								0.881578947368421,
+								0.004243281471004243,
+								0.3717105263157895,
+								0.015558698727015563,
+								0.1875
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 316211393642635,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

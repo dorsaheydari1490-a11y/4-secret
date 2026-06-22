@@ -750,10 +750,10 @@
 				{
 					"id": "set-position",
 					"objectClass": "دقت",
-					"sid": 733552761598602,
+					"sid": 101636929445617,
 					"parameters": {
-						"x": "41",
-						"y": "326"
+						"x": "252",
+						"y": "447"
 					}
 				},
 				{
@@ -764,11 +764,6 @@
 						"seconds": "2",
 						"use-timescale": true
 					}
-				},
-				{
-					"id": "destroy",
-					"objectClass": "دقت",
-					"sid": 208932566004381
 				}
 			],
 			"sid": 369883704472008

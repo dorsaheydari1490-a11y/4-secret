@@ -1,10 +1,70 @@
 {
 	"name": "دقت",
-	"plugin-id": "Text",
-	"sid": 701049791591556,
+	"plugin-id": "Sprite",
+	"sid": 530526309694210,
 	"isGlobal": false,
 	"editorNewInstanceIsReplica": true,
 	"instanceVariables": [],
 	"behaviorTypes": [],
-	"effectTypes": []
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 480,
+						"height": 188,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 6114732,
+						"collisionPoly": {
+							"points": [
+								0.43333333333333335,
+								0,
+								0.8395833333333333,
+								0.05319148936170213,
+								0.9770833333333333,
+								0.39893617021276595,
+								1,
+								0.4946808510638298,
+								0.99375,
+								0.7021276595744681,
+								0.9208333333333333,
+								0.7978723404255319,
+								0.15,
+								0.9574468085106383,
+								0.041666666666666664,
+								0.9042553191489362,
+								0.020833333333333332,
+								0.851063829787234,
+								0.0020833333333333333,
+								0.7340425531914894,
+								0.0020833333333333333,
+								0.6276595744680851,
+								0.027083333333333334,
+								0.4734042553191489,
+								0.11875,
+								0.25
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 774632953777776,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
 }

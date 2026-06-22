@@ -60,55 +60,6 @@
 					}
 				},
 				{
-					"type": "جواب1اول",
-					"properties": {
-						"text": "مساحت مستطیل :طول در عرض",
-						"enable-bbcode": true,
-						"font": "Arial",
-						"size": 28,
-						"line-height": 0,
-						"bold": false,
-						"italic": false,
-						"color": [
-							0.24705882352941178,
-							0.21176470588235294,
-							0.7686274509803922,
-							1
-						],
-						"horizontal-alignment": "left",
-						"vertical-alignment": "top",
-						"wrapping": "word",
-						"text-direction": "ltr",
-						"icon-set": -1,
-						"initially-visible": true,
-						"origin": "top-left",
-						"read-aloud": false
-					},
-					"uid": 47,
-					"sid": 243823534460214,
-					"tags": "",
-					"instanceVariables": {},
-					"behaviors": {},
-					"showing": true,
-					"locked": false,
-					"world": {
-						"x": 58,
-						"y": 47,
-						"width": 403,
-						"height": 44,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"z": 0,
-						"angle": 0
-					}
-				},
-				{
 					"type": "مساحت",
 					"properties": {
 						"initially-visible": true,
@@ -463,6 +414,39 @@
 						"height": 39,
 						"originX": 0.5,
 						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
+					"type": "جواب_اول",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 47,
+					"sid": 798278872759458,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 216,
+						"y": 63,
+						"width": 441,
+						"height": 119,
+						"originX": 0.4915134370579915,
+						"originY": 0.5608552631578947,
 						"color": [
 							1,
 							1,
