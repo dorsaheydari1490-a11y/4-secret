@@ -1,7 +1,7 @@
 {
 	"name": "راهنما3",
-	"plugin-id": "Text",
-	"sid": 568036357828192,
+	"plugin-id": "Sprite",
+	"sid": 731064847171716,
 	"isGlobal": false,
 	"editorNewInstanceIsReplica": true,
 	"instanceVariables": [],
@@ -9,8 +9,64 @@
 		{
 			"behaviorId": "Fade",
 			"name": "Fade",
-			"sid": 222269989313222
+			"sid": 313096076330034
 		}
 	],
-	"effectTypes": []
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 679,
+						"height": 368,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 1023478,
+						"collisionPoly": {
+							"points": [
+								0.882179675994109,
+								0.01358695652173913,
+								0.9764359351988218,
+								0.19021739130434784,
+								0.9882179675994109,
+								0.25,
+								0.9661266568483063,
+								0.9211956521739131,
+								0.7835051546391752,
+								0.970108695652174,
+								0.14580265095729014,
+								0.9266304347826086,
+								0.01914580265095729,
+								0.8586956521739131,
+								0.007363770250368188,
+								0.7717391304347826,
+								0.12812960235640647,
+								0.18206521739130435,
+								0.20029455081001474,
+								0.06521739130434782,
+								0.45508100147275404,
+								0.021739130434782608
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 556160268665047,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
 }

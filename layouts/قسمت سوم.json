@@ -268,66 +268,6 @@
 					}
 				},
 				{
-					"type": "راهنما3",
-					"properties": {
-						"text": "دکمه اینتر رو بزن",
-						"enable-bbcode": true,
-						"font": "Arial",
-						"size": 25,
-						"line-height": 0,
-						"bold": false,
-						"italic": false,
-						"color": [
-							0.9176470588235294,
-							0.9372549019607843,
-							0.7411764705882353,
-							1
-						],
-						"horizontal-alignment": "left",
-						"vertical-alignment": "top",
-						"wrapping": "word",
-						"text-direction": "ltr",
-						"icon-set": -1,
-						"initially-visible": true,
-						"origin": "top-left",
-						"read-aloud": false
-					},
-					"uid": 160,
-					"sid": 541300845312091,
-					"tags": "",
-					"instanceVariables": {},
-					"behaviors": {
-						"Fade": {
-							"properties": {
-								"fade-in-time": 2,
-								"wait-time": 10,
-								"fade-out-time": 1,
-								"destroy": true,
-								"enabled": true,
-								"live-preview": false
-							}
-						}
-					},
-					"showing": true,
-					"locked": false,
-					"world": {
-						"x": -387,
-						"y": 211,
-						"width": 222,
-						"height": 50,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"z": 0,
-						"angle": 0
-					}
-				},
-				{
 					"type": "Sprite12",
 					"properties": {
 						"initially-visible": true,
@@ -863,6 +803,50 @@
 						"y": 160,
 						"width": 41.62758620689655,
 						"height": 31.162303664921463,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
+					"type": "راهنما3",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 278,
+					"sid": 710898772400932,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {
+						"Fade": {
+							"properties": {
+								"fade-in-time": 0,
+								"wait-time": 13,
+								"fade-out-time": 1,
+								"destroy": true,
+								"enabled": true,
+								"live-preview": false
+							}
+						}
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": -475,
+						"y": 617,
+						"width": 261,
+						"height": 95,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [

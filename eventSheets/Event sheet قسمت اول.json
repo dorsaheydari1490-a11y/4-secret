@@ -764,6 +764,11 @@
 						"seconds": "2",
 						"use-timescale": true
 					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "دقت",
+					"sid": 141961788039807
 				}
 			],
 			"sid": 369883704472008
