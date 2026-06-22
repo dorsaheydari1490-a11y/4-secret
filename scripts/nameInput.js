@@ -4,12 +4,30 @@ const WELCOME_OBJECT = "متن_خوشآمد";
 const MAX_LENGTH = 20;
 const INPUT_LAYOUT = { x: 240, y: 200, width: 300, height: 44 };
 
+const BAD_PLAYER_NAMES = new Set([
+	"ورود_نام.Text",
+	"text.نام_ورود",
+]);
+
 let nameInputEl = null;
 let activeRuntime = null;
 let resetInputOnShow = true;
 
+function isBadPlayerName(name) {
+	const trimmed = (name ?? "").trim();
+	if (!trimmed) return true;
+	if (BAD_PLAYER_NAMES.has(trimmed)) return true;
+	if (trimmed.includes("ورود_نام") || trimmed.includes("نام_ورود")) return true;
+	return false;
+}
+
 function getNameInstance(runtime) {
 	return runtime.objects[NAME_OBJECT]?.getFirstInstance() ?? null;
+}
+
+function setInstanceVisible(runtime, objectName, visible) {
+	const inst = runtime.objects[objectName]?.getFirstInstance();
+	if (inst) inst.isVisible = visible;
 }
 
 function shouldShowInput(runtime) {
@@ -57,8 +75,80 @@ function syncToText(runtime, value) {
 	if (inst) inst.text = value;
 }
 
-async function savePlayerAndStart(runtime) {
-	const value = (nameInputEl?.value ?? "").trim();
+export function getPlayerNameValue(runtime) {
+	const fromInput = (nameInputEl?.value ?? "").trim();
+	if (fromInput) return fromInput;
+	const inst = getNameInstance(runtime);
+	return (inst?.text ?? "").trim();
+}
+
+export function resetToNewUserUI(runtime) {
+	setInstanceVisible(runtime, "دکمه_ادامه", false);
+	setInstanceVisible(runtime, "دکمه_شروع_جدید", false);
+	setInstanceVisible(runtime, WELCOME_OBJECT, false);
+	setInstanceVisible(runtime, "متن_دکمه_ادامه", false);
+	setInstanceVisible(runtime, "متن_دکمه_شروع_جدید", false);
+	setInstanceVisible(runtime, "دکمه_شروع", true);
+	setInstanceVisible(runtime, "متن_دکمه_شروع", true);
+	setInstanceVisible(runtime, NAME_OBJECT, false);
+
+	const inst = getNameInstance(runtime);
+	if (inst) inst.text = "";
+
+	prepareNameInputForLayout();
+	showNameInput(runtime);
+}
+
+export async function sanitizePlayerNameOnLayoutStart(runtime) {
+	const raw = await runtime.storage.getItem("playerName");
+	if (raw == null) return false;
+	if (!isBadPlayerName(raw)) return false;
+
+	await runtime.storage.removeItem("playerName");
+	return true;
+}
+
+export async function applyLoginLayoutState(runtime) {
+	const sanitized = await sanitizePlayerNameOnLayoutStart(runtime);
+	if (sanitized) {
+		resetToNewUserUI(runtime);
+		return;
+	}
+
+	const raw = await runtime.storage.getItem("playerName");
+	const name = (raw ?? "").trim();
+	if (!name) return;
+	decorateWelcomeText(runtime, name);
+	bindWelcomeChangeHandler(runtime);
+}
+
+export async function changePlayerName(runtime) {
+	if (runtime.layout.name !== LAYOUT_NAME) return;
+
+	const welcome = runtime.objects[WELCOME_OBJECT]?.getFirstInstance();
+	if (!welcome?.isVisible) return;
+
+	await runtime.storage.removeItem("playerName");
+	resetToNewUserUI(runtime);
+}
+
+function decorateWelcomeText(runtime, name) {
+	const welcome = runtime.objects[WELCOME_OBJECT]?.getFirstInstance();
+	if (!welcome?.isVisible) return;
+	welcome.text = `سلام ${name}\n(برای تغییر نام لمس کنید)`;
+}
+
+function bindWelcomeChangeHandler(runtime) {
+	const welcome = runtime.objects[WELCOME_OBJECT]?.getFirstInstance();
+	if (!welcome || welcome.__changeNameBound) return;
+	welcome.__changeNameBound = true;
+	welcome.addEventListener("click", () => {
+		changePlayerName(runtime);
+	});
+}
+
+export async function savePlayerAndStart(runtime) {
+	const value = getPlayerNameValue(runtime);
 	if (!value) return;
 
 	syncToText(runtime, value);

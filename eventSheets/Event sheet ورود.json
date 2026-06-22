@@ -520,7 +520,7 @@
 					"sid": 630517222618467,
 					"parameters": {
 						"key": "\"playerName\"",
-						"value": "\"ورود_نام.Text\""
+						"value": "ورود_نام.Text"
 					}
 				},
 				{
