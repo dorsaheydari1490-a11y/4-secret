@@ -1,6 +1,11 @@
 const LAYOUT_NAME = "ورود";
 const NAME_OBJECT = "ورود_نام";
 const WELCOME_OBJECT = "متن_خوشآمد";
+const LOGOUT_BUTTON = "دکمه_خروج";
+const LOGOUT_TEXT = "متن_دکمه_خروج";
+const START_LAYOUT = "شروع";
+const PLAYER_NAME_KEY = "playerName";
+const SAVED_LAYOUT_KEY = "savedLayout";
 const MAX_LENGTH = 20;
 const INPUT_LAYOUT = { x: 240, y: 200, width: 300, height: 44 };
 
@@ -12,6 +17,17 @@ const BAD_PLAYER_NAMES = new Set([
 let nameInputEl = null;
 let activeRuntime = null;
 let resetInputOnShow = true;
+let navigationIntent = null;
+
+export function tryAcquireNavigation(intent) {
+	if (navigationIntent) return false;
+	navigationIntent = intent;
+	return true;
+}
+
+export function releaseNavigation() {
+	navigationIntent = null;
+}
 
 function isBadPlayerName(name) {
 	const trimmed = (name ?? "").trim();
@@ -21,13 +37,68 @@ function isBadPlayerName(name) {
 	return false;
 }
 
+function getLocalStorageInst(runtime) {
+	return runtime.objects.LocalStorage?.getFirstInstance?.() ?? null;
+}
+
+async function storageGetItem(runtime, key) {
+	const ls = getLocalStorageInst(runtime);
+	const [fromRuntime, fromPlugin] = await Promise.all([
+		runtime.storage.getItem(key),
+		ls?.getItem ? ls.getItem(key) : Promise.resolve(null),
+	]);
+	const runtimeValue = (fromRuntime ?? "").trim();
+	const pluginValue = (fromPlugin ?? "").trim();
+	return runtimeValue || pluginValue || null;
+}
+
+async function storageSetItem(runtime, key, value) {
+	await runtime.storage.setItem(key, value);
+	const ls = getLocalStorageInst(runtime);
+	if (ls?.setItem) {
+		await ls.setItem(key, value);
+	}
+}
+
+async function storageRemoveItem(runtime, key) {
+	await runtime.storage.removeItem(key);
+	const ls = getLocalStorageInst(runtime);
+	if (ls?.removeItem) {
+		await ls.removeItem(key);
+	}
+}
+
+export async function clearPlayerSession(runtime) {
+	await storageRemoveItem(runtime, PLAYER_NAME_KEY);
+	await storageRemoveItem(runtime, SAVED_LAYOUT_KEY);
+}
+
+export async function savePlayerSession(runtime, name) {
+	await storageSetItem(runtime, PLAYER_NAME_KEY, name);
+}
+
+async function getSavedLayout(runtime) {
+	const ls = getLocalStorageInst(runtime);
+	const [fromRuntime, fromPlugin] = await Promise.all([
+		runtime.storage.getItem(SAVED_LAYOUT_KEY),
+		ls?.getItem ? ls.getItem(SAVED_LAYOUT_KEY) : Promise.resolve(null),
+	]);
+	const runtimeValue = (fromRuntime ?? "").trim();
+	const pluginValue = (fromPlugin ?? "").trim();
+	return pluginValue || runtimeValue || null;
+}
+
 function getNameInstance(runtime) {
 	return runtime.objects[NAME_OBJECT]?.getFirstInstance() ?? null;
 }
 
 function setInstanceVisible(runtime, objectName, visible) {
 	const inst = runtime.objects[objectName]?.getFirstInstance();
-	if (inst) inst.isVisible = visible;
+	if (!inst) return;
+	inst.isVisible = visible;
+	if (typeof inst.setCollisionEnabled === "function") {
+		inst.setCollisionEnabled(visible);
+	}
 }
 
 function shouldShowInput(runtime) {
@@ -88,6 +159,8 @@ export function resetToNewUserUI(runtime) {
 	setInstanceVisible(runtime, WELCOME_OBJECT, false);
 	setInstanceVisible(runtime, "متن_دکمه_ادامه", false);
 	setInstanceVisible(runtime, "متن_دکمه_شروع_جدید", false);
+	setInstanceVisible(runtime, LOGOUT_BUTTON, false);
+	setInstanceVisible(runtime, LOGOUT_TEXT, false);
 	setInstanceVisible(runtime, "دکمه_شروع", true);
 	setInstanceVisible(runtime, "متن_دکمه_شروع", true);
 	setInstanceVisible(runtime, NAME_OBJECT, false);
@@ -99,12 +172,30 @@ export function resetToNewUserUI(runtime) {
 	showNameInput(runtime);
 }
 
+function showReturningUserUI(runtime, name) {
+	const welcome = runtime.objects[WELCOME_OBJECT]?.getFirstInstance();
+	if (welcome) {
+		welcome.text = `سلام ${name}`;
+		welcome.isVisible = true;
+	}
+	setInstanceVisible(runtime, "دکمه_ادامه", true);
+	setInstanceVisible(runtime, "دکمه_شروع_جدید", true);
+	setInstanceVisible(runtime, "متن_دکمه_ادامه", true);
+	setInstanceVisible(runtime, "متن_دکمه_شروع_جدید", true);
+	setInstanceVisible(runtime, LOGOUT_BUTTON, true);
+	setInstanceVisible(runtime, LOGOUT_TEXT, true);
+	setInstanceVisible(runtime, NAME_OBJECT, false);
+	setInstanceVisible(runtime, "دکمه_شروع", false);
+	setInstanceVisible(runtime, "متن_دکمه_شروع", false);
+	hideNameInput();
+}
+
 export async function sanitizePlayerNameOnLayoutStart(runtime) {
-	const raw = await runtime.storage.getItem("playerName");
+	const raw = await storageGetItem(runtime, PLAYER_NAME_KEY);
 	if (raw == null) return false;
 	if (!isBadPlayerName(raw)) return false;
 
-	await runtime.storage.removeItem("playerName");
+	await storageRemoveItem(runtime, PLAYER_NAME_KEY);
 	return true;
 }
 
@@ -115,47 +206,65 @@ export async function applyLoginLayoutState(runtime) {
 		return;
 	}
 
-	const raw = await runtime.storage.getItem("playerName");
+	const raw = await storageGetItem(runtime, PLAYER_NAME_KEY);
 	const name = (raw ?? "").trim();
 	if (!name) return;
-	decorateWelcomeText(runtime, name);
-	bindWelcomeChangeHandler(runtime);
+	showReturningUserUI(runtime, name);
 }
 
-export async function changePlayerName(runtime) {
+export async function logoutPlayerName(runtime) {
 	if (runtime.layout.name !== LAYOUT_NAME) return;
-
-	const welcome = runtime.objects[WELCOME_OBJECT]?.getFirstInstance();
-	if (!welcome?.isVisible) return;
-
-	await runtime.storage.removeItem("playerName");
+	await clearPlayerSession(runtime);
+	hideNameInput();
 	resetToNewUserUI(runtime);
 }
 
-function decorateWelcomeText(runtime, name) {
-	const welcome = runtime.objects[WELCOME_OBJECT]?.getFirstInstance();
-	if (!welcome?.isVisible) return;
-	welcome.text = `سلام ${name}\n(برای تغییر نام لمس کنید)`;
+export async function changePlayerName(runtime) {
+	return logoutPlayerName(runtime);
 }
 
-function bindWelcomeChangeHandler(runtime) {
-	const welcome = runtime.objects[WELCOME_OBJECT]?.getFirstInstance();
-	if (!welcome || welcome.__changeNameBound) return;
-	welcome.__changeNameBound = true;
-	welcome.addEventListener("click", () => {
-		changePlayerName(runtime);
-	});
-}
-
-export async function savePlayerAndStart(runtime) {
-	const value = getPlayerNameValue(runtime);
-	if (!value) return;
-
-	syncToText(runtime, value);
-	await runtime.storage.setItem("playerName", value);
-	await runtime.storage.setItem("savedLayout", "شروع");
+async function navigateFromLogin(runtime, layoutName) {
 	hideNameInput();
-	runtime.goToLayout("شروع");
+	activeRuntime = null;
+	runtime.goToLayout(layoutName);
+}
+
+export async function savePlayerAndStart(runtime, intent = "new") {
+	if (navigationIntent === "fresh") return;
+	if (!tryAcquireNavigation(intent)) return;
+
+	try {
+		const value = getPlayerNameValue(runtime);
+		const storedName = (await storageGetItem(runtime, PLAYER_NAME_KEY) ?? "").trim();
+		const name = value || storedName;
+		if (!name) return;
+
+		syncToText(runtime, name);
+		await savePlayerSession(runtime, name);
+
+		const existingLayout = await getSavedLayout(runtime);
+		if (existingLayout) {
+			await navigateFromLogin(runtime, existingLayout);
+		} else {
+			await storageSetItem(runtime, SAVED_LAYOUT_KEY, START_LAYOUT);
+			await navigateFromLogin(runtime, START_LAYOUT);
+		}
+	} finally {
+		releaseNavigation();
+	}
+}
+
+export async function startFreshGame(runtime) {
+	if (!tryAcquireNavigation("fresh")) return;
+
+	try {
+		await storageSetItem(runtime, SAVED_LAYOUT_KEY, START_LAYOUT);
+		hideNameInput();
+		activeRuntime = null;
+		await navigateFromLogin(runtime, START_LAYOUT);
+	} finally {
+		releaseNavigation();
+	}
 }
 
 function ensureInputElement(runtime) {
@@ -195,15 +304,15 @@ function ensureInputElement(runtime) {
 
 	input.addEventListener("input", () => {
 		if (!activeRuntime) return;
-		const value = input.value.slice(0, MAX_LENGTH);
-		if (value !== input.value) input.value = value;
-		syncToText(activeRuntime, value);
+		const inputValue = input.value.slice(0, MAX_LENGTH);
+		if (inputValue !== input.value) input.value = inputValue;
+		syncToText(activeRuntime, inputValue);
 	});
 
 	input.addEventListener("keydown", (e) => {
 		if (e.key === "Enter" && activeRuntime) {
 			e.preventDefault();
-			savePlayerAndStart(activeRuntime);
+			savePlayerAndStart(activeRuntime, "new");
 		}
 	});
 
