@@ -105,11 +105,11 @@
 				{
 					"id": "move-to-position",
 					"objectClass": "Sprite8",
-					"sid": 279442305030289,
+					"sid": 122733973774374,
 					"behaviorType": "MoveTo",
 					"parameters": {
 						"x": "3000",
-						"y": "693",
+						"y": "529",
 						"mode": "direct"
 					}
 				}
