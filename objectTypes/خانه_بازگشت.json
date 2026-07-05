@@ -1,0 +1,72 @@
+{
+	"name": "خانه_بازگشت",
+	"plugin-id": "Sprite",
+	"sid": 848347327215405,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 500,
+						"height": 500,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 2655580,
+						"collisionPoly": {
+							"points": [
+								0.4753521126760563,
+								0.044,
+								0.5422535211267606,
+								0.044,
+								0.8485915492957746,
+								0.112,
+								0.9859154929577465,
+								0.428,
+								0.9859154929577465,
+								0.492,
+								0.8908450704225352,
+								0.876,
+								0.8028169014084507,
+								0.94,
+								0.721830985915493,
+								0.956,
+								0.6514084507042254,
+								0.956,
+								0.17253521126760563,
+								0.896,
+								0.13380281690140844,
+								0.84,
+								0.03873239436619718,
+								0.5,
+								0.056338028169014086,
+								0.404,
+								0.1056338028169014,
+								0.336
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 815729807226669,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

@@ -74,6 +74,24 @@
 					"parameters": {
 						"max-speed": "0"
 					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 992378842254463,
+					"parameters": {
+						"seconds": "30",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "خانه_بازگشت",
+					"sid": 274938083486789,
+					"parameters": {
+						"x": "232",
+						"y": "310"
+					}
 				}
 			],
 			"sid": 125476585585043
