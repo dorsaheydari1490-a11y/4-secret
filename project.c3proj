@@ -326,7 +326,8 @@
 			"Event sheet ورود",
 			"Event sheet پروفایل",
 			"Event sheet پروفایل HUD",
-			"Event sheet فروشگاه"
+			"Event sheet فروشگاه",
+			"Event sheet بازگشت"
 		],
 		"subfolders": []
 	},

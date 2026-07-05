@@ -10,6 +10,10 @@
 			"includeSheet": "Event sheet فلش"
 		},
 		{
+			"eventType": "include",
+			"includeSheet": "Event sheet بازگشت"
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{

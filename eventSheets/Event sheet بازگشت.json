@@ -1,0 +1,56 @@
+{
+	"name": "Event sheet بازگشت",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 732297953027928,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "خانه_بازگشت"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 714310553638979,
+					"parameters": {
+						"layout": "ورود"
+					}
+				}
+			],
+			"sid": 350924545550662
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 680577920637438,
+					"parameters": {
+						"object": "خانه_بازگشت"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 905497126144160,
+					"parameters": {
+						"layout": "ورود"
+					}
+				}
+			],
+			"sid": 127153001807414
+		}
+	],
+	"sid": 821087845339359
+}
