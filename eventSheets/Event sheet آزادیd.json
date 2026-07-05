@@ -83,7 +83,21 @@
 					"objectClass": "System",
 					"sid": 691101309927126,
 					"parameters": {
-						"seconds": "5",
+						"seconds": "4",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "فلش",
+					"sid": 738291046582317
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 829104657293481,
+					"parameters": {
+						"seconds": "1",
 						"use-timescale": true
 					}
 				},
