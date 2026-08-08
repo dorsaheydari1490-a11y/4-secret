@@ -312,6 +312,7 @@
 							"properties": {
 								"speed": 45,
 								"acceleration": 0,
+								"rotation-type": "2d",
 								"enabled": true,
 								"live-preview": false
 							}
@@ -770,6 +771,7 @@
 							"properties": {
 								"speed": 180,
 								"acceleration": 0,
+								"rotation-type": "2d",
 								"enabled": true,
 								"live-preview": false
 							}

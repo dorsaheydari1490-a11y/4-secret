@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 48703,
+	"savedWithRelease": 49502,
 	"name": "چهار راز",
 	"runtime": "c3",
 	"useWorker": "auto",
@@ -38,6 +38,13 @@
 			"type": "plugin",
 			"id": "Mouse",
 			"name": "Mouse",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Multiplayer",
+			"name": "Multiplayer",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -150,13 +157,6 @@
 			"type": "behavior",
 			"id": "wrap",
 			"name": "Wrap",
-			"author": "Scirra",
-			"bundled": false
-		},
-		{
-			"type": "plugin",
-			"id": "Multiplayer",
-			"name": "Multiplayer",
 			"author": "Scirra",
 			"bundled": false
 		}
@@ -457,6 +457,22 @@
 					"name": "The sound of jumping.webm",
 					"type": "audio/webm; codecs=opus",
 					"sid": 576803539599680,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "The Sound of Abadi.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 347203437202021,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "First stage page.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 698101284352196,
 					"file-info": {
 						"purpose": "none"
 					}

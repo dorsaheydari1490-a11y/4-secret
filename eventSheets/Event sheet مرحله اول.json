@@ -26,27 +26,13 @@
 				{
 					"id": "play",
 					"objectClass": "Audio",
-					"sid": 795205732098813,
+					"sid": 740264342191309,
 					"parameters": {
 						"audio-file": {
-							"path": "voice_msg_-8433864202966694827"
+							"path": "First stage page"
 						},
 						"loop": "not-looping",
 						"volume": "150",
-						"stereo-pan": "0",
-						"tag-optional": "\"\""
-					}
-				},
-				{
-					"id": "play",
-					"objectClass": "Audio",
-					"sid": 922950779269359,
-					"parameters": {
-						"audio-file": {
-							"path": "voice_msg_-8433864202966694827"
-						},
-						"loop": "not-looping",
-						"volume": "0",
 						"stereo-pan": "0",
 						"tag-optional": "\"\""
 					}
