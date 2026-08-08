@@ -710,6 +710,14 @@
 					}
 				},
 				{
+					"id": "vibrate",
+					"objectClass": "Browser",
+					"sid": 918548530152421,
+					"parameters": {
+						"duration": "80"
+					}
+				},
+				{
 					"id": "go-to-layout",
 					"objectClass": "System",
 					"sid": 686499974302220,
@@ -740,6 +748,11 @@
 						"comparison": 3,
 						"value": "0"
 					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 910316926096282
 				}
 			],
 			"actions": [
@@ -795,6 +808,11 @@
 						"comparison": 0,
 						"value": "1"
 					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 913538359458455
 				}
 			],
 			"actions": [
@@ -1171,6 +1189,14 @@
 						"volume": "0",
 						"stereo-pan": "0",
 						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "vibrate",
+					"objectClass": "Browser",
+					"sid": 918730283365486,
+					"parameters": {
+						"duration": "80"
 					}
 				},
 				{

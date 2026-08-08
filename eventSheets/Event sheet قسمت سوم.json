@@ -678,6 +678,14 @@
 					}
 				},
 				{
+					"id": "vibrate",
+					"objectClass": "Browser",
+					"sid": 918127605402974,
+					"parameters": {
+						"duration": "80"
+					}
+				},
+				{
 					"id": "go-to-layout",
 					"objectClass": "System",
 					"sid": 529751898043437,

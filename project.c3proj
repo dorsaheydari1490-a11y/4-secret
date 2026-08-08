@@ -84,6 +84,13 @@
 			"bundled": false
 		},
 		{
+			"type": "plugin",
+			"id": "Browser",
+			"name": "Browser",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
 			"type": "behavior",
 			"id": "Bullet",
 			"name": "Bullet",
@@ -185,6 +192,7 @@
 			"نام1",
 			"Mouse",
 			"Touch",
+			"Browser",
 			"Text",
 			"شش",
 			"هشت",

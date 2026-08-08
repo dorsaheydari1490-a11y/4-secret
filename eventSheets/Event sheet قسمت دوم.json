@@ -353,6 +353,14 @@
 						"stereo-pan": "0",
 						"tag-optional": "\"\""
 					}
+				},
+				{
+					"id": "vibrate",
+					"objectClass": "Browser",
+					"sid": 917329758164023,
+					"parameters": {
+						"duration": "80"
+					}
 				}
 			],
 			"sid": 113624810044803
