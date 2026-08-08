@@ -4,6 +4,36 @@
 		{
 			"eventType": "include",
 			"includeSheet": "Event sheet پروفایل"
+		},
+		{
+			"eventType": "comment",
+			"text": "[h3]بازگرداندن اندازه صفحه عمودی[/h3]\nViewport را به ۴۸۰×۶۳۰ برمیگرداند تا بقیه بازی درست دیده شود."
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 910000000001105
+				}
+			],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "برگرداندن viewport عمودی چهار راز"
+				},
+				{
+					"id": "set-canvas-size",
+					"objectClass": "System",
+					"sid": 910000000001104,
+					"parameters": {
+						"width": "480",
+						"height": "630"
+					}
+				}
+			],
+			"sid": 910000000001106
 		}
 	],
 	"sid": 910000000000600

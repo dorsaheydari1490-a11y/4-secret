@@ -1,42 +1,36 @@
 {
-	"name": "Sprite8",
+	"name": "دکمه_شخصیت_دایره",
 	"plugin-id": "Sprite",
-	"sid": 504841442856399,
+	"sid": 744611625195575,
 	"isGlobal": false,
 	"editorNewInstanceIsReplica": true,
 	"instanceVariables": [],
-	"behaviorTypes": [
-		{
-			"behaviorId": "MoveTo",
-			"name": "MoveTo",
-			"sid": 608199905579607
-		}
-	],
+	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {
 		"items": [
 			{
 				"frames": [
 					{
-						"width": 670,
-						"height": 896,
+						"width": 143,
+						"height": 142,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"fileType": "image/jpeg",
-						"imageSpriteId": 9066776,
+						"fileType": "image/png",
+						"imageSpriteId": 292036,
 						"collisionPoly": {
 							"points": [
-								0.0021739130434782483,
-								0.0012578616352201255,
-								0.9978260869565218,
-								0.0012578616352201255,
-								0.9978260869565218,
-								0.9987421383647799,
-								0.0021739130434782483,
-								0.9987421383647799
+								0,
+								0,
+								1,
+								0,
+								1,
+								1,
+								0,
+								1
 							]
 						},
 						"useCollisionPoly": true,
@@ -44,7 +38,7 @@
 						"tag": ""
 					}
 				],
-				"sid": 255105949738129,
+				"sid": 560600226909948,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

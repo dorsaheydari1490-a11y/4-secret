@@ -1,43 +1,44 @@
 {
-	"name": "گرد",
+	"name": "دکمه_شخصیت_مستطیل",
 	"plugin-id": "Sprite",
-	"sid": 796001867649614,
+	"sid": 910062724384477,
 	"isGlobal": false,
 	"editorNewInstanceIsReplica": true,
 	"instanceVariables": [],
-	"behaviorTypes": [
-		{
-			"behaviorId": "Pin",
-			"name": "Pin",
-			"sid": 809777229594757
-		},
-		{
-			"behaviorId": "Rotate",
-			"name": "Rotate",
-			"sid": 424360205736849
-		}
-	],
+	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {
 		"items": [
 			{
 				"frames": [
 					{
-						"width": 30,
-						"height": 30,
+						"width": 195,
+						"height": 127,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
 						"fileType": "image/png",
-						"imageSpriteId": 8573865,
+						"imageSpriteId": 3522438,
+						"collisionPoly": {
+							"points": [
+								0,
+								0,
+								1,
+								0,
+								1,
+								1,
+								0,
+								1
+							]
+						},
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""
 					}
 				],
-				"sid": 771026716147368,
+				"sid": 484892192256624,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

@@ -8,6 +8,13 @@
 	"usedAddons": [
 		{
 			"type": "plugin",
+			"id": "Arr",
+			"name": "Array",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Audio",
 			"name": "Audio",
 			"author": "Scirra",
@@ -145,6 +152,13 @@
 			"name": "Wrap",
 			"author": "Scirra",
 			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Multiplayer",
+			"name": "Multiplayer",
+			"author": "Scirra",
+			"bundled": false
 		}
 	],
 	"uniqueId": "7yq8w7boy0m",
@@ -204,11 +218,8 @@
 			"Sprite",
 			"سکو",
 			"Sprite2",
-			"Sprite3",
 			"Sprite4",
 			"آسمان",
-			"گرد",
-			"پاسخ_آخر",
 			"flowerRed",
 			"flowerWhite",
 			"flowerBlue",
@@ -219,7 +230,6 @@
 			"میدان_جهان",
 			"هیرکانی",
 			"جنگل_هیرکانی",
-			"Sprite8",
 			"آتش",
 			"فلش",
 			"ستاره",
@@ -250,10 +260,6 @@
 			"گزینه_ب_سوم",
 			"Sprite13",
 			"Sprite14",
-			"Sprite15",
-			"الف_4",
-			"ب_4",
-			"Sprite17",
 			"LocalStorage",
 			"ورود_نام",
 			"دکمه_پروفایل",
@@ -273,11 +279,30 @@
 			"فلش_راست",
 			"فلش_چپ",
 			"فلش_بالا",
-			"جوجه_تیغی",
 			"دقت",
 			"جواب_اول",
 			"راهنما3",
-			"خانه_بازگشت"
+			"خانه_بازگشت",
+			"Multiplayer",
+			"Array",
+			"TiledBackground",
+			"TiledBackground2",
+			"TiledBackground3",
+			"HalfHost",
+			"HalfClient",
+			"CenterLine",
+			"آمار_شبکه",
+			"متن_لاگ",
+			"متن_انتخاب_شخصیت",
+			"نمایش_امتیاز",
+			"نام_امتیاز_هاست",
+			"نام_امتیاز_کلاینت",
+			"دکمه_شخصیت_مثلث",
+			"دکمه_شخصیت_مربع",
+			"دکمه_شخصیت_مستطیل",
+			"دکمه_شخصیت_دایره",
+			"توپ_مولتی",
+			"پد_مولتی"
 		],
 		"subfolders": []
 	},
@@ -301,9 +326,9 @@
 			"قسمت سوم",
 			"پاسخ قسمت سوم",
 			"ازادیa",
-			"قسمت چهارم",
-			"پاسخ قسمت چهارم",
 			"آبادی",
+			"لایوت_اصلی",
+			"لایوت_بازی",
 			"فروشگاه"
 		],
 		"subfolders": []
@@ -319,8 +344,9 @@
 			"Event sheet قسمت سوم",
 			"Event sheet پاسخ قسمت سوم",
 			"Event sheet آزادی a",
-			"Event sheet قسمت چهارم",
 			"Event sheet آبادی",
+			"Event sheet لایوت اصلی",
+			"Event sheet لایوت بازی",
 			"Event sheet فلش",
 			"Event sheet شروع",
 			"Event sheet ورود",
@@ -535,6 +561,22 @@
 					"file-info": {
 						"purpose": "none"
 					}
+				},
+				{
+					"name": "8-Bit Ping Pong start.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 682733836769237,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Star Cannon.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 362795060042669,
+					"file-info": {
+						"purpose": "none"
+					}
 				}
 			],
 			"subfolders": []
@@ -609,7 +651,16 @@
 			"subfolders": []
 		},
 		"general": {
-			"items": [],
+			"items": [
+				{
+					"name": "ui.css",
+					"type": "text/css",
+					"sid": 884512739016482,
+					"file-info": {
+						"purpose": "stylesheet"
+					}
+				}
+			],
 			"subfolders": []
 		}
 	},
@@ -668,7 +719,7 @@
 			1,
 			0
 		],
-		"orientations": "landscape",
+		"orientations": "any",
 		"webgpu": "no",
 		"multitexturing": "auto",
 		"gpuPreference": "high-performance",

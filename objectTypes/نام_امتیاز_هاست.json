@@ -1,0 +1,10 @@
+{
+	"name": "نام_امتیاز_هاست",
+	"plugin-id": "Text",
+	"sid": 821000000000301,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": []
+}

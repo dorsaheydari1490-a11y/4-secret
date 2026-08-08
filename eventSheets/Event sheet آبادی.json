@@ -10,10 +10,6 @@
 			"includeSheet": "Event sheet فلش"
 		},
 		{
-			"eventType": "include",
-			"includeSheet": "Event sheet بازگشت"
-		},
-		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -23,6 +19,19 @@
 				}
 			],
 			"actions": [
+				{
+					"type": "comment",
+					"text": "برگرداندن viewport عمودی چهار راز"
+				},
+				{
+					"id": "set-canvas-size",
+					"objectClass": "System",
+					"sid": 910000000001103,
+					"parameters": {
+						"width": "480",
+						"height": "630"
+					}
+				},
 				{
 					"type": "comment",
 					"text": "شنیدن داستان و کنار رفتن پرده"
@@ -77,24 +86,6 @@
 					"behaviorType": "Platform",
 					"parameters": {
 						"max-speed": "0"
-					}
-				},
-				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 992378842254463,
-					"parameters": {
-						"seconds": "30",
-						"use-timescale": true
-					}
-				},
-				{
-					"id": "set-position",
-					"objectClass": "خانه_بازگشت",
-					"sid": 274938083486789,
-					"parameters": {
-						"x": "232",
-						"y": "310"
 					}
 				}
 			],

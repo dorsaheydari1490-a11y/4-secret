@@ -1,0 +1,1827 @@
+{
+	"name": "Event sheet لایوت بازی",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "نام_بازی",
+			"type": "string",
+			"initialValue": "ping_pong_dorsa",
+			"comment": "شناسه بازی روی سرور Construct Multiplayer؛ بازیکن‌ها فقط با همین نام همدیگه رو پیدا میکنن.",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 990743015903066
+		},
+		{
+			"eventType": "variable",
+			"name": "نام_نمونه",
+			"type": "string",
+			"initialValue": "v9",
+			"comment": "نسخه/اینستنس اتاق‌ها (مثلا v8). با عوض کردنش میتونی از اتاق‌های قدیمی جدا شی.",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 225400811807885
+		},
+		{
+			"eventType": "variable",
+			"name": "نام_اتاق",
+			"type": "string",
+			"initialValue": "duel",
+			"comment": "اسم پایه اتاق دو نفره؛ سیستم AutoJoin بر اساسش مچ میکنه.",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 461393190284965
+		},
+		{
+			"eventType": "variable",
+			"name": "وضعیت_بازی",
+			"type": "string",
+			"initialValue": "منتظر",
+			"comment": "ماشین‌حالت ساده راند: منتظر / آماده / برو / شروع_شد. هاست پخش میکنه، کلاینت گوش میده.",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 751939155442397
+		},
+		{
+			"eventType": "variable",
+			"name": "ورودی_Y",
+			"type": "number",
+			"initialValue": "360",
+			"comment": "آخرین مختصات عمودی کنترل بازیکن؛ اولویت با تاچ است و اگر تاچ نبود از موس استفاده میشود.",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 628401957384261
+		},
+		{
+			"eventType": "variable",
+			"name": "تاچ_فعال",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "پرچم ۰/۱: اگر بازیکن حداقل یک‌بار صفحه را لمس کرده باشد، دیگر موس جایگزین تاچ نمیشود.",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 739512068495372
+		},
+		{
+			"eventType": "variable",
+			"name": "نام_هاست",
+			"type": "string",
+			"initialValue": "",
+			"comment": "نام نمایشی میزبان بدون پسوند تصادفی آلیاس؛ برای نوار امتیاز.",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 628401957384301
+		},
+		{
+			"eventType": "variable",
+			"name": "نام_کلاینت",
+			"type": "string",
+			"initialValue": "",
+			"comment": "نام نمایشی مهمان/هم‌اتاقی؛ برای نوار امتیاز.",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 628401957384302
+		},
+		{
+			"eventType": "comment",
+			"text": "[h2]لایوت بازی — پینگ‌پونگ دونفره آنلاین[/h2]\nجریان کلی: وصل به Multiplayer، لاگین، AutoJoin اتاق دونفره. هاست مرجع شبیه‌سازی است (توپ_مولتی و امتیاز)، Peer فقط ورودی y می‌فرستد و آبجکت‌های sync‌شده را می‌بیند. لاگ روی صفحه برای دیباگ شبکه است."
+		},
+		{
+			"eventType": "comment",
+			"text": "[h3]تابع ثبت_پیام[/h3]\nهر پیام دیباگ را از جلو آرایه push میکند تا جدیدترین‌ها اول لیست باشند."
+		},
+		{
+			"functionName": "ثبت_پیام",
+			"functionDescription": "لاگ کوتاه شبکه/وضعیت را اول آرایه میگذارد تا تازه‌ترین پیام بالا باشد.",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "متن",
+					"type": "string",
+					"initialValue": "",
+					"comment": "رشته قابل‌نمایش برای دیباگ روی صفحه.",
+					"sid": 233859038565952
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "push",
+					"objectClass": "Array",
+					"sid": 569499264508417,
+					"parameters": {
+						"where": "front",
+						"value": "متن",
+						"axis": "x"
+					}
+				}
+			],
+			"sid": 775104601635400
+		},
+		{
+			"eventType": "comment",
+			"text": "[h3]محدود کردن لاگ[/h3]\nاگر بیش از ۸ پیام جمع شد، از ته آرایه pop میکند تا UI شلوغ نشود."
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-size",
+					"objectClass": "Array",
+					"sid": 283125974747744,
+					"parameters": {
+						"axis": "x",
+						"comparison": 4,
+						"value": "8"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "pop",
+					"objectClass": "Array",
+					"sid": 512868401309946,
+					"parameters": {
+						"where": "back",
+						"axis": "x"
+					}
+				}
+			],
+			"sid": 926400960325658
+		},
+		{
+			"eventType": "comment",
+			"text": "[h3]پاک‌سازی متن لاگ[/h3]\nمتن نمایش لاگ را خالی میکند تا بعدا از روی آرایه دوباره ساخته شود."
+		},
+		{
+			"eventType": "block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "متن_لاگ",
+					"sid": 425158818503373,
+					"parameters": {
+						"text": "\"\""
+					}
+				}
+			],
+			"sid": 651284739105826
+		},
+		{
+			"eventType": "comment",
+			"text": "[h3]بازسازی نمایش لاگ[/h3]\nروی همه عناصر آرایه میچرخد و خط‌به‌خط به متن_لاگ اضافه میکند."
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "for-each-element",
+					"objectClass": "Array",
+					"sid": 231879995978776,
+					"parameters": {
+						"axes": "x"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "append-text",
+					"objectClass": "متن_لاگ",
+					"sid": 333773083067117,
+					"parameters": {
+						"text": "Array.CurValue & newline"
+					}
+				}
+			],
+			"sid": 712934621440749
+		},
+		{
+			"eventType": "comment",
+			"text": "[h3]شروع لایوت بازی — راه‌اندازی شبکه[/h3]\nموسیقی بازی، تعریف ورودی کلاینت با تگ y، همگام‌سازی پد_مولتی/توپ_مولتی و متغیر سکه، بعد اتصال به سرور Multiplayer."
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 156582626695754
+				}
+			],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "viewport افقی برای مالتی (Set canvas size)"
+				},
+				{
+					"id": "set-canvas-size",
+					"objectClass": "System",
+					"sid": 910000000001102,
+					"parameters": {
+						"width": "1280",
+						"height": "720"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 516252939791706,
+					"parameters": {
+						"audio-file": {
+							"path": "Star Cannon"
+						},
+						"loop": "looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "add-client-input-value",
+					"objectClass": "Multiplayer",
+					"sid": 368561817150979,
+					"parameters": {
+						"tag": "\"y\"",
+						"precision": "low-int16-2-bytes",
+						"interpolation": "linear"
+					}
+				},
+				{
+					"id": "sync-object-2",
+					"objectClass": "Multiplayer",
+					"sid": 109388547617353,
+					"parameters": {
+						"object": "پد_مولتی",
+						"x": true,
+						"y": true,
+						"angle": true,
+						"precision": "low-int16-2-bytes",
+						"bandwidth": "normal-bandwidth-unpredictable"
+					}
+				},
+				{
+					"id": "sync-instance-variable",
+					"objectClass": "Multiplayer",
+					"sid": 861233087921224,
+					"parameters": {
+						"object": "پد_مولتی",
+						"instance-variable": {
+							"name": "سکه_ها",
+							"objectClass": "پد_مولتی"
+						},
+						"precision": "low-int16-2-bytes",
+						"interpolation": "none",
+						"client-value-tag": "\"\""
+					}
+				},
+				{
+					"id": "sync-object-2",
+					"objectClass": "Multiplayer",
+					"sid": 942700688882213,
+					"parameters": {
+						"object": "توپ_مولتی",
+						"x": true,
+						"y": true,
+						"angle": true,
+						"precision": "low-int16-2-bytes",
+						"bandwidth": "normal-bandwidth-unpredictable"
+					}
+				},
+				{
+					"id": "connect",
+					"objectClass": "Multiplayer",
+					"sid": 654087415578245,
+					"parameters": {
+						"server": "\"wss://multiplayer.construct.net\""
+					}
+				}
+			],
+			"sid": 908419050092608
+		},
+		{
+			"eventType": "comment",
+			"text": "[h3]On Connected[/h3]\nبعد از وصل شدن به سیگنالینگ سرور، با آلیاس نام بازیکن به علاوه عدد تصادفی لاگین میکند."
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-connected",
+					"objectClass": "Multiplayer",
+					"sid": 654293333908781
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "ثبت_پیام",
+					"sid": 109477891379332,
+					"parameters": [
+						"\"connected, logging in as [\" & (نام_بازیکن <> \"\" ? نام_بازیکن : \"player\") & \"]\""
+					]
+				},
+				{
+					"id": "log-in",
+					"objectClass": "Multiplayer",
+					"sid": 377840594139529,
+					"parameters": {
+						"alias": "(نام_بازیکن <> \"\" ? نام_بازیکن : \"player\") & str(int(random(1000) + 1000))"
+					}
+				}
+			],
+			"sid": 366947304488442
+		},
+		{
+			"eventType": "comment",
+			"text": "[h3]On Logged In[/h3]\nیک تأخیر کوتاه تصادفی میگذارد تا دو کلاینت همزمان به یک اتاق نچسبند، بعد AutoJoin با ظرفیت ۲ و قفل وقتی پر شد."
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-logged-in",
+					"objectClass": "Multiplayer",
+					"sid": 173022669854889
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "ثبت_پیام",
+					"sid": 458364754901833,
+					"parameters": [
+						"\"logged in as \" & Multiplayer.MyAlias"
+					]
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 537651418521218,
+					"parameters": {
+						"seconds": "random(0.3)",
+						"use-timescale": false
+					}
+				},
+				{
+					"callFunction": "ثبت_پیام",
+					"sid": 923950150184932,
+					"parameters": [
+						"\"auto-joining ping_pong_dorsa/v9/duel\""
+					]
+				},
+				{
+					"id": "auto-join-room",
+					"objectClass": "Multiplayer",
+					"sid": 980163144416346,
+					"parameters": {
+						"game": "\"ping_pong_dorsa\"",
+						"instance": "\"v9\"",
+						"first-room": "\"duel\"",
+						"max-peers": "2",
+						"locking": "lock-when-full"
+					}
+				}
+			],
+			"sid": 541546360999220
+		},
+		{
+			"eventType": "comment",
+			"text": "[h3]On Joined Room[/h3]\nنقش Host یا Peer مشخص میشود؛ بعد بر اساس نقش، گروه منطقی و آبجکت‌های محلی تنظیم میشوند."
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-joined-room",
+					"objectClass": "Multiplayer",
+					"sid": 614664685216728
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "ثبت_پیام",
+					"sid": 818928344425393,
+					"parameters": [
+						"\"JOINED room=\" & Multiplayer.CurrentRoom & \" game=\" & Multiplayer.CurrentGame & \" inst=\" & Multiplayer.CurrentInstance"
+					]
+				},
+				{
+					"callFunction": "ثبت_پیام",
+					"sid": 866907897066220,
+					"parameters": [
+						"\"role: \" & (Multiplayer.HostID = Multiplayer.MyID ? \"HOST\" : \"PEER\") & \" peers=\" & Multiplayer.PeerCount"
+					]
+				}
+			],
+			"sid": 614664685216727,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "[b]مسیر هاست[/b]\nگروه Host روشن میشود، پد_مولتی خودش را به PeerID خودش associate میکند، سمت چپ زمین میگذارد، و نام هاست را برای امتیاز ست میکند."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-host",
+							"objectClass": "Multiplayer",
+							"sid": 533932307480457
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "ثبت_پیام",
+							"sid": 656363482714587,
+							"parameters": [
+								"\"I am HOST — waiting for opponent\""
+							]
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 582980265734093,
+							"parameters": {
+								"group-name": "\"Host\"",
+								"state": "activated"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "پد_مولتی",
+							"sid": 968297230722030,
+							"parameters": {
+								"instance-variable": "شناسه",
+								"value": "Multiplayer.MyID"
+							}
+						},
+						{
+							"id": "associate-object-with-peer",
+							"objectClass": "Multiplayer",
+							"sid": 861613149324275,
+							"parameters": {
+								"object": "پد_مولتی",
+								"peer-id": "Multiplayer.MyID"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "پد_مولتی",
+							"sid": 896637561753594,
+							"parameters": {
+								"x": "50",
+								"y": "LayoutHeight / 2"
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "پد_مولتی",
+							"sid": 779004868958750,
+							"parameters": {
+								"angle": "90"
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "پد_مولتی",
+							"sid": 988091639649684,
+							"parameters": {
+								"width": "253",
+								"height": "65"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 614664685216740,
+							"parameters": {
+								"variable": "نام_هاست",
+								"value": "نام_بازیکن <> \"\" ? نام_بازیکن : left(Multiplayer.MyAlias, max(1, len(Multiplayer.MyAlias) - 4))"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 614664685216741,
+							"parameters": {
+								"variable": "نام_کلاینت",
+								"value": "\"\""
+							}
+						}
+					],
+					"sid": 614664685216729
+				},
+				{
+					"eventType": "comment",
+					"text": "[b]مسیر Peer مهمان[/b]\nگروه Peer روشن میشود. پد_مولتی و توپ_مولتی لوکال پاک میشوند چون از هاست sync میآیند. وضعیت آماده، نام‌ها ست، و خطوط زمین/نوار امتیاز نمایش داده میشوند."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 283993514799060
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "ثبت_پیام",
+							"sid": 506471453380279,
+							"parameters": [
+								"\"I am PEER — waiting for host sync\""
+							]
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 916949017243188,
+							"parameters": {
+								"group-name": "\"Peer\"",
+								"state": "activated"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "پد_مولتی",
+							"sid": 243421346149917
+						},
+						{
+							"id": "destroy",
+							"objectClass": "توپ_مولتی",
+							"sid": 925116245955892
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 588903511521439,
+							"parameters": {
+								"variable": "وضعیت_بازی",
+								"value": "\"آماده\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 241655808430480,
+							"parameters": {
+								"variable": "نام_کلاینت",
+								"value": "نام_بازیکن <> \"\" ? نام_بازیکن : left(Multiplayer.MyAlias, max(1, len(Multiplayer.MyAlias) - 4))"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 241655808430481,
+							"parameters": {
+								"variable": "نام_هاست",
+								"value": "left(Multiplayer.PeerAliasFromID(Multiplayer.HostID), max(1, len(Multiplayer.PeerAliasFromID(Multiplayer.HostID)) - 4))"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "HalfHost",
+							"sid": 900000000000001,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "HalfClient",
+							"sid": 900000000000002,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "CenterLine",
+							"sid": 900000000000003,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "نمایش_امتیاز",
+							"sid": 241655808430482,
+							"parameters": {
+								"text": "\"0 — 0\""
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "نام_امتیاز_هاست",
+							"sid": 830000000000101,
+							"parameters": {
+								"text": "\"⁦\" & (Multiplayer.HostID = Multiplayer.MyID ? \"شما \" : \"\") & نام_هاست & \"⁩\""
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "نام_امتیاز_کلاینت",
+							"sid": 830000000000102,
+							"parameters": {
+								"text": "\"⁦\" & (Multiplayer.HostID <> Multiplayer.MyID ? \"شما \" : \"\") & نام_کلاینت & \"⁩\""
+							}
+						}
+					],
+					"sid": 241655808430470
+				}
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "[h3]قطع اتصال[/h3]\nوقتی لینک Multiplayer قطع شد، در لاگ ثبت میشود."
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-disconnected",
+					"objectClass": "Multiplayer",
+					"sid": 259461484991108
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "ثبت_پیام",
+					"sid": 146197702642692,
+					"parameters": [
+						"\"اتصال قطع شد\""
+					]
+				}
+			],
+			"sid": 541044035876471
+		},
+		{
+			"eventType": "comment",
+			"text": "[h3]خطای Multiplayer[/h3]\nپیام خطای پلاگین را برای دیباگ لاگ میکند."
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-error",
+					"objectClass": "Multiplayer",
+					"sid": 676292251502764
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "ثبت_پیام",
+					"sid": 587979503057931,
+					"parameters": [
+						"\"ERROR: \" & Multiplayer.ErrorMessage"
+					]
+				}
+			],
+			"sid": 658723784592513
+		},
+		{
+			"eventType": "comment",
+			"text": "[h3]خروج از اتاق[/h3]\nبازیکن اتاق را ترک کرده؛ فقط لاگ."
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-left-room",
+					"objectClass": "Multiplayer",
+					"sid": 531813382413395
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "ثبت_پیام",
+					"sid": 484207267207365,
+					"parameters": [
+						"\"خروج از اتاق\""
+					]
+				}
+			],
+			"sid": 472125401836956
+		},
+		{
+			"eventType": "comment",
+			"text": "[h3]Kicked[/h3]\nمعمولا یعنی هاست رفته یا در دسترس نیست و سیگنالینگ بیرونت کرده."
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-kicked",
+					"objectClass": "Multiplayer",
+					"sid": 606300150347174
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "ثبت_پیام",
+					"sid": 860915594550532,
+					"parameters": [
+						"\"اتصال قطع شد (میزبان دیگر در دسترس نیست)\""
+					]
+				}
+			],
+			"sid": 760593705535654
+		},
+		{
+			"eventType": "comment",
+			"text": "[h3]آمار پهنای‌باند[/h3]\nهر تیک، دریافت و ارسال بایت‌بر‌ثانیه را روی آمار_شبکه نشان میدهد."
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 217895728961136
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "آمار_شبکه",
+					"sid": 607354841613438,
+					"parameters": {
+						"text": "\"دریافت: \" & round(Multiplayer.StatInboundBandwidth) & \" ب/ث  |  ارسال: \" & round(Multiplayer.StatOutboundBandwidth) & \" ب/ث\""
+					}
+				}
+			],
+			"sid": 165482359165943
+		},
+		{
+			"eventType": "comment",
+			"text": "[h3]ساخت پد_مولتی جدید[/h3]\nوقتی اینستنس پد_مولتی ساخته میشود معمولا برای Peer، اگر PeerID معتبر باشد زاویه/اندازه/شناسه و associate ست میشود."
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "پد_مولتی",
+					"sid": 199482376123497
+				}
+			],
+			"actions": [],
+			"sid": 195906538246427,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "PeerID غیرخالی یعنی این پد_مولتی مال آن همکار شبکه است؛ لینکش کن."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 581078491137472,
+							"parameters": {
+								"first-value": "Multiplayer.PeerID",
+								"comparison": 1,
+								"second-value": "\"\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-angle",
+							"objectClass": "پد_مولتی",
+							"sid": 568627687234611,
+							"parameters": {
+								"angle": "90"
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "پد_مولتی",
+							"sid": 193414574679004,
+							"parameters": {
+								"width": "253",
+								"height": "65"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "پد_مولتی",
+							"sid": 358586575902936,
+							"parameters": {
+								"instance-variable": "شناسه",
+								"value": "Multiplayer.PeerID"
+							}
+						},
+						{
+							"id": "associate-object-with-peer",
+							"objectClass": "Multiplayer",
+							"sid": 911992876728480,
+							"parameters": {
+								"object": "پد_مولتی",
+								"peer-id": "Multiplayer.PeerID"
+							}
+						},
+						{
+							"callFunction": "ثبت_پیام",
+							"sid": 223497870224458,
+							"parameters": [
+								"\"pad created peer=\" & Multiplayer.PeerID & \" count=\" & پد_مولتی.Count"
+							]
+						}
+					],
+					"sid": 369864026717883
+				}
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "[h3]ورودی تاچ[/h3]\nاگر انگشتی روی صفحه باشد، Y تاچ را میگیرد و پرچم تاچ_فعال را ۱ میکند."
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 471829365017482,
+					"parameters": {
+						"first-value": "Touch.TouchCount",
+						"comparison": 4,
+						"second-value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 582910374658291,
+					"parameters": {
+						"variable": "ورودی_Y",
+						"value": "Touch.Y"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 583021485769402,
+					"parameters": {
+						"variable": "تاچ_فعال",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 693048175829364
+		},
+		{
+			"eventType": "comment",
+			"text": "[h3]fallback موس[/h3]\nاگر تاچ نبود و هنوز تاچ_فعال صفر است، از Mouse.Y استفاده میکند برای دسکتاپ."
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 704159286930475
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 815260397041586,
+					"parameters": {
+						"variable": "تاچ_فعال",
+						"comparison": 0,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 926371408152697,
+					"parameters": {
+						"variable": "ورودی_Y",
+						"value": "Mouse.Y"
+					}
+				}
+			],
+			"sid": 137482519263708
+		},
+		{
+			"eventType": "comment",
+			"text": "[h3]ارسال ورودی کلاینت[/h3]\nدر On Client Update، مقدار ورودی_Y را با تگ y به هاست میفرستد تا پد_مولتی ریموت حرکت کند."
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-client-update",
+					"objectClass": "Multiplayer",
+					"sid": 949561108881710
+				}
+			],
+			"actions": [
+				{
+					"id": "set-client-state",
+					"objectClass": "Multiplayer",
+					"sid": 396829371908975,
+					"parameters": {
+						"tag": "\"y\"",
+						"value": "ورودی_Y"
+					}
+				}
+			],
+			"sid": 145792457517258
+		},
+		{
+			"eventType": "comment",
+			"text": "[h3]همگام وضعیت راند[/h3]\nپیام gamestate-changed میرسد و وضعیت_بازی محلی آپدیت میشود."
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-peer-message",
+					"objectClass": "Multiplayer",
+					"sid": 451482713281209,
+					"parameters": {
+						"tag": "\"gamestate-changed\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 283983244098429,
+					"parameters": {
+						"variable": "وضعیت_بازی",
+						"value": "Multiplayer.Message"
+					}
+				}
+			],
+			"sid": 315352474311149
+		},
+		{
+			"eventType": "comment",
+			"text": "[h3]رقیب وصل شد فقط هاست[/h3]\nپد_مولتی سمت راست برای Peer ساخته میشود، UI زمین روشن، شمارش معکوس آماده سپس برو، بعد بولت توپ_مولتی فعال با زاویه تصادفی، و در نهایت وضعیت شروع_شد."
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-peer-connected",
+					"objectClass": "Multiplayer",
+					"sid": 945888216526880
+				},
+				{
+					"id": "is-host",
+					"objectClass": "Multiplayer",
+					"sid": 945888216526881
+				}
+			],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 447096671575293,
+					"parameters": {
+						"object-to-create": "پد_مولتی",
+						"layer": "\"بازی\"",
+						"x": "LayoutWidth - 50",
+						"y": "LayoutHeight / 2",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "set-angle",
+					"objectClass": "پد_مولتی",
+					"sid": 658914306862745,
+					"parameters": {
+						"angle": "90"
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "پد_مولتی",
+					"sid": 673212275665729,
+					"parameters": {
+						"width": "253",
+						"height": "65"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "پد_مولتی",
+					"sid": 510483402726111,
+					"parameters": {
+						"instance-variable": "شناسه",
+						"value": "Multiplayer.PeerID"
+					}
+				},
+				{
+					"id": "associate-object-with-peer",
+					"objectClass": "Multiplayer",
+					"sid": 548037692150916,
+					"parameters": {
+						"object": "پد_مولتی",
+						"peer-id": "Multiplayer.PeerID"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 683837288104550,
+					"parameters": {
+						"variable": "نام_کلاینت",
+						"value": "left(Multiplayer.PeerAlias, max(1, len(Multiplayer.PeerAlias) - 4))"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "HalfHost",
+					"sid": 900000000000001,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "HalfClient",
+					"sid": 900000000000002,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "CenterLine",
+					"sid": 900000000000003,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "نمایش_امتیاز",
+					"sid": 683837288104543,
+					"parameters": {
+						"text": "\"0 — 0\""
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "نام_امتیاز_هاست",
+					"sid": 830000000000111,
+					"parameters": {
+						"text": "\"⁦\" & (Multiplayer.HostID = Multiplayer.MyID ? \"شما \" : \"\") & نام_هاست & \"⁩\""
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "نام_امتیاز_کلاینت",
+					"sid": 830000000000112,
+					"parameters": {
+						"text": "\"⁦\" & (Multiplayer.HostID <> Multiplayer.MyID ? \"شما \" : \"\") & نام_کلاینت & \"⁩\""
+					}
+				},
+				{
+					"callFunction": "ثبت_پیام",
+					"sid": 197603817830444,
+					"parameters": [
+						"\"رقیب وصل شد — شروع شمارش معکوس\""
+					]
+				},
+				{
+					"callFunction": "نمایش_امتیاز",
+					"sid": 268280119576426,
+					"parameters": [
+						"\"آماده\""
+					]
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 371012277451821,
+					"parameters": {
+						"seconds": "3",
+						"use-timescale": true
+					}
+				},
+				{
+					"callFunction": "نمایش_امتیاز",
+					"sid": 238529816910093,
+					"parameters": [
+						"\"برو\""
+					]
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "توپ_مولتی",
+					"sid": 464481182374705,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"state": "enabled"
+					}
+				},
+				{
+					"id": "set-angle-of-motion",
+					"objectClass": "توپ_مولتی",
+					"sid": 855042961806998,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"angle": "choose(random(-35, 35), 180 + random(-35, 35))"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 124855036177363,
+					"parameters": {
+						"seconds": "1.0",
+						"use-timescale": true
+					}
+				},
+				{
+					"callFunction": "نمایش_امتیاز",
+					"sid": 332654842629201,
+					"parameters": [
+						"\"شروع_شد\""
+					]
+				}
+			],
+			"sid": 746727173901764
+		},
+		{
+			"eventType": "comment",
+			"text": "[h3]تابع نمایش_امتیاز[/h3]\nوضعیت راند را ست و با Reliable Ordered به همه broadcast میکند. قبلا SetGameState بوده."
+		},
+		{
+			"functionName": "نمایش_امتیاز",
+			"functionDescription": "وضعیت راند را روی هاست ست میکند و با پیام قابل‌اعتماد به بقیه پخش میکند (تگ gamestate-changed).",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "وضعیت",
+					"type": "string",
+					"initialValue": "",
+					"comment": "یکی از حالت‌های راند مثل آماده / برو / شروع_شد.",
+					"sid": 890048855040928
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 413135847247642,
+					"parameters": {
+						"variable": "وضعیت_بازی",
+						"value": "وضعیت"
+					}
+				},
+				{
+					"id": "broadcast-message",
+					"objectClass": "Multiplayer",
+					"sid": 484084016269353,
+					"parameters": {
+						"from-id": "\"\"",
+						"tag": "\"gamestate-changed\"",
+						"message": "وضعیت_بازی",
+						"mode": "reliable-ordered"
+					}
+				}
+			],
+			"sid": 948892895930912
+		},
+		{
+			"eventType": "comment",
+			"text": "[h3]حرکت پد_مولتی ریموت روی هاست[/h3]\nهاست برای پدی که مال خودش نیست، Y را از PeerState همکار میخواند و داخل صفحه clamp میکند."
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-host",
+					"objectClass": "Multiplayer",
+					"sid": 928720764166213
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "پد_مولتی",
+					"sid": 928720764166212,
+					"parameters": {
+						"instance-variable": "شناسه",
+						"comparison": 1,
+						"value": "Multiplayer.MyID"
+					}
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "پد_مولتی",
+					"sid": 928720764166214,
+					"parameters": {
+						"instance-variable": "شناسه",
+						"comparison": 1,
+						"value": "\"\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-y",
+					"objectClass": "پد_مولتی",
+					"sid": 784101548025993,
+					"parameters": {
+						"y": "max(0, min(LayoutHeight, Multiplayer.PeerState(پد_مولتی.شناسه, \"y\")))"
+					}
+				}
+			],
+			"sid": 241719691855303
+		},
+		{
+			"eventType": "comment",
+			"text": "[h3]برخورد توپ_مولتی با پد_مولتی[/h3]\nبا هر ضربه، سرعت Bullet کمی زیاد میشود تا راند تندتر شود."
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "توپ_مولتی",
+					"sid": 821152729994756,
+					"parameters": {
+						"object": "پد_مولتی"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-speed",
+					"objectClass": "توپ_مولتی",
+					"sid": 849999043496104,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"speed": "توپ_مولتی.Bullet.Speed + 30"
+					}
+				}
+			],
+			"sid": 902378181168427
+		},
+		{
+			"eventType": "comment",
+			"text": "[h3]گل سمت چپ امتیاز به راست[/h3]\nفقط هاست: اگر توپ_مولتی از لبه چپ رد شد، به پد_مولتی غیرمیزبان امتیاز میدهد، ۲ ثانیه صبر، توپ_مولتی وسط ریست با سرعت پایه."
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-host",
+					"objectClass": "Multiplayer",
+					"sid": 430428404074391
+				},
+				{
+					"id": "compare-x",
+					"objectClass": "توپ_مولتی",
+					"sid": 702950919095891,
+					"parameters": {
+						"comparison": 2,
+						"x-co-ordinate": "0"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 198436970072225
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 812000000000023,
+					"parameters": {
+						"variable": "وضعیت_بازی",
+						"comparison": 0,
+						"value": "\"شروع_شد\""
+					}
+				},
+				{
+					"id": "compare-x",
+					"objectClass": "پد_مولتی",
+					"sid": 995801735462493,
+					"parameters": {
+						"comparison": 4,
+						"x-co-ordinate": "LayoutWidth / 2"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "پد_مولتی",
+					"sid": 492749067977577,
+					"parameters": {
+						"instance-variable": "سکه_ها",
+						"value": "پد_مولتی.سکه_ها + 1"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 928043004945509,
+					"parameters": {
+						"seconds": "2",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "توپ_مولتی",
+					"sid": 922521763702867,
+					"parameters": {
+						"x": "LayoutWidth / 2",
+						"y": "LayoutHeight / 2"
+					}
+				},
+				{
+					"id": "set-angle-of-motion",
+					"objectClass": "توپ_مولتی",
+					"sid": 951414592542686,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"angle": "choose(random(-35, 35), 180 + random(-35, 35))"
+					}
+				},
+				{
+					"id": "set-speed",
+					"objectClass": "توپ_مولتی",
+					"sid": 558665698327695,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"speed": "300"
+					}
+				}
+			],
+			"sid": 483699609380200
+		},
+		{
+			"eventType": "comment",
+			"text": "[h3]گل سمت راست امتیاز به هاست[/h3]\nفقط هاست: اگر توپ_مولتی از عرض صفحه رد شد، به پد_مولتی هاست امتیاز، بعد ریست توپ_مولتی."
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-host",
+					"objectClass": "Multiplayer",
+					"sid": 594636048567628
+				},
+				{
+					"id": "compare-x",
+					"objectClass": "توپ_مولتی",
+					"sid": 619035319212122,
+					"parameters": {
+						"comparison": 4,
+						"x-co-ordinate": "LayoutWidth"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 764184370869715
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 812000000000025,
+					"parameters": {
+						"variable": "وضعیت_بازی",
+						"comparison": 0,
+						"value": "\"شروع_شد\""
+					}
+				},
+				{
+					"id": "compare-x",
+					"objectClass": "پد_مولتی",
+					"sid": 816866066061835,
+					"parameters": {
+						"comparison": 2,
+						"x-co-ordinate": "LayoutWidth / 2"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "پد_مولتی",
+					"sid": 940918397381220,
+					"parameters": {
+						"instance-variable": "سکه_ها",
+						"value": "پد_مولتی.سکه_ها + 1"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 157196282936022,
+					"parameters": {
+						"seconds": "2",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "توپ_مولتی",
+					"sid": 546600407038641,
+					"parameters": {
+						"x": "LayoutWidth / 2",
+						"y": "LayoutHeight / 2"
+					}
+				},
+				{
+					"id": "set-angle-of-motion",
+					"objectClass": "توپ_مولتی",
+					"sid": 416113585980792,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"angle": "choose(random(-35, 35), 180 + random(-35, 35))"
+					}
+				},
+				{
+					"id": "set-speed",
+					"objectClass": "توپ_مولتی",
+					"sid": 494590336595601,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"speed": "300"
+					}
+				}
+			],
+			"sid": 372731394710952
+		},
+		{
+			"eventType": "comment",
+			"text": "[h3]Peer Connected عمومی[/h3]\nورود همکار را لاگ میکند؛ هاست نام کلاینت را ست میکند، Peer نام هاست را، و نوار امتیاز تازه میشود."
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-peer-connected",
+					"objectClass": "Multiplayer",
+					"sid": 261926705523779
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "ثبت_پیام",
+					"sid": 481808255278804,
+					"parameters": [
+						"\"'\" & Multiplayer.PeerAlias & \"' وارد شد\""
+					]
+				}
+			],
+			"sid": 213232380163057,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "هاست: نام کلاینت از آلیاس Peer بدون ۴ رقم آخر."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-host",
+							"objectClass": "Multiplayer",
+							"sid": 213232380163058
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 213232380163070,
+							"parameters": {
+								"variable": "نام_کلاینت",
+								"value": "left(Multiplayer.PeerAlias, max(1, len(Multiplayer.PeerAlias) - 4))"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "نمایش_امتیاز",
+							"sid": 213232380163071,
+							"parameters": {
+								"text": "\"0 — 0\""
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "نام_امتیاز_هاست",
+							"sid": 830000000000121,
+							"parameters": {
+								"text": "\"⁦\" & (Multiplayer.HostID = Multiplayer.MyID ? \"شما \" : \"\") & نام_هاست & \"⁩\""
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "نام_امتیاز_کلاینت",
+							"sid": 830000000000122,
+							"parameters": {
+								"text": "\"⁦\" & (Multiplayer.HostID <> Multiplayer.MyID ? \"شما \" : \"\") & نام_کلاینت & \"⁩\""
+							}
+						}
+					],
+					"sid": 213232380163060
+				},
+				{
+					"eventType": "comment",
+					"text": "Peer: نام هاست از آلیاس، و نمایش المان‌های زمین."
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 213232380163061
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 213232380163072,
+							"parameters": {
+								"variable": "نام_هاست",
+								"value": "left(Multiplayer.PeerAlias, max(1, len(Multiplayer.PeerAlias) - 4))"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "HalfHost",
+							"sid": 900000000000001,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "HalfClient",
+							"sid": 900000000000002,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "CenterLine",
+							"sid": 900000000000003,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "نمایش_امتیاز",
+							"sid": 213232380163073,
+							"parameters": {
+								"text": "\"0 — 0\""
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "نام_امتیاز_هاست",
+							"sid": 830000000000131,
+							"parameters": {
+								"text": "\"⁦\" & (Multiplayer.HostID = Multiplayer.MyID ? \"شما \" : \"\") & نام_هاست & \"⁩\""
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "نام_امتیاز_کلاینت",
+							"sid": 830000000000132,
+							"parameters": {
+								"text": "\"⁦\" & (Multiplayer.HostID <> Multiplayer.MyID ? \"شما \" : \"\") & نام_کلاینت & \"⁩\""
+							}
+						}
+					],
+					"sid": 213232380163063
+				}
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "[h3]Peer Disconnected[/h3]\nنام کلاینت پاک، المان‌های زمین مخفی، و پیام منتظر رقیب روی امتیاز."
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-peer-disconnected",
+					"objectClass": "Multiplayer",
+					"sid": 618008954997189
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "ثبت_پیام",
+					"sid": 504849601962349,
+					"parameters": [
+						"\"'\" & Multiplayer.PeerAlias & \"' خارج شد\""
+					]
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 289005437073960,
+					"parameters": {
+						"variable": "نام_کلاینت",
+						"value": "\"\""
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "HalfHost",
+					"sid": 900000000000011,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "HalfClient",
+					"sid": 900000000000012,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "CenterLine",
+					"sid": 900000000000013,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "نمایش_امتیاز",
+					"sid": 289005437073961,
+					"parameters": {
+						"text": "\"منتظر یه رقیب...\""
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "نام_امتیاز_هاست",
+					"sid": 830000000000141,
+					"parameters": {
+						"text": "\"\""
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "نام_امتیاز_کلاینت",
+					"sid": 830000000000142,
+					"parameters": {
+						"text": "\"\""
+					}
+				}
+			],
+			"sid": 289005437073951
+		},
+		{
+			"eventType": "comment",
+			"text": "[h3]حرکت پد_مولتی خودی[/h3]\nپدی که شناسه‌اش برابر MyID است، مستقیم با ورودی_Y جابه‌جا میشود کنترل لوکال."
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "پد_مولتی",
+					"sid": 935599841472269,
+					"parameters": {
+						"instance-variable": "شناسه",
+						"comparison": 0,
+						"value": "Multiplayer.MyID"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-y",
+					"objectClass": "پد_مولتی",
+					"sid": 240836405800088,
+					"parameters": {
+						"y": "ورودی_Y"
+					}
+				}
+			],
+			"sid": 562827252681422
+		},
+		{
+			"eventType": "comment",
+			"text": "[h3]امتیاز وسط + نام هاست[/h3]\nامتیاز پد_مولتی چپ را در وسط می‌نویسد و نام هاست را در تکست چپ (راست‌چین) ست می‌کند."
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 992951584847900,
+					"parameters": {
+						"variable": "وضعیت_بازی",
+						"comparison": 0,
+						"value": "\"شروع_شد\""
+					}
+				},
+				{
+					"id": "compare-x",
+					"objectClass": "پد_مولتی",
+					"sid": 201091921667105,
+					"parameters": {
+						"comparison": 2,
+						"x-co-ordinate": "LayoutWidth / 2"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "نمایش_امتیاز",
+					"sid": 404913697816928,
+					"parameters": {
+						"text": "پد_مولتی.سکه_ها & \" — \""
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "نام_امتیاز_هاست",
+					"sid": 830000000000201,
+					"parameters": {
+						"text": "\"⁦\" & (Multiplayer.HostID = Multiplayer.MyID ? \"شما \" : \"\") & نام_هاست & \"⁩\""
+					}
+				}
+			],
+			"sid": 263319476740459
+		},
+		{
+			"eventType": "comment",
+			"text": "[h3]امتیاز وسط + نام کلاینت[/h3]\nامتیاز پد_مولتی راست را به وسط append می‌کند و نام کلاینت را در تکست راست (چپ‌چین) ست می‌کند."
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 849923308624513,
+					"parameters": {
+						"variable": "وضعیت_بازی",
+						"comparison": 0,
+						"value": "\"شروع_شد\""
+					}
+				},
+				{
+					"id": "compare-x",
+					"objectClass": "پد_مولتی",
+					"sid": 534421809171263,
+					"parameters": {
+						"comparison": 4,
+						"x-co-ordinate": "LayoutWidth / 2"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "append-text",
+					"objectClass": "نمایش_امتیاز",
+					"sid": 334520557707109,
+					"parameters": {
+						"text": "پد_مولتی.سکه_ها"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "نام_امتیاز_کلاینت",
+					"sid": 830000000000202,
+					"parameters": {
+						"text": "\"⁦\" & (Multiplayer.HostID <> Multiplayer.MyID ? \"شما \" : \"\") & نام_کلاینت & \"⁩\""
+					}
+				}
+			],
+			"sid": 377147925770060
+		}
+	],
+	"sid": 581855882183268
+}

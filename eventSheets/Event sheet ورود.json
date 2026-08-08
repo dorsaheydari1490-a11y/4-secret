@@ -22,6 +22,19 @@
 			],
 			"actions": [
 				{
+					"type": "comment",
+					"text": "viewport عمودی پیش‌فرض بازی"
+				},
+				{
+					"id": "set-canvas-size",
+					"objectClass": "System",
+					"sid": 910000000001105,
+					"parameters": {
+						"width": "480",
+						"height": "630"
+					}
+				},
+				{
 					"id": "set-visible",
 					"objectClass": "دکمه_ادامه",
 					"sid": 910000000000202,

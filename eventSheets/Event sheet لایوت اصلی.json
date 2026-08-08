@@ -1,0 +1,389 @@
+{
+	"name": "Event sheet لایوت اصلی",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "نام_بازیکن",
+			"type": "string",
+			"initialValue": "",
+			"comment": "شخصیتی که بازیکن انتخاب میکند (مثلث/مربع/دایره/مستطیل)؛ برای لاگین و نمایش امتیاز به لایوت بازی میرود.",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 411595830162500
+		},
+		{
+			"eventType": "comment",
+			"text": "[h2]لایوت اصلی — انتخاب شخصیت[/h2]\nصفحه منو: کلیک/تاچ روی اسپرایت شخصیت (مثلث، مربع، دایره، مستطیل) و ورود به لایوت بازی."
+		},
+		{
+			"eventType": "comment",
+			"text": "[h3]شروع لایوت اصلی[/h3]\nموسیقی منو رو پخش میکنه و متغیر شخصیت رو خالی میکنه."
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 422502532372713
+				}
+			],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "viewport افقی برای مالتی (Set canvas size)"
+				},
+				{
+					"id": "set-canvas-size",
+					"objectClass": "System",
+					"sid": 910000000001101,
+					"parameters": {
+						"width": "1280",
+						"height": "720"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 175026720955298,
+					"parameters": {
+						"audio-file": {
+							"path": "8-Bit Ping Pong start"
+						},
+						"loop": "looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 342751103150941,
+					"parameters": {
+						"variable": "نام_بازیکن",
+						"value": "\"\""
+					}
+				}
+			],
+			"sid": 287485089185670
+		},
+		{
+			"eventType": "comment",
+			"text": "[h3]انتخاب شخصیت (ماوس و لمس)[/h3]\nبا کلیک یا تاچ روی هر اسپرایت، همان نام ذخیره میشود و وارد لایوت بازی میشود."
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 900000000000002,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "دکمه_شخصیت_مثلث"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 900000000000003,
+					"parameters": {
+						"variable": "نام_بازیکن",
+						"value": "\"مثلث\""
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 900000000000004,
+					"parameters": {
+						"layout": "لایوت_بازی"
+					}
+				},
+				{
+					"id": "stop-all",
+					"objectClass": "Audio",
+					"sid": 900000000000005
+				}
+			],
+			"sid": 900000000000006
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 900000000000007,
+					"parameters": {
+						"object": "دکمه_شخصیت_مثلث"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 900000000000008,
+					"parameters": {
+						"variable": "نام_بازیکن",
+						"value": "\"مثلث\""
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 900000000000009,
+					"parameters": {
+						"layout": "لایوت_بازی"
+					}
+				},
+				{
+					"id": "stop-all",
+					"objectClass": "Audio",
+					"sid": 900000000000010
+				}
+			],
+			"sid": 900000000000011
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 900000000000012,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "دکمه_شخصیت_مربع"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 900000000000013,
+					"parameters": {
+						"variable": "نام_بازیکن",
+						"value": "\"مربع\""
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 900000000000014,
+					"parameters": {
+						"layout": "لایوت_بازی"
+					}
+				},
+				{
+					"id": "stop-all",
+					"objectClass": "Audio",
+					"sid": 900000000000015
+				}
+			],
+			"sid": 900000000000016
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 900000000000017,
+					"parameters": {
+						"object": "دکمه_شخصیت_مربع"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 900000000000018,
+					"parameters": {
+						"variable": "نام_بازیکن",
+						"value": "\"مربع\""
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 900000000000019,
+					"parameters": {
+						"layout": "لایوت_بازی"
+					}
+				},
+				{
+					"id": "stop-all",
+					"objectClass": "Audio",
+					"sid": 900000000000020
+				}
+			],
+			"sid": 900000000000021
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 900000000000022,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "دکمه_شخصیت_دایره"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 900000000000023,
+					"parameters": {
+						"variable": "نام_بازیکن",
+						"value": "\"دایره\""
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 900000000000024,
+					"parameters": {
+						"layout": "لایوت_بازی"
+					}
+				},
+				{
+					"id": "stop-all",
+					"objectClass": "Audio",
+					"sid": 900000000000025
+				}
+			],
+			"sid": 900000000000026
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 900000000000027,
+					"parameters": {
+						"object": "دکمه_شخصیت_دایره"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 900000000000028,
+					"parameters": {
+						"variable": "نام_بازیکن",
+						"value": "\"دایره\""
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 900000000000029,
+					"parameters": {
+						"layout": "لایوت_بازی"
+					}
+				},
+				{
+					"id": "stop-all",
+					"objectClass": "Audio",
+					"sid": 900000000000030
+				}
+			],
+			"sid": 900000000000031
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 900000000000032,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "دکمه_شخصیت_مستطیل"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 900000000000033,
+					"parameters": {
+						"variable": "نام_بازیکن",
+						"value": "\"مستطیل\""
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 900000000000034,
+					"parameters": {
+						"layout": "لایوت_بازی"
+					}
+				},
+				{
+					"id": "stop-all",
+					"objectClass": "Audio",
+					"sid": 900000000000035
+				}
+			],
+			"sid": 900000000000036
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 900000000000037,
+					"parameters": {
+						"object": "دکمه_شخصیت_مستطیل"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 900000000000038,
+					"parameters": {
+						"variable": "نام_بازیکن",
+						"value": "\"مستطیل\""
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 900000000000039,
+					"parameters": {
+						"layout": "لایوت_بازی"
+					}
+				},
+				{
+					"id": "stop-all",
+					"objectClass": "Audio",
+					"sid": 900000000000040
+				}
+			],
+			"sid": 900000000000041
+		}
+	],
+	"sid": 946966137815184
+}

@@ -1,0 +1,72 @@
+{
+	"name": "توپ_مولتی",
+	"plugin-id": "Sprite",
+	"sid": 476640065921914,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Bullet",
+			"name": "Bullet",
+			"sid": 503772905014279
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 387,
+						"height": 389,
+						"originX": 0.5431996747071709,
+						"originY": 0.548575809704209,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 1066914,
+						"collisionPoly": {
+							"points": [
+								0.4965699969831713,
+								0,
+								0.5929379976127706,
+								0,
+								0.9286716772255669,
+								0.12151844907899569,
+								0.9597581290415665,
+								0.8995818595331516,
+								0.8975852254095674,
+								0.9580828678379752,
+								0.819869095869568,
+								1,
+								0.5556342554335708,
+								1,
+								0.49035270661997143,
+								1,
+								0,
+								0.8059802462454335,
+								0,
+								0.5690511626108974,
+								0,
+								0.469599448492697
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 128961372328285,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

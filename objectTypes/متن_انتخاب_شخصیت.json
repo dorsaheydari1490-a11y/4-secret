@@ -1,0 +1,10 @@
+{
+	"name": "متن_انتخاب_شخصیت",
+	"plugin-id": "Text",
+	"sid": 821000000000401,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": []
+}

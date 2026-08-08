@@ -1,0 +1,85 @@
+{
+	"name": "پد_مولتی",
+	"plugin-id": "Sprite",
+	"sid": 687633186565549,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [
+		{
+			"name": "شناسه",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 192253928986415
+		},
+		{
+			"name": "سکه_ها",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 563941672408275
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 179149257215347
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 539,
+						"height": 168,
+						"originX": 0.5056329835020532,
+						"originY": 0.37981859410430835,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 7486986,
+						"collisionPoly": {
+							"points": [
+								0.22822790779324034,
+								0,
+								0.9958419529052976,
+								0,
+								1,
+								0.29152494331065754,
+								1,
+								0.55640589569161,
+								0.8685396236416644,
+								1,
+								0.30232926363326573,
+								1,
+								0.01352397933367978,
+								0.8212868480725624,
+								0.004023805508035568,
+								0.5816326530612246,
+								0.004023805508035568,
+								0.26629818594104293,
+								0.14082630859731313,
+								0
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 445801755056608,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

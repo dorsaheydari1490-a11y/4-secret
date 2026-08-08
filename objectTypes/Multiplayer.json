@@ -1,0 +1,12 @@
+{
+	"name": "Multiplayer",
+	"plugin-id": "Multiplayer",
+	"sid": 437923366690958,
+	"singleglobal-inst": {
+		"type": "Multiplayer",
+		"properties": {},
+		"uid": 344,
+		"sid": 340671792074905,
+		"tags": ""
+	}
+}

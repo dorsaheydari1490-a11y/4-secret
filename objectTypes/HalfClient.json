@@ -1,0 +1,23 @@
+{
+	"name": "HalfClient",
+	"plugin-id": "TiledBg",
+	"sid": 771829104563002,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"image": {
+		"width": 8,
+		"height": 8,
+		"originX": 0,
+		"originY": 0,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"fileType": "image/png",
+		"imageSpriteId": 8811002,
+		"useCollisionPoly": true,
+		"tag": ""
+	}
+}
