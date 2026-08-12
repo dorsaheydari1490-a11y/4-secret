@@ -113,6 +113,14 @@
 					"parameters": {
 						"visibility": "invisible"
 					}
+				},
+				{
+					"id": "lock-orientation",
+					"objectClass": "Browser",
+					"sid": 498442155270172,
+					"parameters": {
+						"orientation": "portrait"
+					}
 				}
 			],
 			"sid": 910000000000212

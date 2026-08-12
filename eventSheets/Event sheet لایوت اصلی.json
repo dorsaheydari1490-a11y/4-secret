@@ -23,6 +23,27 @@
 			"eventType": "block",
 			"conditions": [
 				{
+					"id": "on-end-of-layout",
+					"objectClass": "System",
+					"sid": 271018716397191
+				}
+			],
+			"actions": [
+				{
+					"id": "lock-orientation",
+					"objectClass": "Browser",
+					"sid": 552993320875622,
+					"parameters": {
+						"orientation": "portrait"
+					}
+				}
+			],
+			"sid": 311035129696883
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
 					"id": "on-start-of-layout",
 					"objectClass": "System",
 					"sid": 422502532372713
@@ -63,6 +84,14 @@
 					"parameters": {
 						"variable": "نام_بازیکن",
 						"value": "\"\""
+					}
+				},
+				{
+					"id": "lock-orientation",
+					"objectClass": "Browser",
+					"sid": 715264380204749,
+					"parameters": {
+						"orientation": "landscape"
 					}
 				}
 			],
