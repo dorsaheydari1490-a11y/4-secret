@@ -106,6 +106,15 @@
 					}
 				},
 				{
+					"id": "set-angle-of-motion",
+					"objectClass": "توپ",
+					"sid": 861042961806991,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"angle": "choose(random(-35, 35), 180 + random(-35, 35))"
+					}
+				},
+				{
 					"id": "set-gravity",
 					"objectClass": "توپ",
 					"sid": 626092127761704,
@@ -760,6 +769,15 @@
 					"behaviorType": "Bullet",
 					"parameters": {
 						"speed": "200"
+					}
+				},
+				{
+					"id": "set-angle-of-motion",
+					"objectClass": "توپ",
+					"sid": 861042961806992,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"angle": "choose(random(-35, 35), 180 + random(-35, 35))"
 					}
 				},
 				{
