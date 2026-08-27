@@ -714,7 +714,7 @@
 					"objectClass": "Browser",
 					"sid": 918548530152421,
 					"parameters": {
-						"duration": "80"
+						"pattern": "\"200,100,200\""
 					}
 				},
 				{
@@ -1196,7 +1196,7 @@
 					"objectClass": "Browser",
 					"sid": 918730283365486,
 					"parameters": {
-						"duration": "80"
+						"pattern": "\"200,100,200\""
 					}
 				},
 				{

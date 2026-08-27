@@ -40,7 +40,8 @@
 				"offsetY": 0,
 				"useColor": true,
 				"colorSet": false,
-				"relativeFlags": 2047
+				"relativeFlags": 16383,
+				"version": 1
 			},
 			"keyframes": [
 				{

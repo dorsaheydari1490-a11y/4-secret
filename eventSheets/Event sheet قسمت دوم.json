@@ -379,7 +379,7 @@
 					"objectClass": "Browser",
 					"sid": 917329758164023,
 					"parameters": {
-						"duration": "80"
+						"pattern": "\"200,100,200\""
 					}
 				}
 			],
@@ -487,15 +487,6 @@
 					"parameters": {
 						"x": "98",
 						"y": "187"
-					}
-				},
-				{
-					"id": "set-position",
-					"objectClass": "راهنما2",
-					"sid": 543183992914175,
-					"parameters": {
-						"x": "178",
-						"y": "560"
 					}
 				}
 			],
@@ -696,15 +687,6 @@
 					"parameters": {
 						"x": "98",
 						"y": "187"
-					}
-				},
-				{
-					"id": "set-position",
-					"objectClass": "راهنما2",
-					"sid": 253745103130691,
-					"parameters": {
-						"x": "187",
-						"y": "560"
 					}
 				}
 			],

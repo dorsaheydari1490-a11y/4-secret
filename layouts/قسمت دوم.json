@@ -891,66 +891,6 @@
 					}
 				},
 				{
-					"type": "راهنما2",
-					"properties": {
-						"text": "از کلید چپ و راست استفاده کن",
-						"enable-bbcode": true,
-						"font": "Arial",
-						"size": 25,
-						"line-height": 0,
-						"bold": false,
-						"italic": false,
-						"color": [
-							0.7725490196078432,
-							0.803921568627451,
-							0.9254901960784314,
-							1
-						],
-						"horizontal-alignment": "left",
-						"vertical-alignment": "top",
-						"wrapping": "word",
-						"text-direction": "ltr",
-						"icon-set": -1,
-						"initially-visible": true,
-						"origin": "top-left",
-						"read-aloud": false
-					},
-					"uid": 94,
-					"sid": 327591185397456,
-					"tags": "",
-					"instanceVariables": {},
-					"behaviors": {
-						"Fade": {
-							"properties": {
-								"fade-in-time": 2,
-								"wait-time": 18,
-								"fade-out-time": 1,
-								"destroy": true,
-								"enabled": true,
-								"live-preview": false
-							}
-						}
-					},
-					"showing": true,
-					"locked": false,
-					"world": {
-						"x": -414,
-						"y": 576,
-						"width": 244,
-						"height": 46,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"z": 0,
-						"angle": 0
-					}
-				},
-				{
 					"type": "شروع_معرفی",
 					"properties": {
 						"text": ".",
