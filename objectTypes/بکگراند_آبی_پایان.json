@@ -1,0 +1,23 @@
+{
+	"name": "بکگراند_آبی_پایان",
+	"plugin-id": "TiledBg",
+	"sid": 871000000000503,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"image": {
+		"width": 8,
+		"height": 8,
+		"originX": 0,
+		"originY": 0,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"fileType": "image/png",
+		"imageSpriteId": 8710003,
+		"useCollisionPoly": true,
+		"tag": ""
+	}
+}

@@ -82,6 +82,26 @@
 			"sid": 628401957384302
 		},
 		{
+			"eventType": "variable",
+			"name": "صفحه_پایان_فعال",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "پرچم ۰/۱: صفحه آبی پایان/خروج فعال است تا دوباره نشان داده نشود.",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 871000000000001
+		},
+		{
+			"eventType": "variable",
+			"name": "امتیاز_برد",
+			"type": "number",
+			"initialValue": "5",
+			"comment": "اولین بازیکنی که به این امتیاز برسد برنده است و صفحه پایان می‌آید.",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 871000000000002
+		},
+		{
 			"eventType": "comment",
 			"text": "[h2]لایوت بازی — پینگ‌پونگ دونفره آنلاین[/h2]\nجریان کلی: وصل به Multiplayer، لاگین، AutoJoin اتاق دونفره. هاست مرجع شبیه‌سازی است (توپ_مولتی و امتیاز)، Peer فقط ورودی y می‌فرستد و آبجکت‌های sync‌شده را می‌بیند. لاگ روی صفحه برای دیباگ شبکه است."
 		},
@@ -201,6 +221,101 @@
 		},
 		{
 			"eventType": "comment",
+			"text": "[h3]خانه بازگشت[/h3]\nکلیک/تاچ روی خانه: قطع اتصال Multiplayer و برگشت به لایوت ورود."
+		},
+		{
+			"functionName": "نمایش_صفحه_پایان",
+			"functionDescription": "صفحه آبی پایان یا خروج بازیکن را نشان می‌دهد.",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "حالت",
+					"type": "string",
+					"initialValue": "\"خروج\"",
+					"comment": "نام انیمیشن اسپرایت: خروج یا پایان",
+					"sid": 871000000000010
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 871000000000011,
+					"parameters": {
+						"variable": "صفحه_پایان_فعال",
+						"comparison": 0,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 871000000000012,
+					"parameters": {
+						"variable": "صفحه_پایان_فعال",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 871000000000013,
+					"parameters": {
+						"variable": "وضعیت_بازی",
+						"value": "\"پایان\""
+					}
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "توپ_مولتی",
+					"sid": 871000000000014,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"state": "disabled"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "بکگراند_آبی_پایان",
+					"sid": 871000000000015,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "خارج_شدن_بازیکن",
+					"sid": 871000000000017,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "خانه_بازگشت",
+					"sid": 871000000000018,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"callFunction": "ثبت_پیام",
+					"sid": 871000000000019,
+					"parameters": [
+						"\"صفحه پایان: \" & حالت"
+					]
+				}
+			],
+			"sid": 871000000000020
+		},
+		{
+			"eventType": "comment",
 			"text": "[h3]شروع لایوت بازی — راه‌اندازی شبکه[/h3]\nموسیقی بازی، تعریف ورودی کلاینت با تگ y، همگام‌سازی پد_مولتی/توپ_مولتی و متغیر سکه، بعد اتصال به سرور Multiplayer."
 		},
 		{
@@ -213,6 +328,39 @@
 				}
 			],
 			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 871000000000030,
+					"parameters": {
+						"variable": "صفحه_پایان_فعال",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "بکگراند_آبی_پایان",
+					"sid": 871000000000031,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "خارج_شدن_بازیکن",
+					"sid": 871000000000032,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "خانه_بازگشت",
+					"sid": 871000000000033,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
 				{
 					"type": "comment",
 					"text": "viewport افقی برای مالتی (Set canvas size)"
@@ -652,6 +800,13 @@
 					"parameters": [
 						"\"اتصال قطع شد\""
 					]
+				},
+				{
+					"callFunction": "نمایش_صفحه_پایان",
+					"sid": 871000000000055,
+					"parameters": [
+						"\"خروج\""
+					]
 				}
 			],
 			"sid": 541044035876471
@@ -724,6 +879,18 @@
 					"parameters": [
 						"\"اتصال قطع شد (میزبان دیگر در دسترس نیست)\""
 					]
+				},
+				{
+					"callFunction": "نمایش_صفحه_پایان",
+					"sid": 871000000000050,
+					"parameters": [
+						"\"خروج\""
+					]
+				},
+				{
+					"id": "leave-room",
+					"objectClass": "Multiplayer",
+					"sid": 871000000000051
 				}
 			],
 			"sid": 760593705535654
@@ -964,7 +1131,34 @@
 					}
 				}
 			],
-			"sid": 315352474311149
+			"sid": 315352474311149,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 871000000000060,
+							"parameters": {
+								"first-value": "Multiplayer.Message",
+								"comparison": 0,
+								"second-value": "\"پایان\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "نمایش_صفحه_پایان",
+							"sid": 871000000000061,
+							"parameters": [
+								"\"پایان\""
+							]
+						}
+					],
+					"sid": 871000000000062
+				}
+			]
 		},
 		{
 			"eventType": "comment",
@@ -1619,7 +1813,73 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "[h3]Peer Disconnected[/h3]\nنام کلاینت پاک، المان‌های زمین مخفی، و پیام منتظر رقیب روی امتیاز."
+			"text": "[h3]شرط برد[/h3]\nهاست: اگر امتیاز هر پد_مولتی به امتیاز_برد برسد، وضعیت پایان پخش و صفحه آبی پایان نشان داده می‌شود."
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-host",
+					"objectClass": "Multiplayer",
+					"sid": 871000000000070
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 871000000000071,
+					"parameters": {
+						"variable": "وضعیت_بازی",
+						"comparison": 0,
+						"value": "\"شروع_شد\""
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 871000000000072,
+					"parameters": {
+						"variable": "صفحه_پایان_فعال",
+						"comparison": 0,
+						"value": "0"
+					}
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "پد_مولتی",
+					"sid": 871000000000073,
+					"parameters": {
+						"instance-variable": "سکه_ها",
+						"comparison": 5,
+						"value": "امتیاز_برد"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 871000000000074
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "نمایش_امتیاز",
+					"sid": 871000000000075,
+					"parameters": [
+						"\"پایان\""
+					]
+				},
+				{
+					"callFunction": "نمایش_صفحه_پایان",
+					"sid": 871000000000076,
+					"parameters": [
+						"\"پایان\""
+					]
+				}
+			],
+			"sid": 871000000000077
+		},
+		{
+			"eventType": "comment",
+			"text": "[h3]خانه بازگشت[/h3]\nکلیک/تاچ روی خانه: قطع اتصال Multiplayer و برگشت به لایوت ورود."
 		},
 		{
 			"eventType": "block",
@@ -1633,7 +1893,7 @@
 			"actions": [
 				{
 					"callFunction": "ثبت_پیام",
-					"sid": 504849601962349,
+					"sid": 871000000000040,
 					"parameters": [
 						"\"'\" & Multiplayer.PeerAlias & \"' خارج شد\""
 					]
@@ -1641,59 +1901,23 @@
 				{
 					"id": "set-eventvar-value",
 					"objectClass": "System",
-					"sid": 289005437073960,
+					"sid": 871000000000041,
 					"parameters": {
 						"variable": "نام_کلاینت",
 						"value": "\"\""
 					}
 				},
 				{
-					"id": "set-visible",
-					"objectClass": "HalfHost",
-					"sid": 900000000000011,
-					"parameters": {
-						"visibility": "invisible"
-					}
+					"callFunction": "نمایش_صفحه_پایان",
+					"sid": 871000000000042,
+					"parameters": [
+						"\"خروج\""
+					]
 				},
 				{
-					"id": "set-visible",
-					"objectClass": "HalfClient",
-					"sid": 900000000000012,
-					"parameters": {
-						"visibility": "invisible"
-					}
-				},
-				{
-					"id": "set-visible",
-					"objectClass": "CenterLine",
-					"sid": 900000000000013,
-					"parameters": {
-						"visibility": "invisible"
-					}
-				},
-				{
-					"id": "set-text",
-					"objectClass": "نمایش_امتیاز",
-					"sid": 289005437073961,
-					"parameters": {
-						"text": "\"منتظر یه رقیب...\""
-					}
-				},
-				{
-					"id": "set-text",
-					"objectClass": "نام_امتیاز_هاست",
-					"sid": 830000000000141,
-					"parameters": {
-						"text": "\"\""
-					}
-				},
-				{
-					"id": "set-text",
-					"objectClass": "نام_امتیاز_کلاینت",
-					"sid": 830000000000142,
-					"parameters": {
-						"text": "\"\""
-					}
+					"id": "leave-room",
+					"objectClass": "Multiplayer",
+					"sid": 871000000000043
 				}
 			],
 			"sid": 289005437073951
@@ -1821,6 +2045,80 @@
 				}
 			],
 			"sid": 377147925770060
+		},
+		{
+			"eventType": "comment",
+			"text": "[h3]خانه بازگشت[/h3]\nکلیک/تاچ روی خانه: قطع اتصال Multiplayer و برگشت به لایوت ورود."
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 871000000000080,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "خانه_بازگشت"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "leave-room",
+					"objectClass": "Multiplayer",
+					"sid": 871000000000081
+				},
+				{
+					"id": "stop-all",
+					"objectClass": "Audio",
+					"sid": 871000000000082
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 871000000000083,
+					"parameters": {
+						"layout": "ورود"
+					}
+				}
+			],
+			"sid": 871000000000090
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 871000000000084,
+					"parameters": {
+						"object": "خانه_بازگشت"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "leave-room",
+					"objectClass": "Multiplayer",
+					"sid": 871000000000085
+				},
+				{
+					"id": "stop-all",
+					"objectClass": "Audio",
+					"sid": 871000000000086
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 871000000000087,
+					"parameters": {
+						"layout": "ورود"
+					}
+				}
+			],
+			"sid": 871000000000091
 		}
 	],
 	"sid": 581855882183268

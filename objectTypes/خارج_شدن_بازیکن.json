@@ -1,0 +1,62 @@
+{
+	"name": "خارج_شدن_بازیکن",
+	"plugin-id": "Sprite",
+	"sid": 109272939686460,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 490,
+						"height": 59,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 9402817,
+						"collisionPoly": {
+							"points": [
+								0.07142857142857142,
+								0.03389830508474576,
+								0.7,
+								0.03389830508474576,
+								0.7775510204081633,
+								0.05084745762711865,
+								0.9836734693877551,
+								0.2542372881355932,
+								0.9489795918367347,
+								0.8813559322033898,
+								0.5061224489795918,
+								0.9661016949152542,
+								0.11632653061224489,
+								0.9830508474576272,
+								0.00816326530612245,
+								0.6949152542372882,
+								0.024489795918367346,
+								0.22033898305084745
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 970040646397282,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}
