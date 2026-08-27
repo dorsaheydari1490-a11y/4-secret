@@ -126,39 +126,13 @@
 			],
 			"actions": [
 				{
-					"id": "set-gravity",
-					"objectClass": "مثلث",
-					"sid": 612973302922814,
-					"behaviorType": "Platform",
-					"parameters": {
-						"gravity": "1000"
-					}
-				}
-			],
-			"sid": 309498039085921,
-			"disabled": true
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-key-pressed",
-					"objectClass": "Keyboard",
-					"sid": 930382496915068,
-					"parameters": {
-						"key": 13
-					}
-				}
-			],
-			"actions": [
-				{
 					"type": "comment",
-					"text": "با دکمه اینتر مثلث بالا میرود"
+					"text": "با کلیک موس مثلث میپرد"
 				},
 				{
 					"id": "set-vector-y",
 					"objectClass": "مثلث",
-					"sid": 804997225187063,
+					"sid": 612973302922814,
 					"behaviorType": "Platform",
 					"parameters": {
 						"vector-y": "-500"
@@ -167,7 +141,7 @@
 				{
 					"id": "play",
 					"objectClass": "Audio",
-					"sid": 123907405628556,
+					"sid": 612973302922815,
 					"parameters": {
 						"audio-file": {
 							"path": "The sound of jumping"
@@ -179,7 +153,7 @@
 					}
 				}
 			],
-			"sid": 294141990324489,
+			"sid": 309498039085921,
 			"children": [
 				{
 					"eventType": "block",
@@ -187,7 +161,7 @@
 						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 428923034438718,
+							"sid": 612973302922816,
 							"parameters": {
 								"first-value": "مثلث.Platform.Gravity",
 								"comparison": 1,
@@ -197,20 +171,16 @@
 					],
 					"actions": [
 						{
-							"type": "comment",
-							"text": "تنظیم برای به هم نریختن گرانش مثلث"
-						},
-						{
 							"id": "set-gravity",
 							"objectClass": "مثلث",
-							"sid": 203127107561652,
+							"sid": 612973302922817,
 							"behaviorType": "Platform",
 							"parameters": {
 								"gravity": "1000"
 							}
 						}
 					],
-					"sid": 927274929938727
+					"sid": 612973302922818
 				}
 			]
 		},
@@ -682,7 +652,7 @@
 					"objectClass": "Browser",
 					"sid": 918127605402974,
 					"parameters": {
-						"duration": "80"
+						"pattern": "\"200,100,200\""
 					}
 				},
 				{
@@ -786,9 +756,9 @@
 				{
 					"id": "set-position",
 					"objectClass": "راهنما3",
-					"sid": 925509553141829,
+					"sid": 732751665621032,
 					"parameters": {
-						"x": "177",
+						"x": "250",
 						"y": "115"
 					}
 				}
@@ -943,15 +913,16 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-tap-object",
+					"id": "on-tap",
 					"objectClass": "Touch",
-					"sid": 980862753698783,
-					"parameters": {
-						"object": "دکمه_پرش"
-					}
+					"sid": 980862753698783
 				}
 			],
 			"actions": [
+				{
+					"type": "comment",
+					"text": "با لمس هر جای صفحه مثلث میپرد"
+				},
 				{
 					"id": "set-vector-y",
 					"objectClass": "مثلث",

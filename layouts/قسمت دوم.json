@@ -568,10 +568,10 @@
 								"acceleration": 900,
 								"deceleration": 500,
 								"directions": "left-right",
-								"set-angle": "smooth",
+								"set-angle": "no",
 								"allow-sliding": false,
-								"default-controls": true,
-								"enabled": true
+								"default-controls": false,
+								"enabled": false
 							}
 						},
 						"Solid": {
@@ -1264,7 +1264,7 @@
 				{
 					"type": "فلش_راست",
 					"properties": {
-						"initially-visible": true,
+						"initially-visible": false,
 						"initial-animation": "Animation 1",
 						"initial-frame": 0,
 						"enable-collisions": true,
@@ -1297,7 +1297,7 @@
 				{
 					"type": "فلش_چپ",
 					"properties": {
-						"initially-visible": true,
+						"initially-visible": false,
 						"initial-animation": "Animation 1",
 						"initial-frame": 0,
 						"enable-collisions": true,

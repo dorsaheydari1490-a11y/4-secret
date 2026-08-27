@@ -32,6 +32,26 @@
 			"sid": 237651680781402
 		},
 		{
+			"eventType": "variable",
+			"name": "ورودی_X",
+			"type": "number",
+			"initialValue": "104",
+			"comment": "آخرین مختصات افقی کنترل بازیکن؛ اولویت با تاچ است و اگر تاچ نبود از موس استفاده میشود.",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 628401957384401
+		},
+		{
+			"eventType": "variable",
+			"name": "تاچ_فعال",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "پرچم ۰/۱: اگر بازیکن حداقل یک‌بار صفحه را لمس کرده باشد، دیگر موس جایگزین تاچ نمیشود.",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 739512068495401
+		},
+		{
 			"eventType": "include",
 			"includeSheet": "Event sheet پروفایل"
 		},
@@ -782,54 +802,99 @@
 			"sid": 759026457280933
 		},
 		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "is-touching-object",
-					"objectClass": "Touch",
-					"sid": 265948453953958,
-					"parameters": {
-						"object": "فلش_راست"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "simulate-control",
-					"objectClass": "پد",
-					"sid": 180061986842493,
-					"behaviorType": "8Direction",
-					"parameters": {
-						"control": "right"
-					}
-				}
-			],
-			"sid": 825014901038652
+			"eventType": "comment",
+			"text": "[h3]ورودی تاچ[/h3]\nاگر انگشتی روی صفحه باشد، X تاچ را میگیرد و پرچم تاچ_فعال را ۱ میکند."
 		},
 		{
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "is-touching-object",
-					"objectClass": "Touch",
-					"sid": 398082350192645,
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 471829365017501,
 					"parameters": {
-						"object": "فلش_چپ"
+						"first-value": "Touch.TouchCount",
+						"comparison": 4,
+						"second-value": "0"
 					}
 				}
 			],
 			"actions": [
 				{
-					"id": "simulate-control",
-					"objectClass": "پد",
-					"sid": 849732690282395,
-					"behaviorType": "8Direction",
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 582910374658401,
 					"parameters": {
-						"control": "left"
+						"variable": "ورودی_X",
+						"value": "Touch.X"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 583021485769501,
+					"parameters": {
+						"variable": "تاچ_فعال",
+						"value": "1"
 					}
 				}
 			],
-			"sid": 453213324469450
+			"sid": 693048175829501
+		},
+		{
+			"eventType": "comment",
+			"text": "[h3]fallback موس[/h3]\nاگر تاچ نبود و هنوز تاچ_فعال صفر است، از Mouse.X استفاده میکند برای دسکتاپ."
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 704159286930501
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 815260397041601,
+					"parameters": {
+						"variable": "تاچ_فعال",
+						"comparison": 0,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 926371408152701,
+					"parameters": {
+						"variable": "ورودی_X",
+						"value": "Mouse.X"
+					}
+				}
+			],
+			"sid": 137482519263801
+		},
+		{
+			"eventType": "comment",
+			"text": "[h3]حرکت پد[/h3]\nپد افقی مستقیم با ورودی_X جابه‌جا میشود و داخل عرض لایوت clamp میشود."
+		},
+		{
+			"eventType": "block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-x",
+					"objectClass": "پد",
+					"sid": 240836405800101,
+					"parameters": {
+						"x": "max(0, min(LayoutWidth, ورودی_X))"
+					}
+				}
+			],
+			"sid": 562827252681501
 		}
 	],
 	"sid": 882086689542277
