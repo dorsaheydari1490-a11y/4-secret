@@ -1,0 +1,10 @@
+{
+	"name": "end_reason_txt",
+	"plugin-id": "Text",
+	"sid": 652641444306177,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": []
+}

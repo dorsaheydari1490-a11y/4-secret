@@ -93,9 +93,51 @@
 					"parameters": {
 						"orientation": "landscape"
 					}
+				},
+				{
+					"callFunction": "پاکسازی_آبجکت_مالتی",
+					"sid": 910000000004301
 				}
 			],
-			"sid": 287485089185670
+			"sid": 287485089185670,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-in-room",
+							"objectClass": "Multiplayer",
+							"sid": 910000000004311
+						}
+					],
+					"actions": [
+						{
+							"id": "leave-room",
+							"objectClass": "Multiplayer",
+							"sid": 910000000004312
+						}
+					],
+					"sid": 910000000004313
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-connected",
+							"objectClass": "Multiplayer",
+							"sid": 910000000004314
+						}
+					],
+					"actions": [
+						{
+							"id": "disconnect-signalling",
+							"objectClass": "Multiplayer",
+							"sid": 910000000004315
+						}
+					],
+					"sid": 910000000004316
+				}
+			]
 		},
 		{
 			"eventType": "comment",
@@ -412,6 +454,66 @@
 				}
 			],
 			"sid": 900000000000041
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 910000000004400
+				}
+			],
+			"actions": [],
+			"sid": 910000000004401,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 910000000004402,
+							"parameters": {
+								"first-value": "پد_مولتی.Count",
+								"comparison": 4,
+								"second-value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "پد_مولتی",
+							"sid": 910000000004403
+						}
+					],
+					"sid": 910000000004404
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 910000000004405,
+							"parameters": {
+								"first-value": "توپ_مولتی.Count",
+								"comparison": 4,
+								"second-value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "توپ_مولتی",
+							"sid": 910000000004406
+						}
+					],
+					"sid": 910000000004407
+				}
+			]
 		}
 	],
 	"sid": 946966137815184

@@ -134,20 +134,20 @@ runOnStartup(async (runtime) => {
 		}
 	});
 
-	let lastMouseDown = false;
-	runtime.addEventListener("tick", () => {
-		if (runtime.layout.name === LAYOUT_NAME) {
-			const mouseDown = runtime.mouse.isMouseButtonPressed(0);
-			if (mouseDown && !lastMouseDown) {
-				handleLoginClick(runtime, resolveLoginClick(runtime));
-			}
-			lastMouseDown = mouseDown;
-			updateNameInput(runtime);
-		} else {
-			lastMouseDown = false;
-			hideNameInput();
-		}
-	});
+	// let lastMouseDown = false;
+	// runtime.addEventListener("tick", () => {
+	// 	if (runtime.layout.name === LAYOUT_NAME) {
+	// 		const mouseDown = runtime.mouse.isMouseButtonPressed(0);
+	// 		if (mouseDown && !lastMouseDown) {
+	// 			handleLoginClick(runtime, resolveLoginClick(runtime));
+	// 		}
+	// 		lastMouseDown = mouseDown;
+	// 		updateNameInput(runtime);
+	// 	} else {
+	// 		lastMouseDown = false;
+	// 		hideNameInput();
+	// 	}
+	// });
 
 	runtime.addEventListener("pointerdown", (e) => {
 		handleLoginClick(runtime, resolveLoginClickAt(runtime, e.clientX, e.clientY));

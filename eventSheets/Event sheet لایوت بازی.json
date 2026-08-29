@@ -15,7 +15,7 @@
 			"eventType": "variable",
 			"name": "نام_نمونه",
 			"type": "string",
-			"initialValue": "v9",
+			"initialValue": "v13",
 			"comment": "نسخه/اینستنس اتاق‌ها (مثلا v8). با عوض کردنش میتونی از اتاق‌های قدیمی جدا شی.",
 			"isStatic": false,
 			"isConstant": false,
@@ -102,6 +102,66 @@
 			"sid": 871000000000002
 		},
 		{
+			"eventType": "variable",
+			"name": "شناسه_نشست",
+			"type": "number",
+			"initialValue": "0",
+			"isStatic": false,
+			"isConstant": false,
+			"comment": "با هر ورود به لایوت بازی یکی اضافه میشود تا waitهای قدیمی بعد از بازگشت اجرا نشوند.",
+			"sid": 910000000002001
+		},
+		{
+			"eventType": "variable",
+			"name": "نشست_شمارش",
+			"type": "number",
+			"initialValue": "0",
+			"isStatic": false,
+			"isConstant": false,
+			"comment": "شناسه نشست هنگام شروع راند؛ برای بی‌اثر کردن waitهای قدیمی.",
+			"sid": 9100000000020012
+		},
+		{
+			"eventType": "variable",
+			"name": "نیاز_به_اتصال",
+			"type": "number",
+			"initialValue": "0",
+			"isStatic": false,
+			"isConstant": false,
+			"comment": "۱ = بعد از قطع، دوباره Connect/Join انجام شود.",
+			"sid": 910000000003001
+		},
+		{
+			"eventType": "variable",
+			"name": "خروج_به_ورود",
+			"type": "number",
+			"initialValue": "0",
+			"isStatic": false,
+			"isConstant": false,
+			"comment": "۱ = بعد از Leave/Disconnect برو به لایوت ورود.",
+			"sid": 910000000003002
+		},
+		{
+			"eventType": "variable",
+			"name": "مالتی_پاک_شده",
+			"type": "number",
+			"initialValue": "0",
+			"isStatic": false,
+			"isConstant": false,
+			"comment": "۱ = اتصال مالتی قبلاً تمیز قطع شده؛ on-end-of-layout دوباره Leave/Disconnect نزند.",
+			"sid": 910000000003003
+		},
+		{
+			"eventType": "variable",
+			"name": "خروج_در_جریان",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "۱ = کلیک خانه در حال پردازش؛ کلیک تکراری و fallback همزمان را مسدود می‌کند.",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 910000000003004
+		},
+		{
 			"eventType": "comment",
 			"text": "[h2]لایوت بازی — پینگ‌پونگ دونفره آنلاین[/h2]\nجریان کلی: وصل به Multiplayer، لاگین، AutoJoin اتاق دونفره. هاست مرجع شبیه‌سازی است (توپ_مولتی و امتیاز)، Peer فقط ورودی y می‌فرستد و آبجکت‌های sync‌شده را می‌بیند. لاگ روی صفحه برای دیباگ شبکه است."
 		},
@@ -140,6 +200,315 @@
 				}
 			],
 			"sid": 775104601635400
+		},
+		{
+			"functionName": "پاکسازی_آبجکت_مالتی",
+			"functionDescription": "حذف پد/توپ sync‌شده و مخفی کردن UI زمین؛ قبل از ترک لایوت یا روی لایوت‌های غیربازی.",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "پد_مولتی",
+					"sid": 910000000004001
+				},
+				{
+					"id": "destroy",
+					"objectClass": "توپ_مولتی",
+					"sid": 910000000004002
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "HalfHost",
+					"sid": 910000000004003,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "HalfClient",
+					"sid": 910000000004004,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "CenterLine",
+					"sid": 910000000004005,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 910000000004000
+		},
+		{
+			"functionName": "بازگشت_به_ورود",
+			"functionDescription": "خروج امن از مالتی: Leave، Disconnect، و fallback اگر On disconnected نیامد.",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": true,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 910000000003201,
+					"parameters": {
+						"variable": "خروج_در_جریان",
+						"comparison": 0,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 910000000003202,
+					"parameters": {
+						"variable": "خروج_در_جریان",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 910000000003203,
+					"parameters": {
+						"variable": "خروج_به_ورود",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 910000000003204,
+					"parameters": {
+						"variable": "نیاز_به_اتصال",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 910000000003205,
+					"parameters": {
+						"variable": "مالتی_پاک_شده",
+						"value": "0"
+					}
+				},
+				{
+					"id": "stop-all",
+					"objectClass": "Audio",
+					"sid": 910000000003206
+				},
+				{
+					"callFunction": "پاکسازی_آبجکت_مالتی",
+					"sid": 910000000004010
+				},
+				{
+					"callFunction": "ثبت_پیام",
+					"sid": 910000000003207,
+					"parameters": [
+						"\"خانه: شروع خروج...\""
+					]
+				}
+			],
+			"sid": 910000000003200,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-in-room",
+							"objectClass": "Multiplayer",
+							"sid": 910000000003210
+						}
+					],
+					"actions": [
+						{
+							"id": "leave-room",
+							"objectClass": "Multiplayer",
+							"sid": 910000000003211
+						},
+						{
+							"callFunction": "ثبت_پیام",
+							"sid": 910000000003212,
+							"parameters": [
+								"\"خانه: Leave room\""
+							]
+						}
+					],
+					"sid": 910000000003209
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 910000000003213,
+							"parameters": {
+								"seconds": "0.1",
+								"use-timescale": false
+							}
+						}
+					],
+					"sid": 910000000003214,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-connected",
+									"objectClass": "Multiplayer",
+									"sid": 910000000003215
+								}
+							],
+							"actions": [
+								{
+									"id": "disconnect-signalling",
+									"objectClass": "Multiplayer",
+									"sid": 910000000003216
+								},
+								{
+									"callFunction": "ثبت_پیام",
+									"sid": 910000000003217,
+									"parameters": [
+										"\"خانه: Disconnect\""
+									]
+								}
+							],
+							"sid": 910000000003218
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 910000000003219,
+							"parameters": {
+								"seconds": "1.0",
+								"use-timescale": false
+							}
+						}
+					],
+					"sid": 910000000003220,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 910000000003221,
+									"parameters": {
+										"variable": "خروج_به_ورود",
+										"comparison": 0,
+										"value": "1"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 910000000003222,
+									"parameters": {
+										"first-value": "LayoutName",
+										"comparison": 0,
+										"second-value": "\"لایوت_بازی\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "ثبت_پیام",
+									"sid": 910000000003223,
+									"parameters": [
+										"\"خانه: fallback → ورود\""
+									]
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 910000000003224,
+									"parameters": {
+										"variable": "مالتی_پاک_شده",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 910000000003225,
+									"parameters": {
+										"variable": "خروج_به_ورود",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 910000000003226,
+									"parameters": {
+										"variable": "خروج_در_جریان",
+										"value": "0"
+									}
+								},
+								{
+									"callFunction": "پاکسازی_آبجکت_مالتی",
+									"sid": 910000000004014
+								},
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 910000000003227,
+									"parameters": {
+										"layout": "ورود"
+									}
+								}
+							],
+							"sid": 910000000003228
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 910000000003229
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 910000000003230,
+									"parameters": {
+										"variable": "خروج_در_جریان",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 910000000003231
+						}
+					]
+				}
+			]
 		},
 		{
 			"eventType": "comment",
@@ -221,7 +590,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "[h3]خانه بازگشت[/h3]\nکلیک/تاچ روی خانه: قطع اتصال Multiplayer و برگشت به لایوت ورود."
+			"text": "[h3]خانه بازگشت[/h3]\nکلیک/تاچ → تابع async بازگشت_به_ورود: Leave، Disconnect، و اگر تا ۱ثانیه On disconnected نیامد fallback به ورود. کلیک تکراری با خروج_در_جریان مسدود می‌شود."
 		},
 		{
 			"functionName": "نمایش_صفحه_پایان",
@@ -237,6 +606,13 @@
 					"initialValue": "\"خروج\"",
 					"comment": "نام انیمیشن اسپرایت: خروج یا پایان",
 					"sid": 871000000000010
+				},
+				{
+					"name": "دلیل_پایان",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 754836836490516
 				}
 			],
 			"eventType": "function-block",
@@ -265,10 +641,27 @@
 				{
 					"id": "set-eventvar-value",
 					"objectClass": "System",
+					"sid": 871000000000021,
+					"parameters": {
+						"variable": "نیاز_به_اتصال",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
 					"sid": 871000000000013,
 					"parameters": {
 						"variable": "وضعیت_بازی",
 						"value": "\"پایان\""
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "end_reason_txt",
+					"sid": 213105450040112,
+					"parameters": {
+						"text": "دلیل_پایان"
 					}
 				},
 				{
@@ -279,6 +672,10 @@
 					"parameters": {
 						"state": "disabled"
 					}
+				},
+				{
+					"callFunction": "پاکسازی_آبجکت_مالتی",
+					"sid": 910000000004011
 				},
 				{
 					"id": "set-visible",
@@ -305,6 +702,14 @@
 					}
 				},
 				{
+					"id": "set-visible",
+					"objectClass": "end_reason_txt",
+					"sid": 719481650848365,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
 					"callFunction": "ثبت_پیام",
 					"sid": 871000000000019,
 					"parameters": [
@@ -315,8 +720,292 @@
 			"sid": 871000000000020
 		},
 		{
+			"functionName": "شروع_اتصال_شبکه",
+			"functionDescription": "پاکسازی نشست قبلی و Connect قطعی برای بازی مجدد.",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": true,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 910000000003301,
+					"parameters": {
+						"variable": "نیاز_به_اتصال",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 910000000003302,
+					"parameters": {
+						"variable": "خروج_به_ورود",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 910000000003303,
+					"parameters": {
+						"variable": "مالتی_پاک_شده",
+						"value": "0"
+					}
+				},
+				{
+					"callFunction": "ثبت_پیام",
+					"sid": 910000000003304,
+					"parameters": [
+						"\"شروع اتصال شبکه...\""
+					]
+				}
+			],
+			"sid": 910000000003300,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-in-room",
+							"objectClass": "Multiplayer",
+							"sid": 910000000003310
+						}
+					],
+					"actions": [
+						{
+							"id": "leave-room",
+							"objectClass": "Multiplayer",
+							"sid": 910000000003311
+						},
+						{
+							"callFunction": "ثبت_پیام",
+							"sid": 910000000003312,
+							"parameters": [
+								"\"پاکسازی: Leave room\""
+							]
+						}
+					],
+					"sid": 910000000003309
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 910000000003313,
+							"parameters": {
+								"seconds": "0.3",
+								"use-timescale": false
+							}
+						}
+					],
+					"sid": 910000000003314,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-connected",
+									"objectClass": "Multiplayer",
+									"sid": 910000000003315
+								},
+								{
+									"id": "is-logged-in",
+									"objectClass": "Multiplayer",
+									"sid": 910000000003316
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 910000000003317,
+									"parameters": {
+										"variable": "نیاز_به_اتصال",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "ثبت_پیام",
+									"sid": 910000000003318,
+									"parameters": [
+										"\"هنوز وصل/لاگین؛ AutoJoin مستقیم\""
+									]
+								},
+								{
+									"id": "auto-join-room",
+									"objectClass": "Multiplayer",
+									"sid": 910000000003319,
+									"parameters": {
+										"game": "\"ping_pong_dorsa\"",
+										"instance": "\"v13\"",
+										"first-room": "\"duel\"",
+										"max-peers": "2",
+										"locking": "lock-when-full"
+									}
+								}
+							],
+							"sid": 910000000003320
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 910000000003321
+								},
+								{
+									"id": "is-connected",
+									"objectClass": "Multiplayer",
+									"sid": 910000000003322
+								}
+							],
+							"actions": [
+								{
+									"id": "disconnect-signalling",
+									"objectClass": "Multiplayer",
+									"sid": 910000000003323
+								},
+								{
+									"callFunction": "ثبت_پیام",
+									"sid": 910000000003324,
+									"parameters": [
+										"\"پاکسازی: Disconnect\""
+									]
+								}
+							],
+							"sid": 910000000003325
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 910000000003326
+								}
+							],
+							"actions": [
+								{
+									"id": "connect",
+									"objectClass": "Multiplayer",
+									"sid": 910000000003327,
+									"parameters": {
+										"server": "\"wss://multiplayer.construct.net\""
+									}
+								},
+								{
+									"callFunction": "ثبت_پیام",
+									"sid": 910000000003328,
+									"parameters": [
+										"\"Connect درخواست شد\""
+									]
+								}
+							],
+							"sid": 910000000003329
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 910000000003330,
+							"parameters": {
+								"seconds": "2.0",
+								"use-timescale": false
+							}
+						}
+					],
+					"sid": 910000000003331,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 910000000003332,
+									"parameters": {
+										"variable": "نیاز_به_اتصال",
+										"comparison": 0,
+										"value": "1"
+									}
+								},
+								{
+									"id": "is-connected",
+									"objectClass": "Multiplayer",
+									"sid": 910000000003333
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "ثبت_پیام",
+									"sid": 910000000003337,
+									"parameters": [
+										"\"اتصال برقرار است؛ منتظر Join...\""
+									]
+								}
+							],
+							"sid": 910000000003336
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 910000000003338
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 910000000003339,
+									"parameters": {
+										"variable": "نیاز_به_اتصال",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "ثبت_پیام",
+									"sid": 910000000003334,
+									"parameters": [
+										"\"Fallback: Connect دوباره\""
+									]
+								},
+								{
+									"id": "connect",
+									"objectClass": "Multiplayer",
+									"sid": 910000000003335,
+									"parameters": {
+										"server": "\"wss://multiplayer.construct.net\""
+									}
+								}
+							],
+							"sid": 910000000003342
+						}
+					]
+				}
+			]
+		},
+		{
 			"eventType": "comment",
-			"text": "[h3]شروع لایوت بازی — راه‌اندازی شبکه[/h3]\nموسیقی بازی، تعریف ورودی کلاینت با تگ y، همگام‌سازی پد_مولتی/توپ_مولتی و متغیر سکه، بعد اتصال به سرور Multiplayer."
+			"text": "[h3]شروع لایوت بازی — راه‌اندازی شبکه[/h3]\nهمگام‌سازی و سپس تابع async شروع_اتصال_شبکه: Leave → Disconnect → Connect با fallback."
 		},
 		{
 			"eventType": "block",
@@ -328,6 +1017,23 @@
 				}
 			],
 			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 910000000003240,
+					"parameters": {
+						"variable": "خروج_در_جریان",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "end_reason_txt",
+					"sid": 250554138537775,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
 				{
 					"id": "set-eventvar-value",
 					"objectClass": "System",
@@ -440,15 +1146,133 @@
 					}
 				},
 				{
-					"id": "connect",
-					"objectClass": "Multiplayer",
-					"sid": 654087415578245,
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 910000000002002,
 					"parameters": {
-						"server": "\"wss://multiplayer.construct.net\""
+						"variable": "شناسه_نشست",
+						"value": "شناسه_نشست + 1"
 					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 910000000002003,
+					"parameters": {
+						"variable": "وضعیت_بازی",
+						"value": "\"منتظر\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 910000000002004,
+					"parameters": {
+						"variable": "تاچ_فعال",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 910000000002005,
+					"parameters": {
+						"variable": "نام_هاست",
+						"value": "\"\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 910000000002006,
+					"parameters": {
+						"variable": "نام_کلاینت",
+						"value": "\"\""
+					}
+				},
+				{
+					"type": "comment",
+					"text": "قطع اتصال قبلی مالتی‌پلیر قبل از اتصال تازه"
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "توپ_مولتی",
+					"sid": 910000000002009,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"state": "disabled"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "توپ_مولتی",
+					"sid": 910000000002010,
+					"parameters": {
+						"x": "LayoutWidth / 2",
+						"y": "LayoutHeight / 2"
+					}
+				},
+				{
+					"id": "set-speed",
+					"objectClass": "توپ_مولتی",
+					"sid": 910000000002011,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"speed": "300"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "پد_مولتی",
+					"sid": 910000000002012,
+					"parameters": {
+						"instance-variable": "شناسه",
+						"value": "\"\""
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "پد_مولتی",
+					"sid": 910000000002013,
+					"parameters": {
+						"instance-variable": "سکه_ها",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "پد_مولتی",
+					"sid": 910000000002014,
+					"parameters": {
+						"x": "50",
+						"y": "LayoutHeight / 2"
+					}
+				},
+				{
+					"id": "clear",
+					"objectClass": "Array",
+					"sid": 910000000002015,
+					"parameters": {
+						"axis": "x"
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "Array",
+					"sid": 910000000002016,
+					"parameters": {
+						"width": "0",
+						"height": "1",
+						"depth": "1"
+					}
+				},
+				{
+					"callFunction": "شروع_اتصال_شبکه",
+					"sid": 910000000003340
 				}
 			],
-			"sid": 908419050092608
+			"sid": 908419050092608,
+			"children": []
 		},
 		{
 			"eventType": "comment",
@@ -516,7 +1340,7 @@
 					"callFunction": "ثبت_پیام",
 					"sid": 923950150184932,
 					"parameters": [
-						"\"auto-joining ping_pong_dorsa/v9/duel\""
+						"\"auto-joining ping_pong_dorsa/v13/duel\""
 					]
 				},
 				{
@@ -525,7 +1349,7 @@
 					"sid": 980163144416346,
 					"parameters": {
 						"game": "\"ping_pong_dorsa\"",
-						"instance": "\"v9\"",
+						"instance": "\"v13\"",
 						"first-room": "\"duel\"",
 						"max-peers": "2",
 						"locking": "lock-when-full"
@@ -596,50 +1420,6 @@
 							}
 						},
 						{
-							"id": "set-instvar-value",
-							"objectClass": "پد_مولتی",
-							"sid": 968297230722030,
-							"parameters": {
-								"instance-variable": "شناسه",
-								"value": "Multiplayer.MyID"
-							}
-						},
-						{
-							"id": "associate-object-with-peer",
-							"objectClass": "Multiplayer",
-							"sid": 861613149324275,
-							"parameters": {
-								"object": "پد_مولتی",
-								"peer-id": "Multiplayer.MyID"
-							}
-						},
-						{
-							"id": "set-position",
-							"objectClass": "پد_مولتی",
-							"sid": 896637561753594,
-							"parameters": {
-								"x": "50",
-								"y": "LayoutHeight / 2"
-							}
-						},
-						{
-							"id": "set-angle",
-							"objectClass": "پد_مولتی",
-							"sid": 779004868958750,
-							"parameters": {
-								"angle": "90"
-							}
-						},
-						{
-							"id": "set-size",
-							"objectClass": "پد_مولتی",
-							"sid": 988091639649684,
-							"parameters": {
-								"width": "253",
-								"height": "65"
-							}
-						},
-						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
 							"sid": 614664685216740,
@@ -656,9 +1436,147 @@
 								"variable": "نام_کلاینت",
 								"value": "\"\""
 							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "پد_مولتی",
+							"sid": 910000000002080
+						},
+						{
+							"id": "destroy",
+							"objectClass": "توپ_مولتی",
+							"sid": 910000000002081
+						},
+						{
+							"callFunction": "ثبت_پیام",
+							"sid": 910000000002095,
+							"parameters": [
+								"\"HOST destroyed locals, recreating...\""
+							]
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 910000000002096,
+							"parameters": {
+								"seconds": "0",
+								"use-timescale": false
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 910000000002082,
+							"parameters": {
+								"object-to-create": "پد_مولتی",
+								"layer": "\"بازی\"",
+								"x": "50",
+								"y": "LayoutHeight / 2",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "پد_مولتی",
+							"sid": 910000000002083,
+							"parameters": {
+								"instance-variable": "شناسه",
+								"value": "Multiplayer.MyID"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "پد_مولتی",
+							"sid": 910000000002084,
+							"parameters": {
+								"instance-variable": "سکه_ها",
+								"value": "0"
+							}
+						},
+						{
+							"id": "associate-object-with-peer",
+							"objectClass": "Multiplayer",
+							"sid": 910000000002085,
+							"parameters": {
+								"object": "پد_مولتی",
+								"peer-id": "Multiplayer.MyID"
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "پد_مولتی",
+							"sid": 910000000002086,
+							"parameters": {
+								"angle": "90"
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "پد_مولتی",
+							"sid": 910000000002087,
+							"parameters": {
+								"width": "253",
+								"height": "65"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "پد_مولتی",
+							"sid": 910000000002088,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 910000000002089,
+							"parameters": {
+								"object-to-create": "توپ_مولتی",
+								"layer": "\"بازی\"",
+								"x": "LayoutWidth / 2",
+								"y": "LayoutHeight / 2",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "توپ_مولتی",
+							"sid": 910000000002090,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"state": "disabled"
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "توپ_مولتی",
+							"sid": 910000000002091,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"speed": "300"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "توپ_مولتی",
+							"sid": 910000000002092,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"callFunction": "ثبت_پیام",
+							"sid": 910000000002093,
+							"parameters": [
+								"\"HOST pad ready count=\" & پد_مولتی.Count & \" ball=\" & توپ_مولتی.Count"
+							]
 						}
 					],
-					"sid": 614664685216729
+					"sid": 614664685216729,
+					"children": []
 				},
 				{
 					"eventType": "comment",
@@ -795,21 +1713,137 @@
 			],
 			"actions": [
 				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 910000000003091,
+					"parameters": {
+						"variable": "مالتی_پاک_شده",
+						"value": "1"
+					}
+				},
+				{
 					"callFunction": "ثبت_پیام",
 					"sid": 146197702642692,
 					"parameters": [
 						"\"اتصال قطع شد\""
 					]
-				},
-				{
-					"callFunction": "نمایش_صفحه_پایان",
-					"sid": 871000000000055,
-					"parameters": [
-						"\"خروج\""
-					]
 				}
 			],
-			"sid": 541044035876471
+			"sid": 541044035876471,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 910000000003101,
+							"parameters": {
+								"variable": "نیاز_به_اتصال",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "connect",
+							"objectClass": "Multiplayer",
+							"sid": 910000000003102,
+							"parameters": {
+								"server": "\"wss://multiplayer.construct.net\""
+							}
+						},
+						{
+							"callFunction": "ثبت_پیام",
+							"sid": 910000000003341,
+							"parameters": [
+								"\"اتصال مجدد بعد از Disconnect...\""
+							]
+						}
+					],
+					"sid": 910000000003100
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 910000000003111
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 910000000003112,
+							"parameters": {
+								"variable": "خروج_به_ورود",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 910000000003113,
+							"parameters": {
+								"variable": "خروج_به_ورود",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 910000000003241,
+							"parameters": {
+								"variable": "خروج_در_جریان",
+								"value": "0"
+							}
+						},
+						{
+							"id": "stop-all",
+							"objectClass": "Audio",
+							"sid": 910000000003114
+						},
+						{
+							"callFunction": "پاکسازی_آبجکت_مالتی",
+							"sid": 910000000004013
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 910000000003115,
+							"parameters": {
+								"layout": "ورود"
+							}
+						}
+					],
+					"sid": 910000000003110
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 910000000003121
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "نمایش_صفحه_پایان",
+							"sid": 251478851816184,
+							"parameters": [
+								"\"خروج\"",
+								"\"سیگنالینگ سرور قطع شد\""
+							]
+						}
+					],
+					"sid": 910000000003120
+				}
+			]
 		},
 		{
 			"eventType": "comment",
@@ -837,7 +1871,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "[h3]خروج از اتاق[/h3]\nبازیکن اتاق را ترک کرده؛ فقط لاگ."
+			"text": "[h3]خروج از اتاق[/h3]\nاگر نیاز_به_اتصال=۱: فقط Disconnect؛ Connect در On disconnected یا تابع شروع_اتصال_شبکه انجام می‌شود."
 		},
 		{
 			"eventType": "block",
@@ -857,11 +1891,95 @@
 					]
 				}
 			],
-			"sid": 472125401836956
+			"sid": 472125401836956,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 910000000003051,
+							"parameters": {
+								"variable": "نیاز_به_اتصال",
+								"comparison": 0,
+								"value": "1"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 910000000003053,
+							"parameters": {
+								"variable": "صفحه_پایان_فعال",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 910000000003050,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-connected",
+									"objectClass": "Multiplayer",
+									"sid": 910000000003061
+								}
+							],
+							"actions": [
+								{
+									"id": "disconnect-signalling",
+									"objectClass": "Multiplayer",
+									"sid": 910000000003062
+								},
+								{
+									"callFunction": "ثبت_پیام",
+									"sid": 910000000003063,
+									"parameters": [
+										"\"ترک اتاق؛ قطع سیگنالینگ\""
+									]
+								}
+							],
+							"sid": 910000000003060
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 910000000003081
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 910000000003082,
+							"parameters": {
+								"variable": "خروج_به_ورود",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "disconnect-signalling",
+							"objectClass": "Multiplayer",
+							"sid": 910000000003083
+						}
+					],
+					"sid": 910000000003080
+				}
+			]
 		},
 		{
 			"eventType": "comment",
-			"text": "[h3]Kicked[/h3]\nمعمولا یعنی هاست رفته یا در دسترس نیست و سیگنالینگ بیرونت کرده."
+			"text": "[h3]Kicked[/h3]\nهاست رفته یا در دسترس نیست. نیاز_به_اتصال خاموش می‌شود تا دوباره auto-join نشود؛ صفحه پایان نشان داده می‌شود تا بازیکن با خانه برگردد."
 		},
 		{
 			"eventType": "block",
@@ -874,6 +1992,15 @@
 			],
 			"actions": [
 				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 871000000000052,
+					"parameters": {
+						"variable": "نیاز_به_اتصال",
+						"value": "0"
+					}
+				},
+				{
 					"callFunction": "ثبت_پیام",
 					"sid": 860915594550532,
 					"parameters": [
@@ -882,9 +2009,10 @@
 				},
 				{
 					"callFunction": "نمایش_صفحه_پایان",
-					"sid": 871000000000050,
+					"sid": 893585290899164,
 					"parameters": [
-						"\"خروج\""
+						"\"خروج\"",
+						"\"کیک شدید\""
 					]
 				},
 				{
@@ -944,6 +2072,11 @@
 					"eventType": "block",
 					"conditions": [
 						{
+							"id": "is-host",
+							"objectClass": "Multiplayer",
+							"sid": 910000000002094
+						},
+						{
 							"id": "compare-two-values",
 							"objectClass": "System",
 							"sid": 581078491137472,
@@ -951,6 +2084,16 @@
 								"first-value": "Multiplayer.PeerID",
 								"comparison": 1,
 								"second-value": "\"\""
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 910000000002071,
+							"parameters": {
+								"first-value": "Multiplayer.PeerID",
+								"comparison": 1,
+								"second-value": "Multiplayer.MyID"
 							}
 						}
 					],
@@ -1150,9 +2293,10 @@
 					"actions": [
 						{
 							"callFunction": "نمایش_صفحه_پایان",
-							"sid": 871000000000061,
+							"sid": 100871271977953,
 							"parameters": [
-								"\"پایان\""
+								"\"پایان\"",
+								"\"همگام سازی وضعیت\""
 							]
 						}
 					],
@@ -1176,9 +2320,28 @@
 					"id": "is-host",
 					"objectClass": "Multiplayer",
 					"sid": 945888216526881
+				},
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 910000000002031,
+					"parameters": {
+						"first-value": "پد_مولتی.Count",
+						"comparison": 2,
+						"second-value": "2"
+					}
 				}
 			],
 			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 910000000002032,
+					"parameters": {
+						"variable": "نشست_شمارش",
+						"value": "شناسه_نشست"
+					}
+				},
 				{
 					"id": "create-object",
 					"objectClass": "System",
@@ -1869,9 +3032,10 @@
 				},
 				{
 					"callFunction": "نمایش_صفحه_پایان",
-					"sid": 871000000000076,
+					"sid": 873960903812270,
 					"parameters": [
-						"\"پایان\""
+						"\"پایان\"",
+						"\"شما بردید\""
 					]
 				}
 			],
@@ -1879,7 +3043,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "[h3]خانه بازگشت[/h3]\nکلیک/تاچ روی خانه: قطع اتصال Multiplayer و برگشت به لایوت ورود."
+			"text": "[h3]خانه بازگشت[/h3]\nکلیک/تاچ → تابع async بازگشت_به_ورود: Leave، Disconnect، و اگر تا ۱ثانیه On disconnected نیامد fallback به ورود. کلیک تکراری با خروج_در_جریان مسدود می‌شود."
 		},
 		{
 			"eventType": "block",
@@ -1909,9 +3073,10 @@
 				},
 				{
 					"callFunction": "نمایش_صفحه_پایان",
-					"sid": 871000000000042,
+					"sid": 432100820826434,
 					"parameters": [
-						"\"خروج\""
+						"\"خروج\"",
+						"\"رقیب قطع شد است\""
 					]
 				},
 				{
@@ -1920,7 +3085,8 @@
 					"sid": 871000000000043
 				}
 			],
-			"sid": 289005437073951
+			"sid": 289005437073951,
+			"disabled": true
 		},
 		{
 			"eventType": "comment",
@@ -2048,7 +3214,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "[h3]خانه بازگشت[/h3]\nکلیک/تاچ روی خانه: قطع اتصال Multiplayer و برگشت به لایوت ورود."
+			"text": "[h3]خانه بازگشت[/h3]\nکلیک/تاچ → تابع async بازگشت_به_ورود: Leave، Disconnect، و اگر تا ۱ثانیه On disconnected نیامد fallback به ورود. کلیک تکراری با خروج_در_جریان مسدود می‌شود."
 		},
 		{
 			"eventType": "block",
@@ -2062,29 +3228,26 @@
 						"click-type": "clicked",
 						"object-clicked": "خانه_بازگشت"
 					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 910000000003250,
+					"parameters": {
+						"variable": "خروج_در_جریان",
+						"comparison": 0,
+						"value": "0"
+					}
 				}
 			],
 			"actions": [
 				{
-					"id": "leave-room",
-					"objectClass": "Multiplayer",
-					"sid": 871000000000081
-				},
-				{
-					"id": "stop-all",
-					"objectClass": "Audio",
-					"sid": 871000000000082
-				},
-				{
-					"id": "go-to-layout",
-					"objectClass": "System",
-					"sid": 871000000000083,
-					"parameters": {
-						"layout": "ورود"
-					}
+					"callFunction": "بازگشت_به_ورود",
+					"sid": 910000000003252
 				}
 			],
-			"sid": 871000000000090
+			"sid": 871000000000090,
+			"children": []
 		},
 		{
 			"eventType": "block",
@@ -2096,29 +3259,113 @@
 					"parameters": {
 						"object": "خانه_بازگشت"
 					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 910000000003251,
+					"parameters": {
+						"variable": "خروج_در_جریان",
+						"comparison": 0,
+						"value": "0"
+					}
 				}
 			],
 			"actions": [
 				{
-					"id": "leave-room",
-					"objectClass": "Multiplayer",
-					"sid": 871000000000085
-				},
+					"callFunction": "بازگشت_به_ورود",
+					"sid": 910000000003253
+				}
+			],
+			"sid": 871000000000091,
+			"children": []
+		},
+		{
+			"eventType": "block",
+			"conditions": [
 				{
-					"id": "stop-all",
-					"objectClass": "Audio",
-					"sid": 871000000000086
-				},
-				{
-					"id": "go-to-layout",
+					"id": "on-end-of-layout",
 					"objectClass": "System",
-					"sid": 871000000000087,
+					"sid": 529150523114782
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "پاکسازی_آبجکت_مالتی",
+					"sid": 910000000004012
+				},
+				{
+					"id": "reset-global-variables",
+					"objectClass": "System",
+					"sid": 742545397964089,
 					"parameters": {
-						"layout": "ورود"
+						"reset-static": true
 					}
 				}
 			],
-			"sid": 871000000000091
+			"sid": 816403782322406,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 910000000003131,
+							"parameters": {
+								"variable": "مالتی_پاک_شده",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 910000000003130,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-in-room",
+									"objectClass": "Multiplayer",
+									"sid": 910000000003141
+								}
+							],
+							"actions": [
+								{
+									"id": "leave-room",
+									"objectClass": "Multiplayer",
+									"sid": 910000000003142
+								}
+							],
+							"sid": 910000000003140
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 910000000003151
+								},
+								{
+									"id": "is-connected",
+									"objectClass": "Multiplayer",
+									"sid": 910000000003152
+								}
+							],
+							"actions": [
+								{
+									"id": "disconnect-signalling",
+									"objectClass": "Multiplayer",
+									"sid": 910000000003153
+								}
+							],
+							"sid": 910000000003150
+						}
+					]
+				}
+			]
 		}
 	],
 	"sid": 581855882183268
