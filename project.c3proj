@@ -713,7 +713,7 @@
 	},
 	"properties": {
 		"description": "بی قاعده ها به شهر هندسه حمله کرده اند و دوستان مثلث را اسیر کردند به مثلث کمک کن تا با گذر از مکان های مختلف دوستان خود را نجات دهد و شهر هندسه را دوباره بسازد",
-		"version": "2.1",
+		"version": "2.4",
 		"autoIncrementVersion": false,
 		"author": "dorsa heydari",
 		"authorEmail": "",
